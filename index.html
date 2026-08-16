@@ -18,7 +18,7 @@
         header {
             background-color: #1a1a1a;
             color: #fff;
-            padding: 20px 50px;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -30,33 +30,35 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
         .logo-container img {
-            height: 55px;
-            width: 55px;
+            height: 50px;
+            width: 50px;
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid #d4af37;
         }
         .logo-container h1 {
-            font-size: 24px;
+            font-size: 22px;
             color: #f4e8c1;
             letter-spacing: 1px;
         }
         nav a {
             text-decoration: none;
             color: #fff;
-            margin-left: 25px;
+            margin-left: 20px;
             font-weight: 600;
+            font-size: 15px;
             transition: 0.3s;
         }
         nav a:hover {
             color: #d4af37;
         }
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1.jpeg') no-repeat center center/cover;
-            height: 70vh;
+            /* Hero section background mein ab logo lag gaya hai */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('logo.jpg') no-repeat center center/cover;
+            height: 65vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -66,23 +68,24 @@
             padding: 0 20px;
         }
         .hero h2 {
-            font-size: 45px;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
+            font-size: 40px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
             color: #f4e8c1;
         }
         .hero p {
-            font-size: 18px;
-            margin-bottom: 25px;
-            max-width: 650px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            max-width: 550px;
+            color: #ddd;
         }
         .btn {
             background-color: #d4af37;
             color: #fff;
-            padding: 12px 30px;
+            padding: 10px 25px;
             border: none;
             border-radius: 25px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
@@ -93,20 +96,20 @@
         }
         .container {
             max-width: 1200px;
-            margin: 50px auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
         .section-title {
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 28px;
+            margin-bottom: 8px;
             color: #2c2c2c;
         }
         .section-subtitle {
             text-align: center;
             color: #666;
-            margin-bottom: 40px;
-            font-size: 16px;
+            margin-bottom: 30px;
+            font-size: 15px;
         }
         .gallery-grid {
             display: grid;
@@ -115,104 +118,105 @@
         }
         .card {
             background: #fff;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             transition: transform 0.3s ease;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
         .card img {
             width: 100%;
-            height: 350px;
+            height: 330px;
             object-fit: cover;
         }
         .card-body {
-            padding: 20px;
+            padding: 15px;
             text-align: center;
         }
         .card-body h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 17px;
+            margin-bottom: 6px;
             color: #333;
         }
         .price {
             color: #b38f27;
-            font-size: 19px;
+            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .card-body p {
             color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
+            font-size: 13px;
+            margin-bottom: 12px;
         }
         .customization-section {
             background-color: #f5f0e6;
-            padding: 60px 20px;
-            margin-top: 60px;
+            padding: 50px 20px;
+            margin-top: 50px;
             text-align: center;
             border-top: 2px solid #eae0cd;
             border-bottom: 2px solid #eae0cd;
         }
         .customization-section h2 {
-            font-size: 30px;
+            font-size: 26px;
             color: #2c2c2c;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .customization-section p {
-            max-width: 750px;
-            margin: 0 auto 30px auto;
+            max-width: 650px;
+            margin: 0 auto 25px auto;
             color: #555;
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 15px;
+            line-height: 1.5;
         }
         footer {
             background-color: #1a1a1a;
             color: #fff;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
+            padding: 30px 20px;
+            margin-top: 50px;
         }
         footer p {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #ccc;
+            font-size: 14px;
         }
         .contact-info {
             color: #d4af37;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Logo Section -->
+    <!-- Header Section -->
     <header>
         <div class="logo-container">
-            <img src="Mirs_Abaya_Boutique_Logo_3.pdf" alt="Mir's Abaya Boutique Logo">
+            <img src="logo.jpg" alt="Mir's Abaya Logo">
             <h1>Mir's Abaya Boutique</h1>
         </div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#collection">Wholesale Catalog</a>
+            <a href="#collection">Catalog</a>
             <a href="#customization">B2B Services</a>
-            <a href="#contact">Contact Us</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h2>Mir's Abaya Boutique - B2B Wholesale</h2>
-        <p>Providing premium international wholesale abayas with competitive low-to-mid wholesale pricing, superior fabrics, and custom tailoring solutions.</p>
-        <a href="#collection" class="btn">View Wholesale Catalog</a>
+        <h2>Mirza Baig's B2B Wholesalers</h2>
+        <p>Premium international wholesale abayas at competitive low-to-mid rates with custom tailoring.</p>
+        <a href="#collection" class="btn">View Catalog</a>
     </section>
 
-    <!-- Product Gallery Section -->
+    <!-- Collection Section -->
     <div class="container" id="collection">
-        <h2 class="section-title">Wholesale Collection & Pricing</h2>
-        <p class="section-subtitle">Optimized low-to-mid international B2B wholesale pricing</p>
+        <h2 class="section-title">Wholesale Collection</h2>
+        <p class="section-subtitle">Low-to-mid international B2B pricing</p>
 
         <div class="gallery-grid">
             <!-- Item 1 -->
@@ -221,8 +225,8 @@
                 <div class="card-body">
                     <h3>Embroidered Green Abaya</h3>
                     <div class="price">$22.00</div>
-                    <p>Graceful green fabric with elegant leaf embroidery patterns.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Elegant green fabric with fine leaf embroidery.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 2 -->
@@ -231,8 +235,8 @@
                 <div class="card-body">
                     <h3>Grey Star Detailed Abaya</h3>
                     <div class="price">$24.00</div>
-                    <p>Sophisticated grey tone featuring unique star crystal cuffs.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Grey tone with unique star crystal cuffs.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 3 -->
@@ -241,8 +245,8 @@
                 <div class="card-body">
                     <h3>Classic Maroon Pleated Abaya</h3>
                     <div class="price">$25.00</div>
-                    <p>Rich maroon shade with stylish side pleated draping.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Rich maroon shade with side pleated draping.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 4 -->
@@ -251,8 +255,8 @@
                 <div class="card-body">
                     <h3>Floral Embroidered Wrap Abaya</h3>
                     <div class="price">$28.00</div>
-                    <p>Luxurious wrap design accented with golden floral embroidery.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Luxurious wrap with golden floral embroidery.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 5 -->
@@ -261,8 +265,8 @@
                 <div class="card-body">
                     <h3>Purple Cutwork Sleeve Abaya</h3>
                     <div class="price">$23.00</div>
-                    <p>Shimmering purple fabric with artistic geometric sleeve cutwork.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Shimmering purple with sleeve cutwork.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 6 -->
@@ -271,8 +275,8 @@
                 <div class="card-body">
                     <h3>Royal Green Handcrafted Kaftan</h3>
                     <div class="price">$32.00</div>
-                    <p>Traditional royal green kaftan with heavy gold hand embellishments.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Royal green kaftan with gold hand embellishments.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 7 -->
@@ -281,8 +285,8 @@
                 <div class="card-body">
                     <h3>Muted Pink Buttoned Abaya</h3>
                     <div class="price">$21.00</div>
-                    <p>Charming textured pink fabric with neat front buttons and collar.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Textured pink fabric with front buttons.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 8 -->
@@ -291,8 +295,8 @@
                 <div class="card-body">
                     <h3>Beaded Charcoal Grey Abaya</h3>
                     <div class="price">$26.00</div>
-                    <p>Charcoal grey piece enhanced with delicate fine pearl beadings.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Charcoal grey with delicate pearl beadings.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 9 -->
@@ -301,8 +305,8 @@
                 <div class="card-body">
                     <h3>Beige Open Front Abaya</h3>
                     <div class="price">$20.00</div>
-                    <p>Minimalist open-front daily wear abaya in soft neutral beige.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Minimalist open-front daily wear in soft beige.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
             <!-- Item 10 -->
@@ -311,8 +315,8 @@
                 <div class="card-body">
                     <h3>Minimalist Cream Closed Abaya</h3>
                     <div class="price">$19.00</div>
-                    <p>Elegant flared sleeve closed abaya for a seamless look.</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Inquire B2B</a>
+                    <p>Flared sleeve closed abaya for seamless look.</p>
+                    <a href="#customization" class="btn" style="padding: 6px 15px; font-size: 13px;">Inquire</a>
                 </div>
             </div>
         </div>
@@ -320,15 +324,14 @@
 
     <!-- Customization Section -->
     <section class="customization-section" id="customization">
-        <h2>Professional B2B Customization Services</h2>
-        <p>We specialize in B2B wholesale supply and custom manufacturing. Whether you require custom labeling, specific sizing matrices, tailored color palettes, or unique embroidery details for your retail brand, Mir's Abaya Boutique delivers top-tier quality at competitive wholesale rates.</p>
+        <h2>B2B Customization Services</h2>
+        <p>We provide full B2B wholesale supply, custom labeling, and tailored manufacturing to match your brand requirements.</p>
         <a href="#contact" class="btn">Partner With Us</a>
     </section>
 
-    <!-- Footer & Contact Details -->
+    <!-- Footer -->
     <footer id="contact">
-        <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. | B2B Wholesale & Customization Partner</p>
-        <p>For Business Inquiries & Wholesale Orders, Contact Us:</p>
+        <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved.</p>
         <p class="contact-info">Phone / WhatsApp: +92 334 8147509 | Email: mansoor.ahmed033481@gmail.com</p>
     </footer>
 
