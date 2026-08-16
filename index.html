@@ -3,676 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MİR’S ABAYA BOUTIQUE - Wholesale Collection</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Elegance Abaya Boutique & Customization</title>
     <style>
-        :root {
-            --primary-gold: #e6c547;
-            --dark-bg: #080808;
-            --card-bg: #141414;
-            --text-light: #f8f8f8;
-            --text-muted: #bcbcbc;
-            --border-gold: rgba(230, 197, 71, 0.4);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
+            background-color: #fdfbf7;
+            color: #333;
         }
-
-        h1, h2, h3, .brand-title {
-            font-family: 'Cinzel', serif;
-        }
-
-        /* Header */
         header {
-            background: rgba(10, 10, 10, 0.98);
-            border-bottom: 1px solid var(--border-gold);
+            background-color: #fff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
-
-        .nav-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 12px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand-box {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
-        }
-
-        .brand-logo-mini {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary-gold);
-        }
-
-        .brand-name {
-            font-size: 1.25rem;
-            color: var(--primary-gold);
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
-
-        .top-whatsapp-btn {
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            color: #fff;
-            padding: 10px 22px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: 0.3s;
-        }
-
-        .top-whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: radial-gradient(circle at center, #1c1c1c 0%, var(--dark-bg) 70%);
-            border-bottom: 1px solid var(--border-gold);
-        }
-
-        .hero-logo-frame {
-            width: 210px;
-            height: 210px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--primary-gold), #8a6f18);
-            box-shadow: 0 10px 30px rgba(230, 197, 71, 0.25);
-        }
-
-        .hero-logo-frame img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .hero-section h1 {
-            font-size: 2.6rem;
-            color: var(--primary-gold);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .hero-section p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 650px;
-            margin: 0 auto 20px;
-        }
-
-        .moq-badge {
-            display: inline-block;
-            background: rgba(230, 197, 71, 0.1);
-            color: var(--primary-gold);
-            border: 1px solid var(--primary-gold);
-            padding: 8px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-        }
-
-        /* Category Tabs */
-        .category-nav {
-            max-width: 1300px;
-            margin: 35px auto 20px;
-            padding: 0 20px;
-            display: flex;
-            justify-content: center;
             gap: 15px;
-            flex-wrap: wrap;
         }
-
-        .cat-tab {
-            background: var(--card-bg);
-            color: var(--text-light);
-            border: 1px solid var(--border-gold);
-            padding: 12px 28px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .cat-tab.active, .cat-tab:hover {
-            background: linear-gradient(135deg, var(--primary-gold), #b39224);
-            color: #000;
-            font-weight: 700;
-            border-color: transparent;
-            box-shadow: 0 4px 15px rgba(230, 197, 71, 0.3);
-        }
-
-        /* Sections */
-        .collection-section {
-            max-width: 1300px;
-            margin: 0 auto 60px;
-            padding: 0 20px;
-            display: none;
-        }
-
-        .collection-section.active-section {
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--primary-gold);
-            margin-bottom: 8px;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        .section-desc {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-            font-size: 1rem;
-        }
-
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: var(--card-bg);
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 12px 35px rgba(230, 197, 71, 0.15);
-        }
-
-        .img-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background: #1c1c1c;
-        }
-
-        .img-container img {
-            width: 100%;
-            height: 100%;
+        .logo-container img {
+            height: 50px;
+            width: 50px;
             object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid #d4af37;
         }
-
-        .piece-tag {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(0, 0, 0, 0.85);
-            color: var(--primary-gold);
-            padding: 6px 14px;
-            font-size: 0.8rem;
-            border-radius: 4px;
-            border: 1px solid var(--primary-gold);
-            font-family: 'Cinzel', serif;
+        .logo-container h1 {
+            font-size: 22px;
+            color: #2c2c2c;
             letter-spacing: 1px;
         }
-
-        .card-body {
-            padding: 22px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-
-        .product-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 8px;
-        }
-
-        .product-details {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 15px;
-        }
-
-        .price-tag {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-        }
-
-        .price-tag span {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            display: block;
-            font-weight: normal;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .order-btn {
-            background: linear-gradient(135deg, var(--primary-gold), #b39224);
-            color: #000;
-            padding: 10px 20px;
-            border-radius: 8px;
+        nav a {
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(230, 197, 71, 0.25);
+            color: #444;
+            margin-left: 25px;
+            font-weight: 600;
             transition: 0.3s;
         }
-
-        .order-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, #f5d455, var(--primary-gold));
+        nav a:hover {
+            color: #d4af37;
         }
-
-        /* Footer */
-        footer {
-            background: #050505;
-            border-top: 1px solid var(--border-gold);
-            padding: 50px 20px 25px;
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('1.jpeg') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-top: 60px;
+            color: #fff;
+            padding: 0 20px;
         }
-
-        .footer-content h3 {
-            color: var(--primary-gold);
-            font-size: 1.6rem;
-            margin-bottom: 10px;
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
             letter-spacing: 2px;
         }
-
-        .footer-content p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+        .btn {
+            background-color: #d4af37;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #b38f27;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #2c2c2c;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .card-body h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .card-body p {
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .customization-section {
+            background-color: #f5f0e6;
+            padding: 60px 20px;
+            margin-top: 60px;
+            text-align: center;
+            border-top: 2px solid #eae0cd;
+            border-bottom: 2px solid #eae0cd;
+        }
+        .customization-section h2 {
+            font-size: 30px;
+            color: #2c2c2c;
             margin-bottom: 20px;
         }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            color: var(--text-light);
-            font-size: 0.95rem;
+        .customization-section p {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
         }
-
-        .contact-info a {
-            color: var(--primary-gold);
-            text-decoration: none;
-        }
-
-        .copyright {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 20px;
-        }
-
-        @media(max-width: 768px) {
-            .hero-section h1 { font-size: 2rem; }
-            .hero-logo-frame { width: 160px; height: 160px; }
-            .nav-container { padding: 10px 15px; }
+        footer {
+            background-color: #2c2c2c;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header & Logo Section -->
     <header>
-        <div class="nav-container">
-            <div class="brand-box">
-                <img src="logo.png" alt="Logo" class="brand-logo-mini">
-                <div class="brand-name">MİR’S ABAYA BOUTIQUE</div>
-            </div>
-            <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20place%20a%20wholesale%20order." target="_blank" class="top-whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Quick WhatsApp
-            </a>
+        <div class="logo-container">
+            <!-- Yahan apna logo image file name dein (e.g., logo.png) -->
+            <img src="15.jpeg" alt="Brand Logo">
+            <h1>Elegance Boutique</h1>
         </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#collection">Collection</a>
+            <a href="#customization">Customization</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-logo-frame">
-            <img src="logo.png" alt="Mir's Abaya Boutique Logo">
-        </div>
-        <h1>MİR’S ABAYA BOUTIQUE</h1>
-        <p>Exclusive B2B wholesale manufacturer and supplier of high-end, premium crafted abayas for international boutiques and fashion centers.</p>
-        <div class="moq-badge">
-            <i class="fas fa-box-open"></i> Minimum Order Quantity (MOQ): 4 to 12 Abayas
-        </div>
+    <section class="hero" id="home">
+        <h2>Exclusive Abaya Collection</h2>
+        <p>Discover grace and modesty crafted with premium fabrics and flawless details.</p>
+        <a href="#collection" class="btn">Explore Collection</a>
     </section>
 
-    <!-- Category Tabs -->
-    <div class="category-nav">
-        <button class="cat-tab active" onclick="switchCategory('party')">🎉 Party & Occasion Wear</button>
-        <button class="cat-tab" onclick="switchCategory('elegant')">✨ Elegant & Daily Wear</button>
-        <button class="cat-tab" onclick="switchCategory('casual')">🌿 Casual & Travel Wear</button>
+    <!-- Product Gallery Section -->
+    <div class="container" id="collection">
+        <h2 class="section-title">Our Masterpieces</h2>
+        <p class="section-subtitle">Browse through our latest premium designs</p>
+
+        <div class="gallery-grid">
+            <!-- Item 1 -->
+            <div class="card">
+                <img src="1.jpeg" alt="Abaya 1">
+                <div class="card-body">
+                    <h3>Embroidered Green Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="card">
+                <img src="2.jfif" alt="Abaya 2">
+                <div class="card-body">
+                    <h3>Grey Star Detailed Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="card">
+                <img src="4.jfif" alt="Abaya 3">
+                <div class="card-body">
+                    <h3>Classic Maroon Pleated Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="card">
+                <img src="5.jfif" alt="Abaya 4">
+                <div class="card-body">
+                    <h3>Floral Embroidered Wrap Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="card">
+                <img src="7.jfif" alt="Abaya 5">
+                <div class="card-body">
+                    <h3>Purple Cutwork Sleeve Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="card">
+                <img src="8.jfif" alt="Abaya 6">
+                <div class="card-body">
+                    <h3>Royal Green Handcrafted Kaftan</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 7 -->
+            <div class="card">
+                <img src="9.jfif" alt="Abaya 7">
+                <div class="card-body">
+                    <h3>Muted Pink Buttoned Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 8 -->
+            <div class="card">
+                <img src="24.jpeg" alt="Abaya 8">
+                <div class="card-body">
+                    <h3>Beaded Charcoal Grey Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 9 -->
+            <div class="card">
+                <img src="25.jpeg" alt="Abaya 9">
+                <div class="card-body">
+                    <h3>Beige Open Front Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+            <!-- Item 10 -->
+            <div class="card">
+                <img src="26.jpeg" alt="Abaya 10">
+                <div class="card-body">
+                    <h3>Minimalist Cream Closed Abaya</h3>
+                    <p>Customizable</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- 1. Party & Occasion Wear (Pieces: 6, 8, 24, 25) -->
-    <section id="party" class="collection-section active-section">
-        <h2 class="section-title">Party & Occasion Wear</h2>
-        <p class="section-desc">Grand celebration pieces featuring heavy zari work, intricate embroidery, and shimmering crystal highlights.</p>
-        
-        <div class="product-grid">
-            <!-- Piece 6 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #6</span>
-                    <img src="abaya6.jpg" alt="Piece 6" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Emerald Green Traditional</h3>
-                    <p class="product-details">Traditional heavy craftsmanship with silver and golden detailing on the neckline and sleeves.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$38 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%236%20-%20$38" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 8 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #8</span>
-                    <img src="abaya8.jpg" alt="Piece 8" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Emerald V-Neck Zari</h3>
-                    <p class="product-details">Sophisticated V-neck design with finely crafted zari and sequin work on neckline and borders.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$45 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%238%20-%20$45" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 24 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #24</span>
-                    <img src="abaya24.jpg" alt="Piece 24" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Royal Plum Embroidery</h3>
-                    <p class="product-details">Exquisite neck bootie work, golden zari embroidery on shoulders, paired with a stylish black tassel.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$38 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%2324%20-%20$38" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 25 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #25</span>
-                    <img src="abaya25.jpg" alt="Piece 25" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Jet Black Crystal Diagonal</h3>
-                    <p class="product-details">V-neck jet black abaya featuring stunning diagonal sparkling crystal and rhinestone strip detailing.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$42 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%2325%20-%20$42" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. Elegant & Daily Wear (Pieces: 2, 4, 9, 20) -->
-    <section id="elegant" class="collection-section">
-        <h2 class="section-title">Elegant & Daily Wear</h2>
-        <p class="section-desc">Graceful silhouettes, refined pintucks, and delicate pearl detailing tailored for sophisticated formal appearances.</p>
-        
-        <div class="product-grid">
-            <!-- Piece 2 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #2</span>
-                    <img src="abaya2.jpg" alt="Piece 2" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Slate Grey Pintuck & Tassel</h3>
-                    <p class="product-details">Front button placket with tassel, delicate pintucks on shoulders and sleeves for a graceful look.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$32 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%232%20-%20$32" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 4 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #4</span>
-                    <img src="abaya4.jpg" alt="Piece 4" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Chocolate Brown Micro-Studs</h3>
-                    <p class="product-details">Round neck design enhanced with golden micro-studs and rhinestones along the neckline and hemline.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$36 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%234%20-%20$36" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 9 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #9</span>
-                    <img src="abaya9.jpg" alt="Piece 9" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Royal Navy Velvet Accent</h3>
-                    <p class="product-details">Band collar with smoked mesh chest detailing and a rich maroon velvet front placket accent.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$29 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%239%20-%20$29" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 20 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #20</span>
-                    <img src="abaya20.jpg" alt="Piece 20" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Charcoal Grey Pearl Pintucks</h3>
-                    <p class="product-details">Fine front pintucks adorned with delicate pearls, matching pearl detailing on the cuffs.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$39 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%2320%20-%20$39" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Casual & Travel Wear (Pieces: 1, 21, 23, 26) -->
-    <section id="casual" class="collection-section">
-        <h2 class="section-title">Casual & Travel Wear</h2>
-        <p class="section-desc">Comfortable, breathable, and minimalist silhouettes created for everyday routines and travelling ease.</p>
-        
-        <div class="product-grid">
-            <!-- Piece 1 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #1</span>
-                    <img src="abaya1.jpg" alt="Piece 1" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Emerald Minimal V-Neck</h3>
-                    <p class="product-details">Clean and graceful cut with a V-neckline, subtle front pleats, and a single statement button.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$26 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%231%20-%20$26" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 21 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #21</span>
-                    <img src="abaya21.jpg" alt="Piece 21" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Off-White Open Shrug</h3>
-                    <p class="product-details">Minimalist open-front shrug style with lapel collar, perfect for sophisticated daily wear.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$40 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%2321%20-%20$40" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 23 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #23</span>
-                    <img src="abaya23.jpg" alt="Piece 23" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Taupe Cardigan Cut Abaya</h3>
-                    <p class="product-details">Front-open cardigan silhouette with wide sleeves and a subtle branded label detail.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$28 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%2323%20-%20$28" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Piece 26 -->
-            <div class="product-card">
-                <div class="img-container">
-                    <span class="piece-tag">Piece #26</span>
-                    <img src="abaya26.jpg" alt="Piece 26" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3 class="product-name">Classic Black Front-Zip</h3>
-                    <p class="product-details">High band collar with a smooth, comfortable front zipper design for effortless travel and daily routine.</p>
-                    <div class="card-footer">
-                        <div class="price-tag">$35 <span>Wholesale</span></div>
-                        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Piece%20%2326%20-%20$35" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Customization Section -->
+    <section class="customization-section" id="customization">
+        <h2>We Offer Complete Customization Services</h2>
+        <p>Aapko apni pasand ke mutabiq koi bhi design tayar karwana ho? Hum size, color, fabric, aur embroidery mein mukammal customization provide karte hain. Apni pasand ka design ya measurements humein share karein aur apnadream outfit banwayein.</p>
+        <a href="#contact" class="btn">Contact for Custom Order</a>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <h3>MİR’S ABAYA BOUTIQUE</h3>
-            <p>Direct Wholesale Manufacturer & Supplier for International Boutiques and Retail Stores</p>
-            <div class="contact-info">
-                <div><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/923348147509" target="_blank">+92 334 8147509</a></div>
-                <div><i class="fas fa-envelope"></i> Email: <a href="mailto:mansoor.ahmad033481@gmail.com">mansoor.ahmad033481@gmail.com</a></div>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 MİR’S ABAYA BOUTIQUE. All Rights Reserved.
-        </div>
+    <footer id="contact">
+        <p>&copy; 2026 Elegance Abaya Boutique. All Rights Reserved. | Customization Available</p>
     </footer>
 
-    <!-- Script for Switching Sections -->
-    <script>
-        function switchCategory(catId) {
-            const sections = document.querySelectorAll('.collection-section');
-            sections.forEach(sec => sec.classList.remove('active-section'));
-
-            const tabs = document.querySelectorAll('.cat-tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-
-            document.getElementById(catId).classList.add('active-section');
-            event.target.classList.add('active');
-            window.scrollTo({ top: 500, behavior: 'smooth' });
-        }
-    </script>
 </body>
 </html>
