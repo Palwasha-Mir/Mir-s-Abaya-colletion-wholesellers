@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MİR’S ABAYA BOUTIQUE</title>
+    <title>Mir's Abaya Boutique - The Wholesalers</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-gold: #d4af37;
-            --dark-bg: #0c0c0c;
-            --card-bg: #161616;
-            --text-light: #f5f5f5;
-            --text-muted: #aaaaaa;
-            --accent-green: #0b3d2c;
-            --border-gold: rgba(212, 175, 55, 0.3);
+            --primary-gold: #e6c547;
+            --dark-bg: #080808;
+            --card-bg: #141414;
+            --text-light: #f8f8f8;
+            --text-muted: #bcbcbc;
+            --border-gold: rgba(230, 197, 71, 0.4);
         }
 
         * {
@@ -39,7 +38,7 @@
 
         /* Header */
         header {
-            background: rgba(12, 12, 12, 0.95);
+            background: rgba(10, 10, 10, 0.98);
             border-bottom: 1px solid var(--border-gold);
             position: sticky;
             top: 0;
@@ -50,7 +49,7 @@
         .nav-container {
             max-width: 1300px;
             margin: 0 auto;
-            padding: 15px 30px;
+            padding: 12px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -59,88 +58,99 @@
         .brand-box {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
-        .brand-logo {
-            width: 60px;
-            height: 60px;
+        .brand-logo-mini {
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary-gold);
         }
 
         .brand-name {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             color: var(--primary-gold);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-weight: 700;
         }
 
-        .brand-sub {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .top-whatsapp {
-            background: #25d366;
+        .top-whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128c7e);
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
             transition: 0.3s;
         }
 
-        .top-whatsapp:hover {
-            background: #20ba5a;
-            transform: scale(1.05);
+        .top-whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
         }
 
-        /* Hero Banner */
-        .hero-banner {
+        /* Hero Showcase with Logo */
+        .hero-section {
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(180deg, #111 0%, var(--dark-bg) 100%);
+            padding: 60px 20px 40px;
+            background: radial-gradient(circle at center, #1c1c1c 0%, var(--dark-bg) 70%);
             border-bottom: 1px solid var(--border-gold);
         }
 
-        .hero-banner h1 {
-            font-size: 2.8rem;
+        .hero-logo-frame {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--primary-gold), #8a6f18);
+            box-shadow: 0 10px 30px rgba(230, 197, 71, 0.2);
+        }
+
+        .hero-logo-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
             color: var(--primary-gold);
             margin-bottom: 10px;
             letter-spacing: 2px;
         }
 
-        .hero-banner p {
+        .hero-section p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 700px;
+            font-size: 1.05rem;
+            max-width: 650px;
             margin: 0 auto 20px;
         }
 
         .moq-badge {
             display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(230, 197, 71, 0.1);
             color: var(--primary-gold);
             border: 1px solid var(--primary-gold);
-            padding: 8px 20px;
+            padding: 8px 25px;
             border-radius: 30px;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.95rem;
             letter-spacing: 1px;
         }
 
-        /* Category Navigation Tabs */
+        /* Category Switcher Tabs */
         .category-nav {
             max-width: 1300px;
-            margin: 40px auto 20px;
+            margin: 35px auto 20px;
             padding: 0 20px;
             display: flex;
             justify-content: center;
@@ -152,7 +162,7 @@
             background: var(--card-bg);
             color: var(--text-light);
             border: 1px solid var(--border-gold);
-            padding: 12px 25px;
+            padding: 12px 28px;
             border-radius: 30px;
             cursor: pointer;
             font-family: 'Cinzel', serif;
@@ -162,12 +172,14 @@
         }
 
         .cat-tab.active, .cat-tab:hover {
-            background: var(--primary-gold);
+            background: linear-gradient(135deg, var(--primary-gold), #b39224);
             color: #000;
-            font-weight: 600;
+            font-weight: 700;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(230, 197, 71, 0.3);
         }
 
-        /* Section Styling */
+        /* Sections */
         .collection-section {
             max-width: 1300px;
             margin: 0 auto 60px;
@@ -180,9 +192,9 @@
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-gold);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-align: center;
             letter-spacing: 1px;
         }
@@ -191,10 +203,10 @@
             text-align: center;
             color: var(--text-muted);
             margin-bottom: 35px;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
-        /* Grid */
+        /* Product Grid */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -203,26 +215,26 @@
 
         .product-card {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             border-color: var(--primary-gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 12px 35px rgba(230, 197, 71, 0.15);
         }
 
         .img-container {
             position: relative;
             width: 100%;
-            height: 380px;
-            background: #1f1f1f;
+            height: 400px;
+            background: #1c1c1c;
         }
 
         .img-container img {
@@ -235,7 +247,7 @@
             position: absolute;
             top: 15px;
             left: 15px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             color: var(--primary-gold);
             padding: 6px 14px;
             font-size: 0.8rem;
@@ -261,7 +273,7 @@
         }
 
         .product-details {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             margin-bottom: 20px;
         }
@@ -275,7 +287,7 @@
         }
 
         .price-tag {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--primary-gold);
         }
@@ -289,35 +301,37 @@
         }
 
         .order-btn {
-            background: #25d366;
-            color: #fff;
-            padding: 9px 18px;
-            border-radius: 6px;
+            background: linear-gradient(135deg, var(--primary-gold), #b39224);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(230, 197, 71, 0.25);
             transition: 0.3s;
         }
 
         .order-btn:hover {
-            background: #20ba5a;
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #f5d455, var(--primary-gold));
         }
 
         /* Footer */
         footer {
-            background: #080808;
+            background: #050505;
             border-top: 1px solid var(--border-gold);
-            padding: 50px 20px 20px;
+            padding: 50px 20px 25px;
             text-align: center;
             margin-top: 60px;
         }
 
         .footer-content h3 {
             color: var(--primary-gold);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 10px;
             letter-spacing: 2px;
         }
@@ -331,7 +345,7 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 35px;
             margin-bottom: 25px;
             flex-wrap: wrap;
             color: var(--text-light);
@@ -351,58 +365,57 @@
         }
 
         @media(max-width: 768px) {
-            .hero-banner h1 { font-size: 2rem; }
-            .nav-container { padding: 12px 15px; }
-            .brand-name { font-size: 1.1rem; }
+            .hero-section h1 { font-size: 1.9rem; }
+            .hero-logo-frame { width: 150px; height: 150px; }
+            .nav-container { padding: 10px 15px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header with Logo -->
+    <!-- Header -->
     <header>
         <div class="nav-container">
             <div class="brand-box">
-                <!-- Using Logo from PDF/Image provided -->
-                <img src="Mirs_Abaya_Boutique_Logo.pdf" alt="MİR’S Logo" class="brand-logo" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=200&q=80'">
-                <div>
-                    <div class="brand-name">MİR’S ABAYA BOUTIQUE</div>
-                    <div class="brand-sub">The Wholesalers</div>
-                </div>
+                <img src="Mirs_Abaya_Boutique_Logo_2.pdf" alt="Logo" class="brand-logo-mini" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=200&q=80'">
+                <div class="brand-name">MİR’S ABAYA BOUTIQUE</div>
             </div>
-            <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20place%20an%20order." target="_blank" class="top-whatsapp">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20place%20a%20wholesale%20order." target="_blank" class="top-whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Quick WhatsApp
             </a>
         </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-        <h1>Exquisite Abaya Collection</h1>
-        <p>Premium craftsmanship designed for international boutiques and fashion centers. High-end elegance with unmatched quality.</p>
+    <!-- Hero Section with Logo Display -->
+    <section class="hero-section">
+        <div class="hero-logo-frame">
+            <img src="Mirs_Abaya_Boutique_Logo_2.pdf" alt="Mir's Abaya Boutique Logo" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80'">
+        </div>
+        <h1>MİR’S ABAYA BOUTIQUE</h1>
+        <p>Exclusive B2B wholesale manufacturer and supplier of high-end, premium crafted abayas for international boutiques and fashion centers.</p>
         <div class="moq-badge">
             <i class="fas fa-box-open"></i> Minimum Order Quantity (MOQ): 4 to 12 Abayas
         </div>
     </section>
 
-    <!-- Category Navigation Tabs -->
+    <!-- Category Tabs -->
     <div class="category-nav">
         <button class="cat-tab active" onclick="switchCategory('party')">🎉 Party & Occasion Wear</button>
         <button class="cat-tab" onclick="switchCategory('elegant')">✨ Elegant & Daily Wear</button>
         <button class="cat-tab" onclick="switchCategory('casual')">🌿 Casual & Travel Wear</button>
     </div>
 
-    <!-- 1. Party & Occasion Wear Section -->
+    <!-- 1. Party & Occasion Wear -->
     <section id="party" class="collection-section active-section">
         <h2 class="section-title">Party & Occasion Wear</h2>
-        <p class="section-desc">Heavy zari work, exquisite embroidery, and crystal details crafted for grand events and celebrations.</p>
+        <p class="section-desc">Grand celebration pieces featuring heavy zari work, intricate embroidery, and shimmering crystal highlights.</p>
         
         <div class="product-grid">
             <!-- Piece 5 -->
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #5</span>
-                    <img src="WhatsApp Image 2026-08-14 at 8.20.02 AM (10)_2.jpeg" alt="Royal Maroon Heavy Abaya" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="Royal Maroon Heavy Abaya" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Royal Maroon Heavy Abaya</h3>
@@ -420,7 +433,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #6</span>
-                    <img src="WhatsApp Image 2026-08-14 at 8.20.02 AM (11).jpeg" alt="Emerald Green Traditional" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=600&q=80" alt="Emerald Green Traditional" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Emerald Green Traditional</h3>
@@ -438,7 +451,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #8</span>
-                    <img src="WhatsApp Image 2026-08-14 at 8.20.02 AM.jpeg" alt="Emerald V-Neck Zari" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Emerald V-Neck Zari" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Emerald V-Neck Zari</h3>
@@ -456,7 +469,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #24</span>
-                    <img src="WhatsApp Image 2026-08-14 at 8.20.02 AM (10)_2.jpeg" alt="Royal Plum Embroidery" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=600&q=80" alt="Royal Plum Embroidery" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Royal Plum Embroidery</h3>
@@ -474,7 +487,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #25</span>
-                    <img src="WhatsApp Image 2026-08-14 at 8.20.02 AM (11).jpeg" alt="Jet Black Crystal" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Jet Black Crystal" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Jet Black Crystal Diagonal</h3>
@@ -490,17 +503,17 @@
         </div>
     </section>
 
-    <!-- 2. Elegant & Daily Wear Section -->
+    <!-- 2. Elegant & Daily Wear -->
     <section id="elegant" class="collection-section">
         <h2 class="section-title">Elegant & Daily Wear</h2>
-        <p class="section-desc">Graceful cuts, pintucks, and delicate pearl detailing tailored for sophisticated everyday and formal appearance.</p>
+        <p class="section-desc">Graceful silhouettes, refined pintucks, and delicate pearl detailing tailored for sophisticated formal appearances.</p>
         
         <div class="product-grid">
             <!-- Piece 2 -->
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #2</span>
-                    <img src="WhatsApp Image 2026-08-14 at 10.32.36 AM (1).jpeg" alt="Slate Grey Pintucks" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80" alt="Slate Grey Pintucks" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Slate Grey Pintuck & Tassel</h3>
@@ -518,7 +531,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #4</span>
-                    <img src="WhatsApp Image 2026-08-14 at 10.32.36 AM.jpeg" alt="Chocolate Brown Studs" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Chocolate Brown Studs" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Chocolate Brown Micro-Studs</h3>
@@ -536,7 +549,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #9</span>
-                    <img src="WhatsApp Image 2026-08-14 at 8.20.02 AM (11).jpeg" alt="Navy Velvet Accent" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Navy Velvet Accent" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Royal Navy Velvet Accent</h3>
@@ -554,7 +567,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #20</span>
-                    <img src="WhatsApp Image 2026-08-14 at 10.32.36 AM (1).jpeg" alt="Charcoal Grey Pearls" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Charcoal Grey Pearls" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Charcoal Grey Pearl Pintucks</h3>
@@ -570,17 +583,17 @@
         </div>
     </section>
 
-    <!-- 3. Casual & Travel Wear Section -->
+    <!-- 3. Casual & Travel Wear -->
     <section id="casual" class="collection-section">
         <h2 class="section-title">Casual & Travel Wear</h2>
-        <p class="section-desc">Comfortable, breathable, and minimalist styles designed for everyday routine, office, and travelling.</p>
+        <p class="section-desc">Comfortable, breathable, and minimalist silhouettes created for everyday routines and travelling ease.</p>
         
         <div class="product-grid">
             <!-- Piece 1 -->
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #1</span>
-                    <img src="WhatsApp Image 2026-08-14 at 10.32.36 AM (3).jpeg" alt="Emerald Simple" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Emerald Simple" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Emerald Minimal V-Neck</h3>
@@ -598,7 +611,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #21</span>
-                    <img src="WhatsApp Image 2026-08-14 at 10.32.36 AM (2)_2.jpeg" alt="Off-White Open Shrug" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Off-White Open Shrug" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Off-White Open Shrug</h3>
@@ -616,7 +629,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #23</span>
-                    <img src="WhatsApp Image 2026-08-14 at 10.32.36 AM (3).jpeg" alt="Taupe Cardigan" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Taupe Cardigan" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Taupe Cardigan Cut Abaya</h3>
@@ -634,7 +647,7 @@
             <div class="product-card">
                 <div class="img-container">
                     <span class="piece-tag">Piece #26</span>
-                    <img src="WhatsApp Image 2026-08-14 at 8.20.02 AM (12).jpeg" alt="Classic Black Zip" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80" alt="Classic Black Zip" loading="lazy">
                 </div>
                 <div class="card-body">
                     <h3 class="product-name">Classic Black Front-Zip</h3>
@@ -665,22 +678,18 @@
         </div>
     </footer>
 
-    <!-- JavaScript to Switch Categories -->
+    <!-- Script for Switching Sections -->
     <script>
         function switchCategory(catId) {
-            // Hide all sections
             const sections = document.querySelectorAll('.collection-section');
             sections.forEach(sec => sec.classList.remove('active-section'));
 
-            // Remove active class from buttons
             const tabs = document.querySelectorAll('.cat-tab');
             tabs.forEach(tab => tab.classList.remove('active'));
 
-            // Show selected section
             document.getElementById(catId).classList.add('active-section');
-
-            // Set active class to clicked button
             event.target.classList.add('active');
+            window.scrollTo({ top: 500, behavior: 'smooth' });
         }
     </script>
 </body>
