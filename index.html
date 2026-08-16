@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegance Abaya Boutique & Customization</title>
+    <title>Mir's Abaya Boutique</title>
     <style>
         * {
             margin: 0;
@@ -16,12 +16,13 @@
             color: #333;
         }
         header {
-            background-color: #fff;
+            background-color: #1a1a1a;
+            color: #fff;
             padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eaeaea;
+            border-bottom: 2px solid #d4af37;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -32,20 +33,20 @@
             gap: 15px;
         }
         .logo-container img {
-            height: 50px;
-            width: 50px;
+            height: 55px;
+            width: 55px;
             object-fit: cover;
             border-radius: 50%;
-            border: 1px solid #d4af37;
+            border: 2px solid #d4af37;
         }
         .logo-container h1 {
-            font-size: 22px;
-            color: #2c2c2c;
+            font-size: 24px;
+            color: #f4e8c1;
             letter-spacing: 1px;
         }
         nav a {
             text-decoration: none;
-            color: #444;
+            color: #fff;
             margin-left: 25px;
             font-weight: 600;
             transition: 0.3s;
@@ -54,7 +55,7 @@
             color: #d4af37;
         }
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('1.jpeg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1.jpeg') no-repeat center center/cover;
             height: 70vh;
             display: flex;
             flex-direction: column;
@@ -68,6 +69,7 @@
             font-size: 45px;
             margin-bottom: 15px;
             letter-spacing: 2px;
+            color: #f4e8c1;
         }
         .hero p {
             font-size: 18px;
@@ -115,7 +117,7 @@
             background: #fff;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
         .card:hover {
@@ -132,12 +134,18 @@
         }
         .card-body h3 {
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #333;
         }
-        .card-body p {
-            color: #d4af37;
+        .price {
+            color: #b38f27;
+            font-size: 18px;
             font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-body p {
+            color: #666;
+            font-size: 14px;
             margin-bottom: 15px;
         }
         .customization-section {
@@ -161,11 +169,19 @@
             line-height: 1.6;
         }
         footer {
-            background-color: #2c2c2c;
+            background-color: #1a1a1a;
             color: #fff;
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px;
             margin-top: 60px;
+        }
+        footer p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        .contact-info {
+            color: #d4af37;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -174,9 +190,8 @@
     <!-- Header & Logo Section -->
     <header>
         <div class="logo-container">
-            <!-- Yahan apna logo image file name dein (e.g., logo.png) -->
-            <img src="15.jpeg" alt="Brand Logo">
-            <h1>Elegance Boutique</h1>
+            <img src="Mirs_Abaya_Boutique_Logo_3.pdf" alt="Mir's Abaya Boutique Logo">
+            <h1>Mir's Abaya Boutique</h1>
         </div>
         <nav>
             <a href="#home">Home</a>
@@ -188,15 +203,15 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h2>Exclusive Abaya Collection</h2>
-        <p>Discover grace and modesty crafted with premium fabrics and flawless details.</p>
+        <h2>Mir's Abaya Boutique</h2>
+        <p>Discover grace and modesty crafted with premium fabrics, exquisite details, and custom tailoring.</p>
         <a href="#collection" class="btn">Explore Collection</a>
     </section>
 
     <!-- Product Gallery Section -->
     <div class="container" id="collection">
         <h2 class="section-title">Our Masterpieces</h2>
-        <p class="section-subtitle">Browse through our latest premium designs</p>
+        <p class="section-subtitle">Browse through our latest premium designs and pricing details</p>
 
         <div class="gallery-grid">
             <!-- Item 1 -->
@@ -204,8 +219,9 @@
                 <img src="1.jpeg" alt="Abaya 1">
                 <div class="card-body">
                     <h3>Embroidered Green Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 8,500</div>
+                    <p>Graceful green fabric with elegant leaf embroidery patterns.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 2 -->
@@ -213,8 +229,9 @@
                 <img src="2.jfif" alt="Abaya 2">
                 <div class="card-body">
                     <h3>Grey Star Detailed Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 9,000</div>
+                    <p>Sophisticated grey tone featuring unique star crystal cuffs.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 3 -->
@@ -222,8 +239,9 @@
                 <img src="4.jfif" alt="Abaya 3">
                 <div class="card-body">
                     <h3>Classic Maroon Pleated Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 9,500</div>
+                    <p>Rich maroon shade with stylish side pleated draping.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 4 -->
@@ -231,8 +249,9 @@
                 <img src="5.jfif" alt="Abaya 4">
                 <div class="card-body">
                     <h3>Floral Embroidered Wrap Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 10,000</div>
+                    <p>Luxurious wrap design accented with golden floral embroidery.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 5 -->
@@ -240,8 +259,9 @@
                 <img src="7.jfif" alt="Abaya 5">
                 <div class="card-body">
                     <h3>Purple Cutwork Sleeve Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 8,800</div>
+                    <p>Shimmering purple fabric with artistic geometric sleeve cutwork.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 6 -->
@@ -249,8 +269,9 @@
                 <img src="8.jfif" alt="Abaya 6">
                 <div class="card-body">
                     <h3>Royal Green Handcrafted Kaftan</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 11,500</div>
+                    <p>Traditional royal green kaftan with heavy gold hand embellishments.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 7 -->
@@ -258,8 +279,9 @@
                 <img src="9.jfif" alt="Abaya 7">
                 <div class="card-body">
                     <h3>Muted Pink Buttoned Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 7,800</div>
+                    <p>Charming textured pink fabric with neat front buttons and collar.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 8 -->
@@ -267,8 +289,9 @@
                 <img src="24.jpeg" alt="Abaya 8">
                 <div class="card-body">
                     <h3>Beaded Charcoal Grey Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 8,200</div>
+                    <p>Charcoal grey piece enhanced with delicate fine pearl beadings.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 9 -->
@@ -276,8 +299,9 @@
                 <img src="25.jpeg" alt="Abaya 9">
                 <div class="card-body">
                     <h3>Beige Open Front Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 7,500</div>
+                    <p>Minimalist open-front daily wear abaya in soft neutral beige.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
             <!-- Item 10 -->
@@ -285,8 +309,9 @@
                 <img src="26.jpeg" alt="Abaya 10">
                 <div class="card-body">
                     <h3>Minimalist Cream Closed Abaya</h3>
-                    <p>Customizable</p>
-                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Order Custom</a>
+                    <div class="price">PKR 7,200</div>
+                    <p>Elegant flared sleeve closed abaya for a seamless look.</p>
+                    <a href="#customization" class="btn" style="padding: 8px 20px; font-size: 14px;">Customize</a>
                 </div>
             </div>
         </div>
@@ -294,14 +319,16 @@
 
     <!-- Customization Section -->
     <section class="customization-section" id="customization">
-        <h2>We Offer Complete Customization Services</h2>
-        <p>Aapko apni pasand ke mutabiq koi bhi design tayar karwana ho? Hum size, color, fabric, aur embroidery mein mukammal customization provide karte hain. Apni pasand ka design ya measurements humein share karein aur apnadream outfit banwayein.</p>
+        <h2>Complete Customization Services Available</h2>
+        <p>Want a design tailored to your exact measurements, favorite color, or preferred fabric? At Mir's Abaya Boutique, we provide full custom tailoring services to bring your dream outfit to life.</p>
         <a href="#contact" class="btn">Contact for Custom Order</a>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer & Contact Details -->
     <footer id="contact">
-        <p>&copy; 2026 Elegance Abaya Boutique. All Rights Reserved. | Customization Available</p>
+        <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved.</p>
+        <p>For Orders & Customization, Reach Out To Us:</p>
+        <p class="contact-info">Phone / WhatsApp: +92 300 1234567 | Email: info@mirsabayaboutique.com</p>
     </footer>
 
 </body>
