@@ -6,7 +6,7 @@
     <title>Mir's Abaya Boutique - The Wholesalers</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Segoe+UI&display=swap" rel="stylesheet">
-    <!-- Lightbox CSS for Image Zoom -->
+    <!-- Lightbox CSS for Full Image Preview -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <style>
         * {
@@ -24,10 +24,10 @@
             font-family: 'Playfair Display', serif;
         }
         header {
-            background-color: rgba(17, 26, 20, 0.75); /* Transparent Header */
+            background-color: rgba(17, 26, 20, 0.85);
             backdrop-filter: blur(5px);
             color: #fff;
-            padding: 15px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -41,7 +41,7 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .logo-container img {
             height: 45px;
@@ -71,9 +71,10 @@
             color: #d4af37;
         }
         .hero {
-            background: linear-gradient(rgba(10, 20, 15, 0.6), rgba(10, 20, 15, 0.6)), url('image_68d0c7_3.jpg') no-repeat center center;
-            background-size: cover;
-            min-height: 60vh;
+            background: linear-gradient(rgba(10, 20, 15, 0.7), rgba(10, 20, 15, 0.7)), url('image_68d0c7_3.jpg') no-repeat center center;
+            background-size: contain;
+            background-color: #0b1410;
+            min-height: 65vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -274,8 +275,9 @@
     <!-- Header Section -->
     <header>
         <div class="logo-container">
-            <a href="image_68d0c7_3.jpg" data-lightbox="logo" data-title="Mir's Abaya Boutique Logo">
-                <img src="image_68d0c7_3.jpg" alt="Mir's Abaya Boutique Logo">
+            <!-- Black logo image with lightbox popup so it opens full size on click -->
+            <a href="Gemini_Generated_Image_us6kqtus6kqtus6k_2.jfif" data-lightbox="logo" data-title="Mir's Abaya Boutique Logo">
+                <img src="Gemini_Generated_Image_us6kqtus6kqtus6k_2.jfif" alt="Mir's Abaya Boutique Logo">
             </a>
             <h1>Mir's Abaya Boutique - The Wholesalers</h1>
         </div>
@@ -287,7 +289,7 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Green Background Image -->
     <section class="hero" id="home">
         <h2>Mir's Abaya Boutique - The Wholesalers</h2>
         <p>Budget-Friendly B2B International Wholesale Abayas. Free matching hijab included with every piece!</p>
