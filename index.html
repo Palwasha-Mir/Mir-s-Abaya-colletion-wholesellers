@@ -3,428 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mir's Abaya Boutique - The Wholesalers</title>
+    <title>Mir's Abaya Boutique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Segoe+UI&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fff; color: #333; font-family: 'Segoe UI', sans-serif; }
+        
+        /* Font Styles */
+        h1, h2, h3, .brand-title { font-family: 'Playfair Display', serif; }
+        
+        header { background-color: #111a14; color: #fff; padding: 20px; display: flex; align-items: center; justify-content: center; border-bottom: 3px solid #d4af37; }
+        .logo-box { display: flex; align-items: center; gap: 15px; }
+        
+        /* Logo click setup */
+        .logo-click { cursor: pointer; }
+        .logo-box img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #d4af37; }
+        
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('image_68d0c7_2.jpg');
+            background-size: cover; background-position: center; height: 50vh; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            text-align: center; color: #fff; padding: 20px;
         }
-        body {
-            background-color: #fdfbf7;
-            color: #2b2b2b;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #111a14;
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #d4af37;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo-container img {
-            height: 45px;
-            width: 45px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid #d4af37;
-        }
-        .logo-container h1 {
-            font-size: 16px;
-            color: #f4e8c1;
-            letter-spacing: 0.5px;
-        }
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-            font-size: 13px;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: #d4af37;
-        }
-        .hero {
-            background: linear-gradient(rgba(10, 20, 15, 0.6), rgba(10, 20, 15, 0.6)), url('image_68d0c7_2.jpg') no-repeat center center;
-            background-size: cover;
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 40px 20px;
-        }
-        .hero h2 {
-            font-size: 28px;
-            margin-bottom: 12px;
-            color: #f4e8c1;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-        }
-        .hero p {
-            font-size: 15px;
-            margin-bottom: 25px;
-            max-width: 600px;
-            color: #eee;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-        }
-        .btn {
-            background-color: #d4af37;
-            color: #111a14;
-            padding: 10px 24px;
-            border: none;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .btn:hover {
-            background-color: #e5c158;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 15px;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 26px;
-            margin-bottom: 6px;
-            color: #1a1a1a;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        .more-abayas-note {
-            text-align: center;
-            color: #b38f27;
-            font-weight: 600;
-            margin-bottom: 30px;
-            font-size: 13px;
-            padding: 0 10px;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-            border: 1px solid #eae0cd;
-            margin-bottom: 10px;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-        }
-        .card img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-        }
-        .card-body {
-            padding: 16px;
-            text-align: center;
-        }
-        .card-body h3 {
-            font-size: 16px;
-            margin-bottom: 6px;
-            color: #333;
-        }
-        .price {
-            color: #b38f27;
-            font-size: 17px;
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
-        .free-hijab {
-            font-size: 11px;
-            color: #2e7d32;
-            background: #e8f5e9;
-            padding: 3px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        .card-body p {
-            color: #666;
-            font-size: 13px;
-            margin-bottom: 6px;
-        }
-        .sizes {
-            font-size: 12px;
-            color: #444;
-            font-weight: 600;
-            margin-bottom: 15px;
-            background: #f7f3ec;
-            padding: 5px;
-            border-radius: 4px;
-        }
-        .order-btn {
-            display: block;
-            width: 100%;
-            background-color: #25d366;
-            color: #fff;
-            padding: 10px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.3s;
-            text-align: center;
-        }
-        .order-btn:hover {
-            background-color: #1ebd59;
-        }
-        .customization-section {
-            background-color: #f5f0e6;
-            padding: 40px 20px;
-            margin-top: 40px;
-            text-align: center;
-            border-top: 2px solid #eae0cd;
-            border-bottom: 2px solid #eae0cd;
-        }
-        .customization-section h2 {
-            font-size: 22px;
-            color: #2c2c2c;
-            margin-bottom: 10px;
-        }
-        .customization-section p {
-            max-width: 600px;
-            margin: 0 auto 20px auto;
-            color: #555;
-            font-size: 14px;
-        }
-        footer {
-            background-color: #111a14;
-            color: #fff;
-            text-align: center;
-            padding: 30px 15px;
-            margin-top: 40px;
-            border-top: 2px solid #d4af37;
-        }
-        footer p {
-            margin-bottom: 6px;
-            color: #ccc;
-            font-size: 13px;
-        }
-        .contact-info {
-            color: #d4af37;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        @media(max-width: 600px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-            .logo-container h1 {
-                font-size: 15px;
-                text-align: center;
-            }
-            .hero h2 {
-                font-size: 22px;
-            }
-            .hero p {
-                font-size: 13px;
-            }
-        }
+        .hero h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
+
+        .container { padding: 40px 20px; max-width: 1000px; margin: auto; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        
+        .card { border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .card a img { width: 100%; height: 300px; object-fit: cover; display: block; }
+        .card-body { padding: 20px; text-align: center; }
+        .card-body h3 { font-size: 1.4rem; color: #111a14; margin-bottom: 10px; }
+        .card-body p { margin-bottom: 15px; font-size: 1.1rem; }
+        .order-btn { display: block; background: #d4af37; color: white; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: bold; font-family: 'Playfair Display', serif; }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
-        <div class="logo-container">
-            <img src="Gemini_Generated_Image_us6kqtus6kqtus6k.jfif" alt="Mir's Abaya Boutique Logo">
-            <h1>Mir's Abaya Boutique - The Wholesalers</h1>
+        <div class="logo-box">
+            <!-- Logo with Lightbox -->
+            <a href="Gemini_Generated_Image_us6kqtus6kqtus6k.jfif" data-lightbox="logo" class="logo-click">
+                <img src="Gemini_Generated_Image_us6kqtus6kqtus6k.jfif" alt="Logo">
+            </a>
+            <h3 class="brand-title">Mir's Abaya Boutique</h3>
         </div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#collection">Catalog</a>
-            <a href="#customization">B2B</a>
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h2>Mir's Abaya Boutique - The Wholesalers</h2>
-        <p>Budget-Friendly B2B International Wholesale Abayas. Free matching hijab included with every piece!</p>
-        <a href="#collection" class="btn">View Catalog</a>
+    <section class="hero">
+        <h1>Wholesale Collection</h1>
+        <p>Premium B2B International Quality Abayas</p>
     </section>
 
-    <!-- Collection Section -->
-    <div class="container" id="collection">
-        <h2 class="section-title">Wholesale Collection</h2>
-        <p class="section-subtitle">Budget-Friendly Abayas | Free Matching Hijab with Every Abaya</p>
-        <div class="more-abayas-note">✨ Contact us on WhatsApp for more exquisite abaya designs and collection catalogs! ✨</div>
-
+    <div class="container">
         <div class="gallery-grid">
-            <!-- Item 1 -->
+            <!-- Abaya Item (Copy this block for more) -->
             <div class="card">
-                <img src="1.jpeg" alt="Abaya 1">
+                <a href="1.jpeg" data-lightbox="gallery" data-title="Embroidered Green Abaya - $22">
+                    <img src="1.jpeg" alt="Abaya">
+                </a>
                 <div class="card-body">
-                    <h3>Embroidered Green Abaya</h3>
-                    <div class="price">$22.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Premium Zoom | Style: Leaf Embroidery</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Embroidered%20Green%20Abaya%20($22.00)" target="_blank" class="order-btn">Order</a>
+                    <h3>Embroidered Green</h3>
+                    <p>Price: <b>$22</b> | Size: <b>S-XL</b></p>
+                    <a href="https://wa.me/923348147509" class="order-btn">Order Now</a>
                 </div>
             </div>
-            <!-- Item 2 -->
-            <div class="card">
-                <img src="2.jfif" alt="Abaya 2">
-                <div class="card-body">
-                    <h3>Grey Star Detailed Abaya</h3>
-                    <div class="price">$26.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Soft Malai Crepe | Style: Crystal Cuffs</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Grey%20Star%20Detailed%20Abaya%20($26.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
-            <!-- Item 3 -->
-            <div class="card">
-                <img src="4.jfif" alt="Abaya 3">
-                <div class="card-body">
-                    <h3>Classic Maroon Pleated Abaya</h3>
-                    <div class="price">$29.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Nidah Black | Style: Side Pleated</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Classic%20Maroon%20Pleated%20Abaya%20($29.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
-            <!-- Item 4 -->
-            <div class="card">
-                <img src="5.jfif" alt="Abaya 4">
-                <div class="card-body">
-                    <h3>Floral Embroidered Wrap Abaya</h3>
-                    <div class="price">$33.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Korean Georgette | Style: Wrap Design</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Floral%20Embroidered%20Wrap%20Abaya%20($33.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
-            <!-- Item 5 -->
-            <div class="card">
-                <img src="7.jfif" alt="Abaya 5">
-                <div class="card-body">
-                    <h3>Purple Cutwork Sleeve Abaya</h3>
-                    <div class="price">$25.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Luxury Silk Blend | Style: Cutwork Sleeves</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Purple%20Cutwork%20Sleeve%20Abaya%20($25.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
-            <!-- Item 6 -->
-            <div class="card">
-                <img src="8.jfif" alt="Abaya 6">
-                <div class="card-body">
-                    <h3>Royal Green Handcrafted Kaftan</h3>
-                    <div class="price">$36.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Pure Chiffon | Style: Gold Hand Embellished</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Royal%20Green%20Handcrafted%20Kaftan%20($36.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
-            <!-- Item 7 -->
-            <div class="card">
-                <img src="9.jfif" alt="Abaya 7">
-                <div class="card-body">
-                    <h3>Muted Pink Buttoned Abaya</h3>
-                    <div class="price">$24.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Textured Linen | Style: Front Buttons</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Muted%20Pink%20Buttoned%20Abaya%20($24.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
-            <!-- Item 8 -->
-            <div class="card">
-                <img src="24.jpeg" alt="Abaya 8">
-                <div class="card-body">
-                    <h3>Beaded Charcoal Grey Abaya</h3>
-                    <div class="price">$30.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Premium Nidah | Style: Pearl Beaded</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Beaded%20Charcoal%20Grey%20Abaya%20($30.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
-            <!-- Item 9 -->
-            <div class="card">
-                <img src="25.jpeg" alt="Abaya 9">
-                <div class="card-body">
-                    <h3>Beige Open Front Abaya</h3>
-                    <div class="price">$23.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: Soft Firdaus | Style: Open Front Casual</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Beige%20Open%20Front%20Abaya%20($23.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
-            <!-- Item 10 -->
-            <div class="card">
-                <img src="26.jpeg" alt="Abaya 10">
-                <div class="card-body">
-                    <h3>Minimalist Cream Closed Abaya</h3>
-                    <div class="price">$20.00</div>
-                    <div class="free-hijab">✓ Free Matching Hijab Included</div>
-                    <p>Fabric: High-Grade Crepe | Style: Flared Sleeves</p>
-                    <div class="sizes">Sizes: Small, Medium, Large, XL</div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20order%20Minimalist%20Cream%20Closed%20Abaya%20($20.00)" target="_blank" class="order-btn">Order</a>
-                </div>
-            </div>
+            <!-- Add more cards here like the one above -->
         </div>
     </div>
 
-    <!-- Customization Section -->
-    <section class="customization-section" id="customization">
-        <h2>B2B Customization Services</h2>
-        <p>We provide custom manufacturing, providing labeling and tailor sizing options for wholesale retail partners worldwide.</p>
-        <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20discuss%20B2B%20Customization" target="_blank" class="btn">Inquire via WhatsApp</a>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <p>&copy; 2026 Mir's Abaya Boutique - The Wholesalers. All Rights Reserved. 🧕</p>
-        <p>For Wholesale Orders & Inquiries, Contact Us:</p>
-        <p class="contact-info">Phone / WhatsApp: +92 334 8147509 | Email: mansoor.ahmed033481@gmail.com</p>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
