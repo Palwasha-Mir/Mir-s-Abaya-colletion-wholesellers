@@ -3,423 +3,666 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mir's Abaya Boutique | Royal Luxury Collection</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- AOS Animation Library CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>Mir's Abayas Boutique | Premium Modest Fashion</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
         :root {
-            --royal-gold: #d4af37;
-            --royal-gold-light: #f3e5ab;
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
-            --text-light: #f5f5f5;
-            --text-muted: #aaa;
+            --emerald: #064e3b;
+            --dark-emerald: #022c22;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --midnight: #0b0f0e;
+            --card-bg: #121816;
+            --champagne: #f5e6ca;
+            --white: #ffffff;
+            --gray-text: #c0c0c0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            background-color: var(--midnight);
+            color: var(--white);
+            scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
-        /* Royal Header with Glow & Animation */
+        /* Header / Navbar */
         header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            border-bottom: 2px solid var(--royal-gold);
-            position: relative;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 14, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
         }
 
-        header h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: var(--royal-gold);
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
         }
 
-        header p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 300;
+        .logo-container img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            object-fit: cover;
+        }
+
+        .brand-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
             letter-spacing: 1px;
         }
 
-        .contact-badge {
-            display: inline-block;
-            margin-top: 15px;
+        .nav-contact {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
             padding: 8px 20px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--royal-gold);
-            color: var(--royal-gold-light);
             border-radius: 30px;
+            text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        /* Container & Grid */
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
+        .nav-contact:hover {
+            background: var(--gold);
+            color: var(--midnight);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('green logo .jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
             padding: 0 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(2, 44, 34, 0.9) 0%, rgba(11, 15, 14, 0.85) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--champagne);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-luxury {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, var(--gold) 0%, #aa8228 100%);
+            color: var(--midnight);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .btn-luxury:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* About / B2B Wholesale Notice Section */
+        .info-section {
+            padding: 80px 20px;
+            background: var(--dark-emerald);
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .info-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .info-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .info-container p {
+            font-size: 1.05rem;
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .highlight-moq {
+            color: var(--gold-light);
+            font-weight: 600;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+            border: 1px dashed var(--gold);
+        }
+
+        /* Products Section */
+        .section {
+            padding: 100px 20px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-text);
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+        }
+
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
+            gap: 30px;
         }
 
-        /* Royal Card Design */
         .card {
             background: var(--card-bg);
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-            position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .card:hover {
-            transform: translateY(-12px);
-            border-color: var(--royal-gold);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
         }
 
-        .image-container {
+        .card-img-wrapper {
             width: 100%;
-            height: 400px;
+            height: 380px;
             overflow: hidden;
             position: relative;
         }
 
-        .image-container img {
+        .card-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.5s ease;
         }
 
-        .card:hover .image-container img {
-            transform: scale(1.12);
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.08);
         }
 
-        .badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(212, 175, 55, 0.9);
-            color: #121212;
-            padding: 6px 14px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border-radius: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 2;
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex-grow: 1;
         }
 
-        .card-content {
-            padding: 22px;
-            text-align: center;
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
         }
 
-        .card-content h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            color: var(--royal-gold-light);
-            margin-bottom: 8px;
-        }
-
-        .card-content p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
+        .card-details {
+            font-size: 0.9rem;
+            color: var(--gray-text);
             line-height: 1.5;
         }
 
-        .sizes {
-            font-size: 0.8rem;
-            color: var(--royal-gold);
-            margin-bottom: 18px;
+        .card-details span {
+            color: var(--white);
             font-weight: 500;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 6px;
-            border-radius: 8px;
-            border: 1px dashed rgba(212, 175, 55, 0.3);
         }
 
-        .btn-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 11px 15px;
-            border: none;
-            border-radius: 8px;
+        .free-hijab-badge {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 8px 12px;
+            border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            text-decoration: none;
-        }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1ebd56;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-cart {
-            background-color: transparent;
-            border: 1px solid var(--royal-gold);
-            color: var(--royal-gold);
-        }
-
-        .btn-cart:hover {
-            background-color: var(--royal-gold);
-            color: #121212;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Royal Footer */
-        footer {
             text-align: center;
-            padding: 40px;
-            background: #0a0a0a;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            margin-top: 5px;
         }
 
-        footer span {
-            color: var(--royal-gold);
+        .card-footer {
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .btn-card {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-card:hover {
+            background: var(--gold);
+            color: var(--midnight);
+        }
+
+        /* Modal for Logo View */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px; right: 30px;
+            color: var(--gold);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #050807;
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: auto;
+            margin-bottom: 40px;
+        }
+
+        .footer-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-content p {
+            color: var(--gray-text);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .copyright {
+            color: var(--gray-text);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header data-aos="fade-down" data-aos-duration="1000">
-        <h1>Mir's Abaya Boutique</h1>
-        <p>B2B Luxury Collection • Handcrafted Royal Elegance</p>
-        <div class="contact-badge"><i class="fab fa-whatsapp"></i> Order Helpline: 0334-8147509</div>
+    <header>
+        <div class="logo-container" onclick="openLogoModal()">
+            <img src="boutique logo.jfif" alt="Mir's Abaya Boutique Logo">
+            <span class="brand-title">Mir's Abayas Boutique</span>
+        </div>
+        <a href="https://wa.me/923348147509" class="btn-luxury" style="padding: 8px 20px; font-size: 0.9rem;">Contact via WhatsApp</a>
     </header>
 
-    <!-- Products Grid -->
-    <div class="container">
-        <!-- Item 1 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (1).jpeg" alt="Olive Leaf Embroidered Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Olive Leaf Embroidered Abaya</h3>
-                <p>Fabric: Premium Nidah | Style: Leaf Motif Accent</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Olive%20Leaf%20Embroidered%20Abaya" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Olive Leaf Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Mir's Abayas Boutique</h1>
+            <p>Designed exclusively to make your boutique look luxurious. Experience unmatched elegance, royal craftsmanship, and premium international modesty fashion.</p>
+            <a href="https://wa.me/923348147509" class="btn-luxury">Explore & Order Now</a>
         </div>
+    </section>
 
-        <!-- Item 2 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (4)_2.jfif" alt="Maroon Velvet Rose Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Maroon Velvet Rose Abaya</h3>
-                <p>Fabric: Soft Chiffon & Velvet | Style: Double Breasted Floral</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Maroon%20Velvet%20Rose%20Abaya" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Maroon Velvet Rose Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
-                </div>
+    <!-- Brand Story & B2B Wholesale Info Section -->
+    <section class="info-section">
+        <div class="info-container">
+            <h2>The Journey of Supreme Modesty</h2>
+            <p>At Mir's Abayas Boutique, we believe that modesty is the ultimate expression of royalty. Our pieces are meticulously crafted to redefine luxury fashion globally, offering exquisite B2B wholesale services for international and local boutique owners.</p>
+            <div class="highlight-moq">
+                📦 Wholesale MOQ: 4 to 12 Pieces | *The larger your order volume, the lower the wholesale price becomes.*
             </div>
         </div>
+    </section>
 
-        <!-- Item 3 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="300">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (6)_2.jfif" alt="Royal Purple Cutwork Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Royal Purple Cutwork Sleeves</h3>
-                <p>Fabric: Satin Silk | Style: Geometric Laser Cut</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Royal%20Purple%20Cutwork%20Sleeves" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Royal Purple Cutwork Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
-                </div>
-            </div>
-        </div>
+    <!-- Products Section (12 Products) -->
+    <section class="section" id="collection">
+        <h2 class="section-title">Our Royal Collection</h2>
+        <p class="section-subtitle">Exquisite designs curated for high-end boutique standards (All Sizes Available)</p>
 
-        <!-- Item 4 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="400">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (15)_2.jfif" alt="Emerald Draped Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Emerald Draped Front Abaya</h3>
-                <p>Fabric: Shimmer Crepe | Style: Pearl Zip & Draped Sides</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Emerald%20Draped%20Front%20Abaya" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Emerald Draped Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
+        <div class="grid">
+            
+            <!-- Product 1 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (1).jfif" alt="Sultana Silk Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Sultana Silk Abaya</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Royal Front-Closed with Star Cuff Embroidery</p>
+                        <p><b>Fabric:</b> Premium Lustrous Silk Blend</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Sultana%20Silk%20Abaya" class="btn-card">Order / Inquire</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Item 5 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="500">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (16)_2.jfif" alt="Navy Blue Tassel Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Navy Blue Tassel Accent Abaya</h3>
-                <p>Fabric: Premium Nidah | Style: Gold Paisley Motifs</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Navy%20Blue%20Tassel%20Accent%20Abaya" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Navy Blue Tassel Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
+            <!-- Product 2 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (4).jfif" alt="Velvet Rose Open Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Velvet Rose Open Abaya</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Double-Breasted Floral Zardozi Handwork</p>
+                        <p><b>Fabric:</b> Rich Chiffon with Velvet Trims</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Velvet%20Rose%20Open%20Abaya" class="btn-card">Order / Inquire</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Item 6 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="600">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (16)_2.jpeg" alt="Classic Cream Open Front Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Classic Cream Open Front Abaya</h3>
-                <p>Fabric: Soft Firdaus | Style: Minimalist Casual</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Classic%20Cream%20Open%20Front%20Abaya" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Classic Cream Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
+            <!-- Product 3 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (6).jfif" alt="Amethyst Cutwork Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Amethyst Cutwork Abaya</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Geometric Laser-Cut Sleeves</p>
+                        <p><b>Fabric:</b> High-Grade Shimmer Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Amethyst%20Cutwork%20Abaya" class="btn-card">Order / Inquire</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Item 7 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="700">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (19)_2.jfif" alt="Wine Red Luxury Kaftan">
-            </div>
-            <div class="card-content">
-                <h3>Wine Red Luxury Kaftan</h3>
-                <p>Fabric: Georgette Silk | Style: Heavy Neck Embroidery</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Wine%20Red%20Luxury%20Kaftan" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Wine Red Kaftan')"><i class="fas fa-shopping-bag"></i> Add</button>
+            <!-- Product 4 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (7).jfif" alt="Emerald Heritage Kaftan">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Emerald Heritage Kaftan</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Traditional Arabic Motif Embroidery</p>
+                        <p><b>Fabric:</b> Pure Emerald Nidah Fabric</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Emerald%20Heritage%20Kaftan" class="btn-card">Order / Inquire</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Item 8 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="800">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (22)_2.jfif" alt="Deep Blue Bell Sleeve Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Deep Blue Bell Sleeve Abaya</h3>
-                <p>Fabric: Soft Crepe | Style: Front Zip & Flared Sleeves</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Deep%20Blue%20Bell%20Sleeve%20Abaya" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Deep Blue Bell Sleeve Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
+            <!-- Product 5 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (13).jfif" alt="Midnight Empress Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Midnight Empress Abaya</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Front Metal Zipper with Bell Sleeves</p>
+                        <p><b>Fabric:</b> Textured Royal Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Midnight%20Empress%20Abaya" class="btn-card">Order / Inquire</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Item 9 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="900">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (25)_2.jfif" alt="Caramel Gold Buttoned Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Caramel Gold Buttoned Abaya</h3>
-                <p>Fabric: Premium Malai Crepe | Style: Antique Center Buttons</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Caramel%20Gold%20Buttoned%20Abaya" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Caramel Buttoned Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
+            <!-- Product 6 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (15).jfif" alt="Verdant Pearl Draped Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Verdant Pearl Draped Abaya</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Pearl-Beaded Vines & Drawstring Waist</p>
+                        <p><b>Fabric:</b> Dual-Tone Shimmer Fabric</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Verdant%20Pearl%20Draped%20Abaya" class="btn-card">Order / Inquire</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Item 10 -->
-        <div class="card" data-aos="fade-up" data-aos-delay="1000">
-            <div class="image-container">
-                <span class="badge">✓ Hijab Included</span>
-                <img src="collection (1)_2.jfif" alt="Charcoal Star Cuff Abaya">
-            </div>
-            <div class="card-content">
-                <h3>Charcoal Starburst Cuffs Abaya</h3>
-                <p>Fabric: Silk Satin | Style: Crystal Star Accent Cuffs</p>
-                <div class="sizes">Sizes: S, M, L, XL</div>
-                <div class="btn-group">
-                    <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Boutique,%20I%20want%20to%20order%20Charcoal%20Starburst%20Cuffs%20Abaya" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order</a>
-                    <button class="btn btn-cart" onclick="addToCart('Charcoal Star Cuff Abaya')"><i class="fas fa-shopping-bag"></i> Add</button>
+            <!-- Product 7 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (16).jfif" alt="Royal Sapphire Classic">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Royal Sapphire Classic</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Golden Motif Panel with Tassels</p>
+                        <p><b>Fabric:</b> Premium Soft Crepe</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Royal%20Sapphire%20Classic" class="btn-card">Order / Inquire</a>
                 </div>
             </div>
+
+            <!-- Product 8 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (20).jfif" alt="Imperial Purple Flare">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Imperial Purple Flare</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Buttoned Neckline with Flared Chiffon Sleeves</p>
+                        <p><b>Fabric:</b> Premium Korean Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Imperial%20Purple%20Flare" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (21).jfif" alt="Slate Grey Elegance">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Slate Grey Elegance</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Embroidered Lace Border with Tassels</p>
+                        <p><b>Fabric:</b> Matte Finished Nidah</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Slate%20Grey%20Elegance" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (25).jfif" alt="Golden Amber Coat Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Golden Amber Coat Abaya</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Full-Length Buttoned Coat Style</p>
+                        <p><b>Fabric:</b> Metallic Sheen Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Golden%20Amber%20Coat%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (41).jpeg" alt="Champagne Minimalist Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Champagne Minimalist Abaya</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Clean Lapel Open Front Design</p>
+                        <p><b>Fabric:</b> Ultra-Soft Nidah Fabric</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Champagne%20Minimalist%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="collection (19).jfif" alt="Burgundy Royal Cape">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Burgundy Royal Cape</h3>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Detailed Neckline Embellishments & Draped Cape</p>
+                        <p><b>Fabric:</b> Sheer Chiffon over Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Burgundy%20Royal%20Cape" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 <span>Mir's Abaya Boutique</span> (B2B Collection). All Rights Reserved.</p>
+        <div class="footer-content">
+            <h3>Partner With Us</h3>
+            <p>Elevate your boutique collection with Mir's Abayas. We ship locally and internationally with reliable B2B wholesale handling.</p>
+            <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20send%20a%20wholesale%20inquiry%20to%20Mir's%20Abayas" class="btn-luxury">Send Inquiry Now</a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Mir's Abayas Boutique. All Rights Reserved. Designed for Luxury & Elegance.
+        </div>
     </footer>
 
-    <!-- AOS Animation Library JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS animations
-        AOS.init({
-            once: true,
-            offset: 100
-        });
+    <!-- Logo Modal Popup -->
+    <div class="modal" id="logoModal" onclick="closeLogoModal()">
+        <span class="close-modal">&times;</span>
+        <img src="boutique logo.jfif" alt="Mir's Abaya Boutique Full Logo">
+    </div>
 
-        // Add to Cart interactive function
-        function addToCart(itemName) {
-            alert(`✨ Mir's Boutique: "${itemName}" has been added to your bag successfully!`);
+    <script>
+        function openLogoModal() {
+            document.getElementById('logoModal').style.display = 'flex';
+        }
+        function closeLogoModal() {
+            document.getElementById('logoModal').style.display = 'none';
         }
     </script>
 </body>
