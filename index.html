@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mir's Abayas Boutique | Premium Modest Fashion</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
         
         :root {
             --emerald: #064e3b;
@@ -29,7 +29,7 @@
             overflow-x: hidden;
         }
 
-        /* Header / Navbar - Logo Visibility Fixed */
+        /* Header / Navbar */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -81,7 +81,7 @@
             color: var(--midnight);
         }
 
-        /* Hero Section */
+        /* Hero Section - Dark overlay halka kar diya taake green logo saaf dikhe */
         .hero {
             height: 100vh;
             background: url('green logo .jpg') no-repeat center center/cover;
@@ -98,7 +98,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(2, 44, 34, 0.9) 0%, rgba(11, 15, 14, 0.85) 100%);
+            background: rgba(2, 44, 34, 0.45); /* Yahan dark layer ko halka kar diya gaya hai */
         }
 
         .hero-content {
@@ -113,6 +113,7 @@
             color: var(--gold);
             margin-bottom: 20px;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
         }
 
         .hero p {
@@ -120,6 +121,7 @@
             color: var(--champagne);
             margin-bottom: 30px;
             line-height: 1.6;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
         }
 
         .btn-luxury {
@@ -140,13 +142,13 @@
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
-        /* About / B2B Wholesale Notice Section - Style & Color Updated */
+        /* Journey / Info Section - New Unique Luxury Writing Style */
         .info-section {
-            padding: 80px 20px;
+            padding: 90px 20px;
             background: var(--dark-emerald);
             text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .info-container {
@@ -155,30 +157,33 @@
         }
 
         .info-container h2 {
-            font-family: 'Cinzel', serif; /* Luxury Custom Font */
-            font-size: 2.5rem;
-            color: var(--gold) !important; /* Gold Color Updated */
-            margin-bottom: 20px;
+            font-family: 'Cinzel Decorative', cursive; /* New Royal Writing Style */
+            font-size: 2.3rem;
+            color: var(--gold) !important;
+            margin-bottom: 25px;
             letter-spacing: 2px;
-            text-transform: uppercase;
+            line-height: 1.4;
         }
 
         .info-container p {
-            font-size: 1.05rem;
-            color: var(--gray-text);
-            line-height: 1.8;
-            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif; /* Elegant italic/serif touch for text */
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            font-style: italic;
         }
 
         .highlight-moq {
             color: var(--gold-light);
             font-weight: 600;
-            background: rgba(212, 175, 55, 0.1);
-            padding: 10px 20px;
+            background: rgba(212, 175, 55, 0.12);
+            padding: 12px 24px;
             border-radius: 8px;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 15px;
             border: 1px dashed var(--gold);
+            font-style: normal;
         }
 
         /* Products Section */
@@ -231,7 +236,7 @@
             height: 380px;
             overflow: hidden;
             position: relative;
-            cursor: pointer; /* Indicates it can be clicked for full view */
+            cursor: pointer;
         }
 
         .card-img-wrapper img {
@@ -307,7 +312,7 @@
             color: var(--midnight);
         }
 
-        /* Modal for Full Image View (Logo & Products) */
+        /* Modal for Full Image View */
         .modal {
             display: none;
             position: fixed;
@@ -372,7 +377,7 @@
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .section-title { font-size: 2.2rem; }
-            .info-container h2 { font-size: 1.8rem; }
+            .info-container h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -396,7 +401,7 @@
         </div>
     </section>
 
-    <!-- Brand Story & B2B Wholesale Info Section (Style & Color Updated) -->
+    <!-- Brand Story & B2B Wholesale Info Section (Updated Font & Styling) -->
     <section class="info-section">
         <div class="info-container">
             <h2>The Journey of Supreme Modesty</h2>
@@ -407,7 +412,7 @@
         </div>
     </section>
 
-    <!-- Products Section (12 Products with Full Image Popup) -->
+    <!-- Products Section (12 Products) -->
     <section class="section" id="collection">
         <h2 class="section-title">Our Royal Collection</h2>
         <p class="section-subtitle">Exquisite designs curated for high-end boutique standards (All Sizes Available)</p>
@@ -657,13 +662,13 @@
         </div>
     </footer>
 
-    <!-- Universal Full-Screen Modal Popup (For Logo & Products) -->
+    <!-- Universal Full-Screen Modal Popup -->
     <div class="modal" id="imageModal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
         <img id="modalImage" src="" alt="Full View">
     </div>
 
-    <!-- JavaScript for Modal Popup Functionality -->
+    <!-- JavaScript -->
     <script>
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
