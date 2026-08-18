@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mir's Abayas Boutique | Premium Modest Fashion</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
         
         :root {
             --emerald: #064e3b;
@@ -29,18 +29,18 @@
             overflow-x: hidden;
         }
 
-        /* Header / Navbar */
+        /* Header / Navbar - Logo Visibility Fixed */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
             z-index: 1000;
-            background: rgba(11, 15, 14, 0.9);
+            background: rgba(11, 15, 14, 0.98);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 2px solid var(--gold);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 12px 5%;
         }
 
         .logo-container {
@@ -51,8 +51,8 @@
         }
 
         .logo-container img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             border: 2px solid var(--gold);
             object-fit: cover;
@@ -140,7 +140,7 @@
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
-        /* About / B2B Wholesale Notice Section */
+        /* About / B2B Wholesale Notice Section - Style & Color Updated */
         .info-section {
             padding: 80px 20px;
             background: var(--dark-emerald);
@@ -155,10 +155,12 @@
         }
 
         .info-container h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif; /* Luxury Custom Font */
             font-size: 2.5rem;
-            color: var(--gold);
+            color: var(--gold) !important; /* Gold Color Updated */
             margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .info-container p {
@@ -229,6 +231,7 @@
             height: 380px;
             overflow: hidden;
             position: relative;
+            cursor: pointer; /* Indicates it can be clicked for full view */
         }
 
         .card-img-wrapper img {
@@ -304,29 +307,31 @@
             color: var(--midnight);
         }
 
-        /* Modal for Logo View */
+        /* Modal for Full Image View (Logo & Products) */
         .modal {
             display: none;
             position: fixed;
-            z-index: 2000;
+            z-index: 3000;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             justify-content: center;
             align-items: center;
+            cursor: pointer;
         }
 
         .modal img {
             max-width: 90%;
             max-height: 90vh;
-            border: 2px solid var(--gold);
+            border: 3px solid var(--gold);
             border-radius: 10px;
+            object-fit: contain;
         }
 
         .close-modal {
             position: absolute;
             top: 20px; right: 30px;
             color: var(--gold);
-            font-size: 2rem;
+            font-size: 2.5rem;
             cursor: pointer;
         }
 
@@ -367,6 +372,7 @@
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .section-title { font-size: 2.2rem; }
+            .info-container h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -374,11 +380,11 @@
 
     <!-- Header -->
     <header>
-        <div class="logo-container" onclick="openLogoModal()">
+        <div class="logo-container" onclick="openModal('boutique logo.jfif')">
             <img src="boutique logo.jfif" alt="Mir's Abaya Boutique Logo">
             <span class="brand-title">Mir's Abayas Boutique</span>
         </div>
-        <a href="https://wa.me/923348147509" class="btn-luxury" style="padding: 8px 20px; font-size: 0.9rem;">Contact via WhatsApp</a>
+        <a href="https://wa.me/923348147509" class="nav-contact">WhatsApp Order</a>
     </header>
 
     <!-- Hero Section -->
@@ -390,7 +396,7 @@
         </div>
     </section>
 
-    <!-- Brand Story & B2B Wholesale Info Section -->
+    <!-- Brand Story & B2B Wholesale Info Section (Style & Color Updated) -->
     <section class="info-section">
         <div class="info-container">
             <h2>The Journey of Supreme Modesty</h2>
@@ -401,7 +407,7 @@
         </div>
     </section>
 
-    <!-- Products Section (12 Products) -->
+    <!-- Products Section (12 Products with Full Image Popup) -->
     <section class="section" id="collection">
         <h2 class="section-title">Our Royal Collection</h2>
         <p class="section-subtitle">Exquisite designs curated for high-end boutique standards (All Sizes Available)</p>
@@ -410,7 +416,7 @@
             
             <!-- Product 1 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (1).jfif')">
                     <img src="collection (1).jfif" alt="Sultana Silk Abaya">
                 </div>
                 <div class="card-body">
@@ -429,7 +435,7 @@
 
             <!-- Product 2 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (4).jfif')">
                     <img src="collection (4).jfif" alt="Velvet Rose Open Abaya">
                 </div>
                 <div class="card-body">
@@ -448,7 +454,7 @@
 
             <!-- Product 3 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (6).jfif')">
                     <img src="collection (6).jfif" alt="Amethyst Cutwork Abaya">
                 </div>
                 <div class="card-body">
@@ -467,7 +473,7 @@
 
             <!-- Product 4 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (7).jfif')">
                     <img src="collection (7).jfif" alt="Emerald Heritage Kaftan">
                 </div>
                 <div class="card-body">
@@ -486,7 +492,7 @@
 
             <!-- Product 5 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (13).jfif')">
                     <img src="collection (13).jfif" alt="Midnight Empress Abaya">
                 </div>
                 <div class="card-body">
@@ -505,7 +511,7 @@
 
             <!-- Product 6 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (15).jfif')">
                     <img src="collection (15).jfif" alt="Verdant Pearl Draped Abaya">
                 </div>
                 <div class="card-body">
@@ -524,7 +530,7 @@
 
             <!-- Product 7 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (16).jfif')">
                     <img src="collection (16).jfif" alt="Royal Sapphire Classic">
                 </div>
                 <div class="card-body">
@@ -543,7 +549,7 @@
 
             <!-- Product 8 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (20).jfif')">
                     <img src="collection (20).jfif" alt="Imperial Purple Flare">
                 </div>
                 <div class="card-body">
@@ -562,7 +568,7 @@
 
             <!-- Product 9 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (21).jfif')">
                     <img src="collection (21).jfif" alt="Slate Grey Elegance">
                 </div>
                 <div class="card-body">
@@ -581,7 +587,7 @@
 
             <!-- Product 10 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (25).jfif')">
                     <img src="collection (25).jfif" alt="Golden Amber Coat Abaya">
                 </div>
                 <div class="card-body">
@@ -600,7 +606,7 @@
 
             <!-- Product 11 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (41).jpeg')">
                     <img src="collection (41).jpeg" alt="Champagne Minimalist Abaya">
                 </div>
                 <div class="card-body">
@@ -619,7 +625,7 @@
 
             <!-- Product 12 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal('collection (19).jfif')">
                     <img src="collection (19).jfif" alt="Burgundy Royal Cape">
                 </div>
                 <div class="card-body">
@@ -651,18 +657,23 @@
         </div>
     </footer>
 
-    <!-- Logo Modal Popup -->
-    <div class="modal" id="logoModal" onclick="closeLogoModal()">
+    <!-- Universal Full-Screen Modal Popup (For Logo & Products) -->
+    <div class="modal" id="imageModal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
-        <img src="boutique logo.jfif" alt="Mir's Abaya Boutique Full Logo">
+        <img id="modalImage" src="" alt="Full View">
     </div>
 
+    <!-- JavaScript for Modal Popup Functionality -->
     <script>
-        function openLogoModal() {
-            document.getElementById('logoModal').style.display = 'flex';
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = imageSrc;
         }
-        function closeLogoModal() {
-            document.getElementById('logoModal').style.display = 'none';
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
         }
     </script>
 </body>
