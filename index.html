@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mir's Abayas Boutique | Premium Modest Fashion</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
         
         :root {
-            --emerald: #064e3b;
-            --dark-emerald: #022c22;
+            --emerald: #04382c;
+            --dark-emerald: #022019;
             --gold: #d4af37;
             --gold-light: #f3e5ab;
             --midnight: #0b0f0e;
@@ -34,7 +34,7 @@
             position: fixed;
             top: 0; left: 0; width: 100%;
             z-index: 1000;
-            background: rgba(11, 15, 14, 0.98);
+            background: rgba(11, 15, 14, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 2px solid var(--gold);
             display: flex;
@@ -81,10 +81,10 @@
             color: var(--midnight);
         }
 
-        /* Hero Section - Dark overlay halka kar diya taake green logo saaf dikhe */
+        /* Hero Section - Dark Overlay Removed/Lightened for Logo Visibility */
         .hero {
             height: 100vh;
-            background: url('green logo.jpg') no-repeat center center/cover;
+            background: url('green logo .jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -98,7 +98,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(2, 44, 34, 0.45); /* Yahan dark layer ko halka kar diya gaya hai */
+            background: rgba(2, 32, 25, 0.45); /* ہلکا شیڈ تاکہ گرین لوگو والی تصویر صاف نظر آئے */
         }
 
         .hero-content {
@@ -142,13 +142,13 @@
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
-        /* Journey / Info Section - New Unique Luxury Writing Style */
+        /* About / B2B Wholesale Notice Section - New Writing Style & Elegant Green Background */
         .info-section {
             padding: 90px 20px;
-            background: var(--dark-emerald);
+            background: linear-gradient(135deg, #032d23 0%, #011410 100%);
             text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
         }
 
         .info-container {
@@ -157,32 +157,33 @@
         }
 
         .info-container h2 {
-            font-family: 'Cinzel Decorative', cursive; /* New Royal Writing Style */
-            font-size: 2.3rem;
+            font-family: 'Cinzel', serif; /* نیا اور لگژری رائٹنگ اسٹائل */
+            font-size: 2.8rem;
             color: var(--gold) !important;
             margin-bottom: 25px;
-            letter-spacing: 2px;
-            line-height: 1.4;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
 
         .info-container p {
-            font-family: 'Playfair Display', serif; /* Elegant italic/serif touch for text */
             font-size: 1.15rem;
-            color: #e2e8f0;
+            font-style: italic; /* مزید خوبصورت لک کے لیے اٹالک ٹچ */
+            color: var(--champagne);
             line-height: 1.9;
             margin-bottom: 20px;
-            font-style: italic;
         }
 
         .highlight-moq {
             color: var(--gold-light);
             font-weight: 600;
             background: rgba(212, 175, 55, 0.12);
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 12px 25px;
+            border-radius: 30px;
             display: inline-block;
             margin-top: 15px;
-            border: 1px dashed var(--gold);
+            border: 1px solid var(--gold);
             font-style: normal;
         }
 
@@ -377,7 +378,7 @@
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .section-title { font-size: 2.2rem; }
-            .info-container h2 { font-size: 1.6rem; }
+            .info-container h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -392,7 +393,7 @@
         <a href="https://wa.me/923348147509" class="nav-contact">WhatsApp Order</a>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Logo Background Prominent) -->
     <section class="hero">
         <div class="hero-content">
             <h1>Mir's Abayas Boutique</h1>
@@ -401,7 +402,7 @@
         </div>
     </section>
 
-    <!-- Brand Story & B2B Wholesale Info Section (Updated Font & Styling) -->
+    <!-- Brand Story & B2B Wholesale Info Section (Updated Green Style & New Writing Font) -->
     <section class="info-section">
         <div class="info-container">
             <h2>The Journey of Supreme Modesty</h2>
