@@ -81,10 +81,10 @@
             color: var(--midnight);
         }
 
-        /* Hero Section - Overlay Made Lighter So Green Logo is Prominent */
+        /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('green logo.jpg') no-repeat center center/cover;
+            background: url('green logo .jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -98,7 +98,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(2, 44, 34, 0.45); /* Shehad halka kar diya taake logo saaf dikhe */
+            background: rgba(2, 44, 34, 0.45);
         }
 
         .hero-content {
@@ -142,10 +142,10 @@
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
-        /* About / B2B Wholesale Notice Section - Font Style, Color & Border Updated */
+        /* About / B2B Wholesale Notice Section */
         .info-section {
             padding: 90px 20px;
-            background: #04382c; /* Unique rich green background */
+            background: #04382c;
             text-align: center;
             border-top: 3px solid var(--gold);
             border-bottom: 3px solid var(--gold);
@@ -162,9 +162,9 @@
         }
 
         .info-container h2 {
-            font-family: 'Cinzel', serif; /* New unique luxury writing style */
+            font-family: 'Cinzel', serif;
             font-size: 2.3rem;
-            color: #f3e5ab !important; /* Brighter royal gold color */
+            color: #f3e5ab !important;
             margin-bottom: 20px;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -267,6 +267,13 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
             color: var(--gold);
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            color: #f3e5ab;
+            font-weight: 700;
+            margin-bottom: 5px;
         }
 
         .card-details {
@@ -406,7 +413,7 @@
         </div>
     </section>
 
-    <!-- Brand Story & B2B Wholesale Info Section (Updated Style, Border & Color) -->
+    <!-- Brand Story & B2B Wholesale Info Section -->
     <section class="info-section">
         <div class="info-container">
             <h2>The Journey of Supreme Modesty</h2>
@@ -417,7 +424,7 @@
         </div>
     </section>
 
-    <!-- Products Section (12 Products) -->
+    <!-- Products Section -->
     <section class="section" id="collection">
         <h2 class="section-title">Our Royal Collection</h2>
         <p class="section-subtitle">Exquisite designs curated for high-end boutique standards (All Sizes Available)</p>
@@ -431,6 +438,7 @@
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Sultana Silk Abaya</h3>
+                    <div class="price-tag">$45.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Royal Front-Closed with Star Cuff Embroidery</p>
                         <p><b>Fabric:</b> Premium Lustrous Silk Blend</p>
@@ -443,13 +451,54 @@
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            <!-- Product 2 (New Addition 1) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (2).jfif')">
+                    <img src="collection (2).jfif" alt="Emerald Pleated Front Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Emerald Pleated Front Abaya</h3>
+                    <div class="price-tag">$48.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Side Pleated Panel with Crystal Collar</p>
+                        <p><b>Fabric:</b> Rich Emerald Shimmer Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Emerald%20Pleated%20Front%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 3 (New Addition 2) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (3).jfif')">
+                    <img src="collection (3).jfif" alt="Magenta Royal Pleated Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Magenta Royal Pleated Abaya</h3>
+                    <div class="price-tag">$42.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Buttoned Placket with Draped Pleats</p>
+                        <p><b>Fabric:</b> Premium Korean Crepe Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Magenta%20Royal%20Pleated%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (4).jfif')">
                     <img src="collection (4).jfif" alt="Velvet Rose Open Abaya">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Velvet Rose Open Abaya</h3>
+                    <div class="price-tag">$50.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Double-Breasted Floral Zardozi Handwork</p>
                         <p><b>Fabric:</b> Rich Chiffon with Velvet Trims</p>
@@ -462,13 +511,14 @@
                 </div>
             </div>
 
-            <!-- Product 3 -->
+            <!-- Product 5 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (6).jfif')">
                     <img src="collection (6).jfif" alt="Amethyst Cutwork Abaya">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Amethyst Cutwork Abaya</h3>
+                    <div class="price-tag">$40.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Geometric Laser-Cut Sleeves</p>
                         <p><b>Fabric:</b> High-Grade Shimmer Silk</p>
@@ -481,13 +531,14 @@
                 </div>
             </div>
 
-            <!-- Product 4 -->
+            <!-- Product 6 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (7).jfif')">
                     <img src="collection (7).jfif" alt="Emerald Heritage Kaftan">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Emerald Heritage Kaftan</h3>
+                    <div class="price-tag">$46.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Traditional Arabic Motif Embroidery</p>
                         <p><b>Fabric:</b> Pure Emerald Nidah Fabric</p>
@@ -500,13 +551,54 @@
                 </div>
             </div>
 
-            <!-- Product 5 -->
+            <!-- Product 7 (New Addition 3) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (9).jfif')">
+                    <img src="collection (9).jfif" alt="Mauve Wrap Draped Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Mauve Wrap Draped Abaya</h3>
+                    <div class="price-tag">$38.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Asymmetric Wrap with Geometric Embroidery</p>
+                        <p><b>Fabric:</b> Soft Matte Crepe</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Mauve%20Wrap%20Draped%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 8 (New Addition 4) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (11).jfif')">
+                    <img src="collection (11).jfif" alt="Ocean Blue Regal Cape Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Ocean Blue Regal Cape Abaya</h3>
+                    <div class="price-tag">$49.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Heavy Metallic Embellished Border & Tassels</p>
+                        <p><b>Fabric:</b> Lustrous Blue Silk Blend</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Ocean%20Blue%20Regal%20Cape%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (13).jfif')">
                     <img src="collection (13).jfif" alt="Midnight Empress Abaya">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Midnight Empress Abaya</h3>
+                    <div class="price-tag">$35.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Front Metal Zipper with Bell Sleeves</p>
                         <p><b>Fabric:</b> Textured Royal Silk</p>
@@ -519,13 +611,14 @@
                 </div>
             </div>
 
-            <!-- Product 6 -->
+            <!-- Product 10 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (15).jfif')">
                     <img src="collection (15).jfif" alt="Verdant Pearl Draped Abaya">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Verdant Pearl Draped Abaya</h3>
+                    <div class="price-tag">$44.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Pearl-Beaded Vines & Drawstring Waist</p>
                         <p><b>Fabric:</b> Dual-Tone Shimmer Fabric</p>
@@ -538,13 +631,14 @@
                 </div>
             </div>
 
-            <!-- Product 7 -->
+            <!-- Product 11 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (16).jfif')">
                     <img src="collection (16).jfif" alt="Royal Sapphire Classic">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Royal Sapphire Classic</h3>
+                    <div class="price-tag">$39.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Golden Motif Panel with Tassels</p>
                         <p><b>Fabric:</b> Premium Soft Crepe</p>
@@ -557,13 +651,34 @@
                 </div>
             </div>
 
-            <!-- Product 8 -->
+            <!-- Product 12 (New Addition 5) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (17).jfif')">
+                    <img src="collection (17).jfif" alt="Peach Blossom Buttoned Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Peach Blossom Buttoned Abaya</h3>
+                    <div class="price-tag">$32.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Front Buttons with Tassel Accent</p>
+                        <p><b>Fabric:</b> Flowy Chiffon Crepe</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Peach%20Blossom%20Buttoned%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 13 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (20).jfif')">
                     <img src="collection (20).jfif" alt="Imperial Purple Flare">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Imperial Purple Flare</h3>
+                    <div class="price-tag">$41.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Buttoned Neckline with Flared Chiffon Sleeves</p>
                         <p><b>Fabric:</b> Premium Korean Silk</p>
@@ -576,13 +691,14 @@
                 </div>
             </div>
 
-            <!-- Product 9 -->
+            <!-- Product 14 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (21).jfif')">
                     <img src="collection (21).jfif" alt="Slate Grey Elegance">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Slate Grey Elegance</h3>
+                    <div class="price-tag">$36.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Embroidered Lace Border with Tassels</p>
                         <p><b>Fabric:</b> Matte Finished Nidah</p>
@@ -595,13 +711,54 @@
                 </div>
             </div>
 
-            <!-- Product 10 -->
+            <!-- Product 15 (New Addition 6) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (23).jfif')">
+                    <img src="collection (23).jfif" alt="Teal Belted Royal Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Teal Belted Royal Abaya</h3>
+                    <div class="price-tag">$47.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Centered Golden Embellished Piping with Belt</p>
+                        <p><b>Fabric:</b> Premium Teal Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Teal%20Belted%20Royal%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 16 (New Addition 7) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (24).jfif')">
+                    <img src="collection (24).jfif" alt="Emerald Shimmer Poncho Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Emerald Shimmer Poncho Abaya</h3>
+                    <div class="price-tag">$45.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Neck Embellishment with Draped Pendants</p>
+                        <p><b>Fabric:</b> Shimmer Metallic Silk</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Emerald%20Shimmer%20Poncho%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 17 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (25).jfif')">
                     <img src="collection (25).jfif" alt="Golden Amber Coat Abaya">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Golden Amber Coat Abaya</h3>
+                    <div class="price-tag">$48.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Full-Length Buttoned Coat Style</p>
                         <p><b>Fabric:</b> Metallic Sheen Silk</p>
@@ -614,13 +771,54 @@
                 </div>
             </div>
 
-            <!-- Product 11 -->
+            <!-- Product 18 (New Addition 8) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (32).jpeg')">
+                    <img src="collection (32).jpeg" alt="Emerald Zardozi Leaf Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Emerald Zardozi Leaf Abaya</h3>
+                    <div class="price-tag">$52.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Heavy Leaf & Floral Crystal Work</p>
+                        <p><b>Fabric:</b> Premium Dark Emerald Crepe</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Emerald%20Zardozi%20Leaf%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 19 (New Addition 9) -->
+            <div class="card">
+                <div class="card-img-wrapper" onclick="openModal('collection (39).jpeg')">
+                    <img src="collection (39).jpeg" alt="Charcoal Beaded Pleated Abaya">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Charcoal Beaded Pleated Abaya</h3>
+                    <div class="price-tag">$37.00</div>
+                    <div class="card-details">
+                        <p><b>Style & Design:</b> Vertical Pleating with Delicate Beads</p>
+                        <p><b>Fabric:</b> Matte Finished Soft Nidah</p>
+                        <p><b>Sizes:</b> All Sizes Available (Custom & Standard)</p>
+                    </div>
+                    <div class="free-hijab-badge">✨ Free Matching Hijab Included</div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://wa.me/923348147509?text=I%20want%20to%20inquire%20about%20Charcoal%20Beaded%20Pleated%20Abaya" class="btn-card">Order / Inquire</a>
+                </div>
+            </div>
+
+            <!-- Product 20 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (41).jpeg')">
                     <img src="collection (41).jpeg" alt="Champagne Minimalist Abaya">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Champagne Minimalist Abaya</h3>
+                    <div class="price-tag">$34.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Clean Lapel Open Front Design</p>
                         <p><b>Fabric:</b> Ultra-Soft Nidah Fabric</p>
@@ -633,13 +831,14 @@
                 </div>
             </div>
 
-            <!-- Product 12 -->
+            <!-- Product 21 -->
             <div class="card">
                 <div class="card-img-wrapper" onclick="openModal('collection (19).jfif')">
                     <img src="collection (19).jfif" alt="Burgundy Royal Cape">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Burgundy Royal Cape</h3>
+                    <div class="price-tag">$43.00</div>
                     <div class="card-details">
                         <p><b>Style & Design:</b> Detailed Neckline Embellishments & Draped Cape</p>
                         <p><b>Fabric:</b> Sheer Chiffon over Silk</p>
