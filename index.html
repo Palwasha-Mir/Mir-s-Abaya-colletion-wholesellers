@@ -4,206 +4,342 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mir's Abaya Boutique - Premium Modest Fashion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-gold: #D4AF37;
-            --dark-bg: #111111;
-            --card-bg: #1a1a1a;
-            --text-light: #f4f4f4;
-            --text-muted: #aaaaaa;
-            --accent-green: #0b3b2c;
+            --light-gold: #F3E5AB;
+            --dark-bg: #0d0d0d;
+            --card-bg: #161616;
+            --text-light: #f8f9fa;
+            --text-muted: #b0b0b0;
+            --accent-green: #0a2f23;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
             background-color: var(--dark-bg);
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
+        /* Top Navigation Bar with Black Logo */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid var(--primary-gold);
+            object-fit: cover;
+        }
+
+        .nav-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .nav-badge {
+            background-color: var(--accent-green);
+            color: var(--primary-gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--primary-gold);
+        }
+
+        /* Main Header with Green Logo & Banner */
         header {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('boutique logo.jfif');
+            margin-top: 70px;
+            background: linear-gradient(rgba(10, 47, 35, 0.85), rgba(13, 13, 13, 0.95)), url('boutique logo.jfif');
             background-size: cover;
             background-position: center;
-            padding: 50px 20px;
+            padding: 70px 20px;
             text-align: center;
-            border-bottom: 2px solid var(--primary-gold);
+            border-bottom: 3px solid var(--primary-gold);
         }
 
-        .logo-container img {
-            width: 160px;
-            height: 160px;
+        .main-logo-container img {
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 2px solid var(--primary-gold);
+            border: 3px solid var(--primary-gold);
             object-fit: cover;
-            margin-bottom: 15px;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            margin-bottom: 20px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
         }
 
         header h1 {
+            font-family: 'Playfair Display', serif;
             color: var(--primary-gold);
-            font-size: 2.8rem;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
+            font-size: 3rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
         header p {
             color: var(--text-muted);
             font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .b2b-banner {
-            background-color: var(--accent-green);
-            color: var(--primary-gold);
-            text-align: center;
-            padding: 14px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--primary-gold);
-            font-size: 0.95rem;
+            letter-spacing: 4px;
+            font-weight: 300;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
+            max-width: 1300px;
+            margin: 50px auto;
             padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
+            font-family: 'Playfair Display', serif;
             color: var(--primary-gold);
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            position: relative;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 2px;
-            background-color: var(--primary-gold);
-            margin: 10px auto 0;
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 40px;
         }
 
+        /* Category Filters */
         .category-filter {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .filter-btn {
             background-color: var(--card-bg);
             color: var(--text-light);
-            border: 1px solid var(--primary-gold);
-            padding: 10px 18px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 10px 22px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 30px;
             transition: all 0.3s ease;
             font-size: 0.9rem;
+            font-weight: 400;
         }
 
         .filter-btn:hover, .filter-btn.active {
             background-color: var(--primary-gold);
             color: var(--dark-bg);
-            font-weight: bold;
+            font-weight: 600;
+            border-color: var(--primary-gold);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
 
+        /* Products Grid Layout */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .product-card {
             background-color: var(--card-bg);
-            border: 1px solid #333;
-            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--primary-gold);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 380px;
         }
 
         .product-img {
             width: 100%;
-            height: 350px;
+            height: 100%;
             object-fit: cover;
             cursor: pointer;
-            transition: opacity 0.3s;
+            transition: transform 0.5s ease;
         }
 
-        .product-img:hover {
-            opacity: 0.9;
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .zoom-overlay {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--primary-gold);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--primary-gold);
+            pointer-events: none;
         }
 
         .product-info {
-            padding: 18px;
+            padding: 22px;
         }
 
         .product-category {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--primary-gold);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+            font-weight: 600;
         }
 
         .product-title {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
             font-weight: 600;
+            color: #fff;
         }
 
         .product-fabric {
             font-size: 0.85rem;
-            color: #ccc;
-            margin-bottom: 8px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
             font-style: italic;
         }
 
         .product-price {
-            font-size: 1.05rem;
-            color: var(--text-light);
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            color: var(--light-gold);
+            font-weight: 600;
+            margin-bottom: 14px;
         }
 
         .product-perks {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid #333;
-            padding-top: 10px;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        /* Lightbox Modal for Full Image View */
+        /* Professional B2B Info Section */
+        .b2b-info-wrapper {
+            background: linear-gradient(145deg, #161616, #0f0f0f);
+            border: 1px solid var(--primary-gold);
+            border-radius: 16px;
+            padding: 50px 40px;
+            margin-top: 80px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+
+        .b2b-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .b2b-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .b2b-box:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+
+        .b2b-box h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .b2b-box p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #080808;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 70px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Fullscreen Lightbox Modal */
         .lightbox-modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 2000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(8px);
             text-align: center;
         }
 
         .lightbox-content {
-            max-width: 90%;
+            max-width: 85%;
             max-height: 85vh;
             margin: auto;
             position: absolute;
@@ -211,656 +347,660 @@
             left: 50%;
             transform: translate(-50%, -50%);
             border: 2px solid var(--primary-gold);
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
         }
 
         .close-lightbox {
             position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
+            top: 30px;
+            right: 45px;
             color: var(--primary-gold);
+            font-size: 45px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-lightbox:hover {
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .top-nav { padding: 10px 20px; }
+            header h1 { font-size: 2.2rem; }
+            .container { padding: 0 15px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="boutique logo.jfif" alt="Mir's Abaya Boutique Main Logo">
+    <!-- Top Navigation with Black Logo (Corner Brand Bar) -->
+    <nav class="top-nav">
+        <div class="brand-nav">
+            <img src="boutique logo.jfif" alt="Black Logo" class="nav-logo">
+            <span class="nav-title">MIR'S ABAYA</span>
         </div>
-        <h1>MIR'S ABAYA BOUTIQUE</h1>
-        <p>Premium Modest Fashion Collection</p>
+        <div class="nav-badge">
+            ✨ International B2B & Wholesale (MOQ: 12)
+        </div>
+    </nav>
+
+    <!-- Main Header with Green Logo & Background Banner -->
+    <header>
+        <div class="main-logo-container">
+            <img src="boutique logo.jfif" alt="Green Front Logo">
+        </div>
+        <h1>Mir's Abaya Boutique</h1>
+        <p>Exclusive Global Modest Fashion & Luxury Collection</p>
     </header>
 
-    <div class="b2b-banner">
-        ✨ International B2B Service Available | MOQ: 12 Pieces | Full Customization Supported ✨
-    </div>
-
     <div class="container">
-        <h2 class="section-title">Our Complete 50-Piece Collection</h2>
+        <h2 class="section-title">The Complete 50-Piece Showcase</h2>
+        <p class="section-subtitle">Click any abaya image to open in full high-resolution screen view</p>
 
+        <!-- Category Filters -->
         <div class="category-filter">
-            <button class="filter-btn active">All (50)</button>
-            <button class="filter-btn">Casual (8)</button>
-            <button class="filter-btn">Office (6)</button>
-            <button class="filter-btn">Party (8)</button>
-            <button class="filter-btn">Function (8)</button>
-            <button class="filter-btn">Marriage (8)</button>
-            <button class="filter-btn">Travel (6)</button>
-            <button class="filter-btn">Bridal (6)</button>
+            <button class="filter-btn active">All Collection (50)</button>
+            <button class="filter-btn">Casual Wear (8)</button>
+            <button class="filter-btn">Office Wear (6)</button>
+            <button class="filter-btn">Party Wear (8)</button>
+            <button class="filter-btn">Function Wear (8)</button>
+            <button class="filter-btn">Marriage Wear (8)</button>
+            <button class="filter-btn">Travel Wear (6)</button>
+            <button class="filter-btn">Bridal Wear (6)</button>
         </div>
 
-        <!-- PRODUCTS GRID PART 1 (Items 1 to 25) -->
+        <!-- PRODUCTS GRID (All 50 Items) -->
         <div class="products-grid">
             
-            <!-- Casual Wear Items (1-8) -->
+            <!-- 1 to 8: Casual Wear -->
+            <script>
+                // Dynamic generator logic conceptualized in structured HTML cards below for all 50 items
+            </script>
+
+            <!-- Item 1 -->
             <div class="product-card">
-                <img src="collection1 (1).jfif" alt="Casual Abaya 1" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper">
+                    <img src="collection1 (1).jfif" alt="Casual Abaya 1" class="product-img" onclick="openLightbox(this.src)">
+                    <div class="zoom-overlay">🔍 Click to Expand</div>
+                </div>
                 <div class="product-info">
                     <div class="product-category">Casual Wear</div>
                     <div class="product-title">Everyday Modest Black Abaya</div>
                     <div class="product-fabric">Fabric: Nidah Soft Matte</div>
-                    <div class="product-price">$16.00 (PKR 4,500)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$16.00 / PKR 4,500</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
+            <!-- Item 2 -->
             <div class="product-card">
-                <img src="collection1 (2).jfif" alt="Casual Abaya 2" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper">
+                    <img src="collection1 (2).jfif" alt="Casual Abaya 2" class="product-img" onclick="openLightbox(this.src)">
+                    <div class="zoom-overlay">🔍 Click to Expand</div>
+                </div>
                 <div class="product-info">
                     <div class="product-category">Casual Wear</div>
                     <div class="product-title">Minimalist Front-Open Casual</div>
                     <div class="product-fabric">Fabric: Premium Koshibo</div>
-                    <div class="product-price">$18.00 (PKR 5,000)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$18.00 / PKR 5,000</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
+            <!-- Item 3 -->
             <div class="product-card">
-                <img src="collection1 (3).jfif" alt="Casual Abaya 3" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper">
+                    <img src="collection1 (3).jfif" alt="Casual Abaya 3" class="product-img" onclick="openLightbox(this.src)">
+                    <div class="zoom-overlay">🔍 Click to Expand</div>
+                </div>
                 <div class="product-info">
                     <div class="product-category">Casual Wear</div>
                     <div class="product-title">Piped Border Daily Abaya</div>
                     <div class="product-fabric">Fabric: Zoom Breathable</div>
-                    <div class="product-price">$19.00 (PKR 5,300)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$19.00 / PKR 5,300</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
+            <!-- Item 4 -->
             <div class="product-card">
-                <img src="collection1 (4).jfif" alt="Casual Abaya 4" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper">
+                    <img src="collection1 (4).jfif" alt="Casual Abaya 4" class="product-img" onclick="openLightbox(this.src)">
+                    <div class="zoom-overlay">🔍 Click to Expand</div>
+                </div>
                 <div class="product-info">
                     <div class="product-category">Casual Wear</div>
                     <div class="product-title">Buttoned Casual Comfort Abaya</div>
                     <div class="product-fabric">Fabric: Malai Crepe</div>
-                    <div class="product-price">$20.00 (PKR 5,600)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$20.00 / PKR 5,600</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
+            <!-- Item 5 -->
             <div class="product-card">
-                <img src="collection1 (5).jfif" alt="Casual Abaya 5" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper">
+                    <img src="collection1 (5).jfif" alt="Casual Abaya 5" class="product-img" onclick="openLightbox(this.src)">
+                    <div class="zoom-overlay">🔍 Click to Expand</div>
+                </div>
                 <div class="product-info">
                     <div class="product-category">Casual Wear</div>
                     <div class="product-title">Pocket-Detail Simple Abaya</div>
                     <div class="product-fabric">Fabric: Korean Georgette</div>
-                    <div class="product-price">$21.00 (PKR 5,800)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$21.00 / PKR 5,800</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
+            <!-- Item 6 -->
             <div class="product-card">
-                <img src="collection1 (6).jfif" alt="Casual Abaya 6" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper">
+                    <img src="collection1 (6).jfif" alt="Casual Abaya 6" class="product-img" onclick="openLightbox(this.src)">
+                    <div class="zoom-overlay">🔍 Click to Expand</div>
+                </div>
                 <div class="product-info">
                     <div class="product-category">Casual Wear</div>
                     <div class="product-title">Straight-Cut Daily Wear</div>
                     <div class="product-fabric">Fabric: Soft Nidah</div>
-                    <div class="product-price">$22.00 (PKR 6,000)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$22.00 / PKR 6,000</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
+            <!-- Item 7 -->
             <div class="product-card">
-                <img src="collection1 (7).jfif" alt="Casual Abaya 7" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper">
+                    <img src="collection1 (7).jfif" alt="Casual Abaya 7" class="product-img" onclick="openLightbox(this.src)">
+                    <div class="zoom-overlay">🔍 Click to Expand</div>
+                </div>
                 <div class="product-info">
                     <div class="product-category">Casual Wear</div>
                     <div class="product-title">Classic Black Utility Abaya</div>
                     <div class="product-fabric">Fabric: Zoom Fabric</div>
-                    <div class="product-price">$20.00 (PKR 5,500)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$20.00 / PKR 5,500</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
+            <!-- Item 8 -->
             <div class="product-card">
-                <img src="collection1 (8).jfif" alt="Casual Abaya 8" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper">
+                    <img src="collection1 (8).jfif" alt="Casual Abaya 8" class="product-img" onclick="openLightbox(this.src)">
+                    <div class="zoom-overlay">🔍 Click to Expand</div>
+                </div>
                 <div class="product-info">
                     <div class="product-category">Casual Wear</div>
                     <div class="product-title">Casual Loose-Fit Modest Abaya</div>
                     <div class="product-fabric">Fabric: Premium Crepe</div>
-                    <div class="product-price">$22.00 (PKR 6,000)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$22.00 / PKR 6,000</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
-            <!-- Office Wear Items (9-14) -->
+            <!-- 9 to 14: Office Wear -->
             <div class="product-card">
-                <img src="collection1 (9).jfif" alt="Office Abaya 1" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (9).jfif" alt="Office Abaya 1" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Office Wear</div>
                     <div class="product-title">Executive Corporate Abaya</div>
                     <div class="product-fabric">Fabric: Anti-Wrinkle Executive</div>
-                    <div class="product-price">$18.00 (PKR 5,000)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$18.00 / PKR 5,000</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (10).jfif" alt="Office Abaya 2" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (10).jfif" alt="Office Abaya 2" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Office Wear</div>
                     <div class="product-title">Professional Sleek Black Abaya</div>
                     <div class="product-fabric">Fabric: Formal Koshibo</div>
-                    <div class="product-price">$20.00 (PKR 5,500)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$20.00 / PKR 5,500</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (11).jfif" alt="Office Abaya 3" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (11).jfif" alt="Office Abaya 3" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Office Wear</div>
                     <div class="product-title">Subtle Belted Office Wear</div>
                     <div class="product-fabric">Fabric: Premium Nidah</div>
-                    <div class="product-price">$22.00 (PKR 6,000)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$22.00 / PKR 6,000</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (12).jfif" alt="Office Abaya 4" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (12).jfif" alt="Office Abaya 4" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Office Wear</div>
                     <div class="product-title">Tailored Cuff Business Abaya</div>
                     <div class="product-fabric">Fabric: Zoom Matte</div>
-                    <div class="product-price">$23.00 (PKR 6,200)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$23.00 / PKR 6,200</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (13).jfif" alt="Office Abaya 5" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (13).jfif" alt="Office Abaya 5" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Office Wear</div>
                     <div class="product-title">Structured Modest Work Abaya</div>
                     <div class="product-fabric">Fabric: Malai Crepe</div>
-                    <div class="product-price">$24.00 (PKR 6,500)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$24.00 / PKR 6,500</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (14).jfif" alt="Office Abaya 6" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (14).jfif" alt="Office Abaya 6" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Office Wear</div>
                     <div class="product-title">Classic Formal Office Abaya</div>
                     <div class="product-fabric">Fabric: Imported Nidah</div>
-                    <div class="product-price">$24.00 (PKR 6,500)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$24.00 / PKR 6,500</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
-            <!-- Party Wear Items (15-22) -->
+            <!-- 15 to 22: Party Wear -->
             <div class="product-card">
-                <img src="collection1 (15).jfif" alt="Party Abaya 1" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (15).jfif" alt="Party Abaya 1" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Party Wear</div>
                     <div class="product-title">Shimmery Evening Abaya</div>
-                    <div class="product-fabric">Fabric: Shimmer Georgette with Nidah</div>
-                    <div class="product-price">$22.00 (PKR 6,000)</div>
-                    <div class="product-perks">Free matching Hijab/Niqab included</div>
+                    <div class="product-fabric">Fabric: Shimmer Georgette & Nidah</div>
+                    <div class="product-price">$22.00 / PKR 6,000</div>
+                    <div class="product-perks">🎁 Free matching Hijab/Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (16).jfif" alt="Party Abaya 2" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (16).jfif" alt="Party Abaya 2" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Party Wear</div>
                     <div class="product-title">Sequined Sleeve Party Abaya</div>
                     <div class="product-fabric">Fabric: Rich Crepe & Net Sequence</div>
-                    <div class="product-price">$24.00 (PKR 6,600)</div>
-                    <div class="product-perks">Free matching Hijab/Niqab included</div>
+                    <div class="product-price">$24.00 / PKR 6,600</div>
+                    <div class="product-perks">🎁 Free matching Hijab/Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (17).jfif" alt="Party Abaya 3" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (17).jfif" alt="Party Abaya 3" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Party Wear</div>
                     <div class="product-title">Metallic Accent Evening Wear</div>
                     <div class="product-fabric">Fabric: Nidah with Metallic Touch</div>
-                    <div class="product-price">$25.00 (PKR 7,000)</div>
-                    <div class="product-perks">Free matching Hijab/Niqab included</div>
+                    <div class="product-price">$25.00 / PKR 7,000</div>
+                    <div class="product-perks">🎁 Free matching Hijab/Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (18).jfif" alt="Party Abaya 4" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (18).jfif" alt="Party Abaya 4" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Party Wear</div>
                     <div class="product-title">Elegance Embroidered Party Abaya</div>
                     <div class="product-fabric">Fabric: Chiffon Overlay on Nidah</div>
-                    <div class="product-price">$26.00 (PKR 7,200)</div>
-                    <div class="product-perks">Free matching Hijab/Niqab included</div>
+                    <div class="product-price">$26.00 / PKR 7,200</div>
+                    <div class="product-perks">🎁 Free matching Hijab/Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (19).jfif" alt="Party Abaya 5" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (19).jfif" alt="Party Abaya 5" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Party Wear</div>
                     <div class="product-title">Velvet Touch Party Abaya</div>
                     <div class="product-fabric">Fabric: Korean Velvet & Nidah</div>
-                    <div class="product-price">$27.00 (PKR 7,500)</div>
-                    <div class="product-perks">Free matching Hijab/Niqab included</div>
+                    <div class="product-price">$27.00 / PKR 7,500</div>
+                    <div class="product-perks">🎁 Free matching Hijab/Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (20).jfif" alt="Party Abaya 6" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (20).jfif" alt="Party Abaya 6" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Party Wear</div>
                     <div class="product-title">Glimmer Flare Evening Abaya</div>
                     <div class="product-fabric">Fabric: Shimmer Silk Blend</div>
-                    <div class="product-price">$28.00 (PKR 7,800)</div>
-                    <div class="product-perks">Free matching Hijab/Niqab included</div>
+                    <div class="product-price">$28.00 / PKR 7,800</div>
+                    <div class="product-perks">🎁 Free matching Hijab/Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (21).jfif" alt="Party Abaya 7" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (21).jfif" alt="Party Abaya 7" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Party Wear</div>
                     <div class="product-title">Beaded Grace Party Abaya</div>
                     <div class="product-fabric">Fabric: Premium Zoom with Pearls</div>
-                    <div class="product-price">$29.00 (PKR 8,000)</div>
-                    <div class="product-perks">Free matching Hijab/Niqab included</div>
+                    <div class="product-price">$29.00 / PKR 8,000</div>
+                    <div class="product-perks">🎁 Free matching Hijab/Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (22).jfif" alt="Party Abaya 8" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (22).jfif" alt="Party Abaya 8" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Party Wear</div>
                     <div class="product-title">Royal Midnight Party Abaya</div>
                     <div class="product-fabric">Fabric: Imported Dubai Silk</div>
-                    <div class="product-price">$29.00 (PKR 8,000)</div>
-                    <div class="product-perks">Free matching Hijab/Niqab included</div>
+                    <div class="product-price">$29.00 / PKR 8,000</div>
+                    <div class="product-perks">🎁 Free matching Hijab/Niqab included</div>
                 </div>
             </div>
 
-            <!-- Function Wear (Starting items 23-25) -->
+            <!-- 23 to 30: Function Wear -->
             <div class="product-card">
-                <img src="collection1 (23).jfif" alt="Function Abaya 1" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (23).jfif" alt="Function Abaya 1" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Function Wear</div>
                     <div class="product-title">Embroidered Festive Abaya</div>
                     <div class="product-fabric">Fabric: Zoom with Resham Work</div>
-                    <div class="product-price">$29.00 (PKR 8,000)</div>
-                    <div class="product-perks">Free Hijab or Niqab included</div>
+                    <div class="product-price">$29.00 / PKR 8,000</div>
+                    <div class="product-perks">🎁 Free Hijab or Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (24).jfif" alt="Function Abaya 2" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (24).jfif" alt="Function Abaya 2" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Function Wear</div>
                     <div class="product-title">Golden Thread Festive Wear</div>
                     <div class="product-fabric">Fabric: Nidah with Zari Embroidery</div>
-                    <div class="product-price">$31.00 (PKR 8,500)</div>
-                    <div class="product-perks">Free Hijab or Niqab included</div>
+                    <div class="product-price">$31.00 / PKR 8,500</div>
+                    <div class="product-perks">🎁 Free Hijab or Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (25).jfif" alt="Function Abaya 3" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (25).jfif" alt="Function Abaya 3" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Function Wear</div>
                     <div class="product-title">Traditional Celebration Abaya</div>
                     <div class="product-fabric">Fabric: Premium Chiffon & Nidah</div>
-                    <div class="product-price">$33.00 (PKR 9,000)</div>
-                    <div class="product-perks">Free Hijab or Niqab included</div>
+                    <div class="product-price">$33.00 / PKR 9,000</div>
+                    <div class="product-perks">🎁 Free Hijab or Niqab included</div>
                 </div>
             </div>
-
-        </div>
-    </div>
-
-    <!-- Lightbox Modal Container -->
-    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightboxImg">
-    </div>
-
-    <script>
-        function openLightbox(src) {
-            document.getElementById('lightboxModal').style.display = "block";
-            document.getElementById('lightboxImg').src = src;
-        }
-        function closeLightbox() {
-            document.getElementById('lightboxModal').style.display = "none";
-        }
-    </script>
-</body>
-</html><!-- Function Wear Items (26-30) -->
             <div class="product-card">
-                <img src="collection1 (26).jfif" alt="Function Abaya 4" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (26).jfif" alt="Function Abaya 4" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Function Wear</div>
                     <div class="product-title">Royal Gota Festive Abaya</div>
                     <div class="product-fabric">Fabric: Premium Zoom with Gota Work</div>
-                    <div class="product-price">$34.00 (PKR 9,500)</div>
-                    <div class="product-perks">Free Hijab or Niqab included</div>
+                    <div class="product-price">$34.00 / PKR 9,500</div>
+                    <div class="product-perks">🎁 Free Hijab or Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (27).jfif" alt="Function Abaya 5" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (27).jfif" alt="Function Abaya 5" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Function Wear</div>
                     <div class="product-title">Mirror-Work Celebration Abaya</div>
                     <div class="product-fabric">Fabric: Nidah with Mirror Embroidery</div>
-                    <div class="product-price">$35.00 (PKR 9,700)</div>
-                    <div class="product-perks">Free Hijab or Niqab included</div>
+                    <div class="product-price">$35.00 / PKR 9,700</div>
+                    <div class="product-perks">🎁 Free Hijab or Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (28).jfif" alt="Function Abaya 6" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (28).jfif" alt="Function Abaya 6" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Function Wear</div>
                     <div class="product-title">Opulent Threadwork Abaya</div>
                     <div class="product-fabric">Fabric: Georgette & Malai Crepe</div>
-                    <div class="product-price">$35.50 (PKR 9,800)</div>
-                    <div class="product-perks">Free Hijab or Niqab included</div>
+                    <div class="product-price">$35.50 / PKR 9,800</div>
+                    <div class="product-perks">🎁 Free Hijab or Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (29).jfif" alt="Function Abaya 7" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (29).jfif" alt="Function Abaya 7" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Function Wear</div>
                     <div class="product-title">Sleek Festive Layered Abaya</div>
                     <div class="product-fabric">Fabric: Chiffon Blend with Inner</div>
-                    <div class="product-price">$36.00 (PKR 10,000)</div>
-                    <div class="product-perks">Free Hijab or Niqab included</div>
+                    <div class="product-price">$36.00 / PKR 10,000</div>
+                    <div class="product-perks">🎁 Free Hijab or Niqab included</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (30).jfif" alt="Function Abaya 8" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (30).jfif" alt="Function Abaya 8" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Function Wear</div>
                     <div class="product-title">Grand Gala Festive Piece</div>
                     <div class="product-fabric">Fabric: Imported Dubai Nidah</div>
-                    <div class="product-price">$36.00 (PKR 10,000)</div>
-                    <div class="product-perks">Free Hijab or Niqab included</div>
+                    <div class="product-price">$36.00 / PKR 10,000</div>
+                    <div class="product-perks">🎁 Free Hijab or Niqab included</div>
                 </div>
             </div>
 
-            <!-- Marriage Wear Items (31-38) -->
+            <!-- 31 to 38: Marriage Wear -->
             <div class="product-card">
-                <img src="collection1 (31).jfif" alt="Marriage Abaya 1" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (31).jfif" alt="Marriage Abaya 1" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Marriage Wear</div>
                     <div class="product-title">Royal Celebration Abaya</div>
                     <div class="product-fabric">Fabric: Heavy Silk with Zardozi</div>
-                    <div class="product-price">$36.00 (PKR 10,000)</div>
-                    <div class="product-perks">Free Luxury Hijab or Niqab set</div>
+                    <div class="product-price">$36.00 / PKR 10,000</div>
+                    <div class="product-perks">👑 Free Luxury Hijab or Niqab set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (32).jfif" alt="Marriage Abaya 2" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (32).jfif" alt="Marriage Abaya 2" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Marriage Wear</div>
                     <div class="product-title">Valima Elegant Pearl Abaya</div>
                     <div class="product-fabric">Fabric: Pure Nidah with Pearl Handwork</div>
-                    <div class="product-price">$39.00 (PKR 11,000)</div>
-                    <div class="product-perks">Free Luxury Hijab or Niqab set</div>
+                    <div class="product-price">$39.00 / PKR 11,000</div>
+                    <div class="product-perks">👑 Free Luxury Hijab or Niqab set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (33).jfif" alt="Marriage Abaya 3" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (33).jfif" alt="Marriage Abaya 3" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Marriage Wear</div>
                     <div class="product-title">Golden Accent Wedding Abaya</div>
                     <div class="product-fabric">Fabric: Velvet & Rich Crepe Blend</div>
-                    <div class="product-price">$42.00 (PKR 12,000)</div>
-                    <div class="product-perks">Free Luxury Hijab or Niqab set</div>
+                    <div class="product-price">$42.00 / PKR 12,000</div>
+                    <div class="product-perks">👑 Free Luxury Hijab or Niqab set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (34).jfif" alt="Marriage Abaya 4" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (34).jfif" alt="Marriage Abaya 4" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Marriage Wear</div>
                     <div class="product-title">Grand Reception Abaya</div>
                     <div class="product-fabric">Fabric: Chiffon Layered Dubai Silk</div>
-                    <div class="product-price">$45.00 (PKR 12,800)</div>
-                    <div class="product-perks">Free Luxury Hijab or Niqab set</div>
+                    <div class="product-price">$45.00 / PKR 12,800</div>
+                    <div class="product-perks">👑 Free Luxury Hijab or Niqab set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (35).jfif" alt="Marriage Abaya 5" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (35).jfif" alt="Marriage Abaya 5" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Marriage Wear</div>
                     <div class="product-title">Classic Heirloom Marriage Abaya</div>
                     <div class="product-fabric">Fabric: Premium Zoom with Heavy Border</div>
-                    <div class="product-price">$48.00 (PKR 13,500)</div>
-                    <div class="product-perks">Free Luxury Hijab or Niqab set</div>
+                    <div class="product-price">$48.00 / PKR 13,500</div>
+                    <div class="product-perks">👑 Free Luxury Hijab or Niqab set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (36).jfif" alt="Marriage Abaya 6" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (36).jfif" alt="Marriage Abaya 6" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Marriage Wear</div>
                     <div class="product-title">Majestic Crown Marriage Abaya</div>
                     <div class="product-fabric">Fabric: Imported Organza & Nidah</div>
-                    <div class="product-price">$50.00 (PKR 14,000)</div>
-                    <div class="product-perks">Free Luxury Hijab or Niqab set</div>
+                    <div class="product-price">$50.00 / PKR 14,000</div>
+                    <div class="product-perks">👑 Free Luxury Hijab or Niqab set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (37).jfif" alt="Marriage Abaya 7" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (37).jfif" alt="Marriage Abaya 7" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Marriage Wear</div>
                     <div class="product-title">Starlight Festive Marriage Wear</div>
                     <div class="product-fabric">Fabric: Shimmer Silk & Hand-Embroidered</div>
-                    <div class="product-price">$52.00 (PKR 14,500)</div>
-                    <div class="product-perks">Free Luxury Hijab or Niqab set</div>
+                    <div class="product-price">$52.00 / PKR 14,500</div>
+                    <div class="product-perks">👑 Free Luxury Hijab or Niqab set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (38).jfif" alt="Marriage Abaya 8" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (38).jfif" alt="Marriage Abaya 8" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Marriage Wear</div>
                     <div class="product-title">Ultimate Celebration Masterpiece</div>
                     <div class="product-fabric">Fabric: Pure Dubai Nidah with Zari</div>
-                    <div class="product-price">$55.00 (PKR 15,000)</div>
-                    <div class="product-perks">Free Luxury Hijab or Niqab set</div>
+                    <div class="product-price">$55.00 / PKR 15,000</div>
+                    <div class="product-perks">👑 Free Luxury Hijab or Niqab set</div>
                 </div>
             </div>
 
-            <!-- Travel Wear Items (39-44) -->
+            <!-- 39 to 44: Travel Wear -->
             <div class="product-card">
-                <img src="collection1 (39).jfif" alt="Travel Abaya 1" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (39).jfif" alt="Travel Abaya 1" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Travel Wear</div>
                     <div class="product-title">Lightweight Comfort Travel Abaya</div>
                     <div class="product-fabric">Fabric: Wrinkle-Free Travel Crepe</div>
-                    <div class="product-price">$18.00 (PKR 5,000)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$18.00 / PKR 5,000</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (40).jfif" alt="Travel Abaya 2" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (40).jfif" alt="Travel Abaya 2" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Travel Wear</div>
                     <div class="product-title">Voyager Zip-Pocket Abaya</div>
                     <div class="product-fabric">Fabric: Breathable Zoom Fabric</div>
-                    <div class="product-price">$20.00 (PKR 5,500)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$20.00 / PKR 5,500</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (41).jfif" alt="Travel Abaya 3" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (41).jfif" alt="Travel Abaya 3" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Travel Wear</div>
                     <div class="product-title">Jetset Easy-Fit Black Abaya</div>
                     <div class="product-fabric">Fabric: Stretchable Malai Crepe</div>
-                    <div class="product-price">$22.00 (PKR 6,000)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$22.00 / PKR 6,000</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (42).jfif" alt="Travel Abaya 4" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (42).jfif" alt="Travel Abaya 4" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Travel Wear</div>
                     <div class="product-title">Hajj & Umrah Comfort Travel Wear</div>
                     <div class="product-fabric">Fabric: Ultra-Soft Cotton Crepe Blend</div>
-                    <div class="product-price">$23.00 (PKR 6,300)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$23.00 / PKR 6,300</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (43).jfif" alt="Travel Abaya 5" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (43).jfif" alt="Travel Abaya 5" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Travel Wear</div>
                     <div class="product-title">Active Nomad Utility Abaya</div>
                     <div class="product-fabric">Fabric: Lightweight Korean Nidah</div>
-                    <div class="product-price">$24.00 (PKR 6,600)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$24.00 / PKR 6,600</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (44).jfif" alt="Travel Abaya 6" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (44).jfif" alt="Travel Abaya 6" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Travel Wear</div>
                     <div class="product-title">Ultimate Packable Travel Abaya</div>
                     <div class="product-fabric">Fabric: Premium Anti-Crease Koshibo</div>
-                    <div class="product-price">$25.00 (PKR 7,000)</div>
-                    <div class="product-perks">Optional Niqab & Hijab available</div>
+                    <div class="product-price">$25.00 / PKR 7,000</div>
+                    <div class="product-perks">🛍️ Optional Niqab & Hijab available</div>
                 </div>
             </div>
 
-            <!-- Bridal Wear Items (45-50) -->
+            <!-- 45 to 50: Bridal Wear -->
             <div class="product-card">
-                <img src="collection1 (45).jfif" alt="Bridal Abaya 1" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (45).jfif" alt="Bridal Abaya 1" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Bridal Wear</div>
                     <div class="product-title">Signature Royal Bridal Piece</div>
                     <div class="product-fabric">Fabric: Heavy Custom Zardozi & Pure Silk</div>
-                    <div class="product-price">$55.00 (PKR 15,000)</div>
-                    <div class="product-perks">Includes Free Heavy Bridal Hijab & Niqab Set</div>
+                    <div class="product-price">$55.00 / PKR 15,000</div>
+                    <div class="product-perks">✨ Free Heavy Bridal Hijab & Niqab Set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (46).jfif" alt="Bridal Abaya 2" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (46).jfif" alt="Bridal Abaya 2" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Bridal Wear</div>
                     <div class="product-title">Imperial Pearl & Crystal Bridal Abaya</div>
-                    <div class="product-fabric">Fabric: Dubai Nidah with Hand-Placed Crystals</div>
-                    <div class="product-price">$60.00 (PKR 16,800)</div>
-                    <div class="product-perks">Includes Free Heavy Bridal Hijab & Niqab Set</div>
+                    <div class="product-fabric">Fabric: Dubai Nidah with Crystals</div>
+                    <div class="product-price">$60.00 / PKR 16,800</div>
+                    <div class="product-perks">✨ Free Heavy Bridal Hijab & Niqab Set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (47).jfif" alt="Bridal Abaya 3" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (47).jfif" alt="Bridal Abaya 3" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Bridal Wear</div>
                     <div class="product-title">Grandeur Embroidered Bridal Masterpiece</div>
-                    <div class="product-fabric">Fabric: Organza Over Pure Nidah with Gold Thread</div>
-                    <div class="product-price">$65.00 (PKR 18,000)</div>
-                    <div class="product-perks">Includes Free Heavy Bridal Hijab & Niqab Set</div>
+                    <div class="product-fabric">Fabric: Organza with Gold Thread</div>
+                    <div class="product-price">$65.00 / PKR 18,000</div>
+                    <div class="product-perks">✨ Free Heavy Bridal Hijab & Niqab Set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (48).jfif" alt="Bridal Abaya 4" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (48).jfif" alt="Bridal Abaya 4" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Bridal Wear</div>
                     <div class="product-title">Regal White & Gold Nikkah Abaya</div>
                     <div class="product-fabric">Fabric: Premium Nikkah Chiffon & Silk</div>
-                    <div class="product-price">$70.00 (PKR 19,000)</div>
-                    <div class="product-perks">Includes Free Heavy Bridal Hijab & Niqab Set</div>
+                    <div class="product-price">$70.00 / PKR 19,000</div>
+                    <div class="product-perks">✨ Free Heavy Bridal Hijab & Niqab Set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (49).jfif" alt="Bridal Abaya 5" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (49).jfif" alt="Bridal Abaya 5" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Bridal Wear</div>
                     <div class="product-title">Couture Queen Bridal Abaya Set</div>
-                    <div class="product-fabric">Fabric: Italian Velvet & Heavy Dubai Silk</div>
-                    <div class="product-price">$73.00 (PKR 19,800)</div>
-                    <div class="product-perks">Includes Free Heavy Bridal Hijab & Niqab Set</div>
+                    <div class="product-fabric">Fabric: Italian Velvet & Dubai Silk</div>
+                    <div class="product-price">$73.00 / PKR 19,800</div>
+                    <div class="product-perks">✨ Free Heavy Bridal Hijab & Niqab Set</div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="collection1 (50).jfif" alt="Bridal Abaya 6" class="product-img" onclick="openLightbox(this.src)">
+                <div class="img-wrapper"><img src="collection1 (50).jfif" alt="Bridal Abaya 6" class="product-img" onclick="openLightbox(this.src)"><div class="zoom-overlay">🔍 Click to Expand</div></div>
                 <div class="product-info">
                     <div class="product-category">Bridal Wear</div>
                     <div class="product-title">Mir's Ultimate Luxury Bridal Crown Piece</div>
                     <div class="product-fabric">Fabric: Bespoke Handcrafted Masterpiece</div>
-                    <div class="product-price">$75.00+ (PKR 20,000+)</div>
-                    <div class="product-perks">Includes Free Heavy Bridal Hijab & Niqab Set</div>
+                    <div class="product-price">$75.00+ / PKR 20,000+</div>
+                    <div class="product-perks">✨ Free Heavy Bridal Hijab & Niqab Set</div>
                 </div>
             </div>
 
         </div>
 
-        <!-- B2B & Service Guidelines Section -->
-        <div class="info-section">
-            <h3 class="section-title" style="font-size: 1.6rem; margin-bottom: 25px;">B2B & Service Guidelines</h3>
-            <div class="info-grid">
-                <div class="info-box">
-                    <h3>MOQ Requirement</h3>
-                    <p>Minimum Order Quantity is strictly 12 pieces per wholesale order for global clients.</p>
+        <!-- Professional B2B Guidelines Section -->
+        <div class="b2b-info-wrapper">
+            <h3 class="section-title" style="font-size: 2rem;">B2B & Wholesale Services</h3>
+            <p class="section-subtitle">Dedicated global support for international boutique owners and retailers</p>
+            
+            <div class="b2b-grid">
+                <div class="b2b-box">
+                    <h4>MOQ Requirements</h4>
+                    <p>Minimum Order Quantity is strictly 12 pieces per wholesale order for global clients with mixed size options.</p>
                 </div>
-                <div class="info-box">
-                    <h3>Full Customization</h3>
-                    <p>Tailor-made sizing, cut adjustments, and customized brand labels available internationally.</p>
+                <div class="b2b-box">
+                    <h4>Full Customization</h4>
+                    <p>Tailor-made sizing, private label integration, custom cut adjustments, and bespoke fabric demands supported.</p>
                 </div>
-                <div class="info-box">
-                    <h3>Accessories & Freebies</h3>
-                    <p>Standard Niqab & Hijab available with all pieces. Free high-tier matching sets included exclusively for items priced above PKR 7,000 / $22+.</p>
+                <div class="b2b-box">
+                    <h4>Accessories & Freebies</h4>
+                    <p>Standard Niqab & Hijab available with all pieces. High-tier luxury matching sets included free for items above PKR 7,000.</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Professional Footer -->
     <footer>
         <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. International B2B Modest Fashion Supplier.</p>
     </footer>
 
-    <!-- Lightbox Modal Script Integration -->
+    <!-- Fullscreen Lightbox Modal Script -->
     <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightboxImg">
