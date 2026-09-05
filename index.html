@@ -114,11 +114,11 @@
             color: var(--gold);
         }
 
-        /* Hero Section with Green Logo Background */
+        /* Hero Section - Fixed background size & clean royal font */
         .hero {
-            background: linear-gradient(rgba(13, 33, 26, 0.45), rgba(7, 11, 10, 0.55)), url('green logo.jpg') no-repeat center center/cover;
-            background-size: 90% auto; 
-            height: 85vh;
+            background: linear-gradient(rgba(7, 11, 10, 0.65), rgba(7, 11, 10, 0.75)), url('green logo.jpg') no-repeat center center;
+            background-size: contain;
+            height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -149,23 +149,22 @@
             box-shadow: 0 4px 15px rgba(223, 183, 68, 0.3);
         }
 
-       .hero h1 {
-    font-family: 'Great Vibes', cursive; /* Ye font style ko bohat hi elegant aur stylish bana dega */
-    font-size: 4.5rem; /* Font ka size bhi khobsorat lage ga */
-    font-weight: 400;
-    margin-bottom: 1rem;
-    color: var(--gold-light);
-    letter-spacing: 3px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-}
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-light);
             margin-bottom: 2rem;
             letter-spacing: 1px;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
         }
 
         /* Main Container */
@@ -189,8 +188,10 @@
 
         .section-title p {
             color: var(--text-muted);
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         /* Gallery Grid */
@@ -478,6 +479,7 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.3rem; }
+            .hero { height: 75vh; background-size: cover; }
             .nav-links { display: none; }
             .container { padding: 0 1rem; }
             .modal-content { max-width: 95%; }
@@ -504,7 +506,7 @@
         </div>
     </header>
 
-    <!-- Hero Section (Green Logo Background) -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <span class="badge-tag">Luxury Modest Fashion</span>
@@ -517,7 +519,12 @@
     <main class="container" id="collection">
         <div class="section-title">
             <h2>The Masterpiece Collection</h2>
-            <p>Featuring exclusive handcrafted luxury designs for your dream wardrobe to life </p>
+            <p>Featuring exclusive handcrafted luxury designs to bring your dream wardrobe to life.</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://wa.me/" target="_blank" class="btn-try" style="padding: 12px 24px; font-size: 0.95rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Contact Now on WhatsApp
+                </a>
+            </div>
         </div>
 
         <div class="grid">
