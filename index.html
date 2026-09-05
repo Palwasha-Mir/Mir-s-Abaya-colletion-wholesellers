@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-deep: #0a0f0e;
-            --primary-green: #112620;
-            --secondary-green: #1b3830;
-            --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --gold-dark: #aa820a;
-            --accent-dark: #121212;
-            --text-light: #e0e0e0;
-            --text-muted: #a0a0a0;
+            --bg-deep: #070b0a;
+            --primary-green: #0d211a;
+            --secondary-green: #132e25;
+            --gold: #dfb744;
+            --gold-light: #f7e8b9;
+            --gold-dark: #b89228;
+            --accent-dark: #0b0f0e;
+            --text-light: #e6e6e6;
+            --text-muted: #b0b0b0;
             --white: #ffffff;
             --btn-green: #198754;
-            --btn-green-hover: #157347;
+            --btn-green-hover: #146c43;
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
@@ -44,12 +44,12 @@
         header {
             background-color: var(--accent-dark);
             color: var(--white);
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid var(--gold);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
         }
 
         .nav-container {
@@ -61,21 +61,37 @@
             align-items: center;
         }
 
-        .logo {
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+        }
+
+        .logo-thumb {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .logo-box:hover .logo-thumb {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(223, 183, 68, 0.5);
+        }
+
+        .logo-text {
             font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             letter-spacing: 2px;
             color: var(--gold);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo i {
-            color: var(--gold);
-            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .nav-links {
@@ -98,10 +114,10 @@
             color: var(--gold);
         }
 
-        /* Hero Section */
+        /* Hero Section with Green Logo Background */
         .hero {
-            background: linear-gradient(rgba(17, 38, 32, 0.88), rgba(10, 15, 14, 0.92)), url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
-            height: 65vh;
+            background: linear-gradient(rgba(13, 33, 26, 0.82), rgba(7, 11, 10, 0.90)), url('green logo.jpg') no-repeat center center/cover;
+            height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -109,16 +125,18 @@
             color: var(--white);
             padding: 0 1rem;
             border-bottom: 3px solid var(--gold);
+            position: relative;
         }
 
         .hero-content {
             max-width: 900px;
+            z-index: 2;
         }
 
         .badge-tag {
-            background-color: var(--gold);
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
             color: var(--accent-dark);
-            padding: 0.4rem 1.5rem;
+            padding: 0.4rem 1.6rem;
             font-size: 0.85rem;
             font-weight: 700;
             border-radius: 50px;
@@ -127,20 +145,23 @@
             display: inline-block;
             margin-bottom: 1.2rem;
             font-family: 'Cinzel', serif;
+            box-shadow: 0 4px 15px rgba(223, 183, 68, 0.3);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 1rem;
             color: var(--gold-light);
             letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-light);
             margin-bottom: 2rem;
             letter-spacing: 1px;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
 
         /* Main Container */
@@ -177,10 +198,10 @@
 
         .card {
             background: var(--accent-dark);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(223, 183, 68, 0.25);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -189,7 +210,7 @@
         .card:hover {
             transform: translateY(-8px);
             border-color: var(--gold);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 20px 40px rgba(223, 183, 68, 0.2);
         }
 
         .card-img-wrapper {
@@ -216,7 +237,7 @@
             position: absolute;
             top: 15px;
             left: 15px;
-            background: rgba(10, 15, 14, 0.85);
+            background: rgba(11, 15, 14, 0.9);
             color: var(--gold);
             border: 1px solid var(--gold);
             padding: 5px 12px;
@@ -251,7 +272,7 @@
             margin-bottom: 1.2rem;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
         }
 
         .product-specs span {
@@ -282,25 +303,52 @@
             font-family: 'Cinzel', serif;
         }
 
-        .btn-order {
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-try {
             background-color: var(--btn-green);
             color: var(--white);
             border: none;
-            padding: 10px 18px;
+            padding: 9px 14px;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 0.5px;
             transition: var(--transition);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
-        .btn-order:hover {
+        .btn-try:hover {
             background-color: var(--btn-green-hover);
+            transform: scale(1.03);
+        }
+
+        .btn-chat {
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 9px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-chat:hover {
+            background-color: var(--gold);
+            color: var(--accent-dark);
             transform: scale(1.03);
         }
 
@@ -319,15 +367,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
 
         .wholesale-item {
             text-align: center;
             padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(223, 183, 68, 0.2);
         }
 
         .wholesale-item i {
@@ -358,7 +406,7 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.92);
+            background-color: rgba(0,0,0,0.94);
             backdrop-filter: blur(8px);
         }
 
@@ -368,7 +416,7 @@
             max-width: 85%;
             max-height: 82vh;
             border-radius: 8px;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 35px rgba(223, 183, 68, 0.4);
             border: 1px solid var(--gold);
         }
 
@@ -429,6 +477,8 @@
             .nav-links { display: none; }
             .container { padding: 0 1rem; }
             .modal-content { max-width: 95%; }
+            .action-buttons { flex-direction: column; width: 100%; }
+            .product-footer { flex-direction: column; gap: 12px; align-items: flex-start; }
         }
     </style>
 </head>
@@ -437,7 +487,10 @@
     <!-- Header -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-crown"></i> Mir's Abaya Boutique</a>
+            <div class="logo-box" onclick="openFullLogo()">
+                <img src="boutique logo.jfif" alt="Boutique Logo" class="logo-thumb">
+                <span class="logo-text">Mir's Abaya Boutique</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#collection">Home</a></li>
                 <li><a href="#collection">Collection</a></li>
@@ -447,20 +500,20 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Green Logo Background) -->
     <section class="hero">
         <div class="hero-content">
-            <span class="badge-tag">Exclusive Modest Fashion</span>
+            <span class="badge-tag">Luxury Modest Fashion</span>
             <h1>Mir's Abaya Boutique</h1>
-            <p>Discover ultimate elegance and refined modesty with our handcrafted luxury designer abayas.</p>
+            <p>Embrace timeless elegance and refined sophistication with our exclusive handcrafted designer abayas.</p>
         </div>
     </section>
 
     <!-- Main Content Container -->
     <main class="container" id="collection">
         <div class="section-title">
-            <h2>Modest Fashion Masterpieces</h2>
-            <p>Explore our exclusive curated line of 30 sophisticated handcrafted abayas</p>
+            <h2>The Masterpiece Collection</h2>
+            <p>Featuring all 30 exclusive handcrafted luxury designs</p>
         </div>
 
         <div class="grid">
@@ -474,14 +527,18 @@
                     <div>
                         <h3 class="product-title">Royal Signature Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Jet Black & Gold</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Nada Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Formal & Festive Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Formal & Festive Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$16.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <span class="price">$15.00</span>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -496,14 +553,18 @@
                     <div>
                         <h3 class="product-title">Classic Emerald Drape</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Rich Emerald Green</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Evening & Party Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Evening & Party Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$20.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -518,14 +579,18 @@
                     <div>
                         <h3 class="product-title">Azure Elegance Piece</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Deep Sapphire Blue</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Chiffon Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Casual & Semi-Formal</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Casual & Semi-Formal</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$25.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -540,14 +605,18 @@
                     <div>
                         <h3 class="product-title">Velvet Touch Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Midnight Black</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Imported Velvet & Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Winter & Wedding Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Winter & Wedding Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$15.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <span class="price">$16.00</span>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -562,14 +631,18 @@
                     <div>
                         <h3 class="product-title">Midnight Blue Kaftan</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Royal Navy Blue</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Korean Georgette</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Festive & Luxury Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Festive & Luxury Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$18.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -584,14 +657,18 @@
                     <div>
                         <h3 class="product-title">Imperial Gold Threadwork</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Charcoal & Gold</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Matte Crepe Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Bridal & Grand Events</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Bridal & Grand Events</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$22.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -606,14 +683,18 @@
                     <div>
                         <h3 class="product-title">Sapphire Luxury Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Electric Blue</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Silk Blend</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Formal Evening Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Formal Evening Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$19.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -628,14 +709,18 @@
                     <div>
                         <h3 class="product-title">Ornate Embroidered Robe</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Classic Black & Silver</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Organza & Crepe</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Party & Gala Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Party & Gala Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$24.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -650,14 +735,18 @@
                     <div>
                         <h3 class="product-title">Silk Finish Designer Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Dark Obsidian</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Italian Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Daily Luxury Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Daily Luxury Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$16.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <span class="price">$15.50</span>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -672,14 +761,18 @@
                     <div>
                         <h3 class="product-title">Couture Pastel Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Soft Rose & Cream</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Georgette</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Daytime & Casual Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Daytime & Casual Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$21.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -694,14 +787,18 @@
                     <div>
                         <h3 class="product-title">Minimalist Chic Piece</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Matte Black</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Everyday Modest Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Everyday Modest Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$15.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -716,14 +813,18 @@
                     <div>
                         <h3 class="product-title">Regal Noir Edition</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Deep Jet Black</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Jet Black Crepe Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Evening & Formal Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Evening & Formal Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$23.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -738,14 +839,18 @@
                     <div>
                         <h3 class="product-title">Golden Bordered Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Black & Metallic Gold</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Touch Satin Crepe</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Celebration Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Celebration Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$18.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -760,14 +865,18 @@
                     <div>
                         <h3 class="product-title">Soft Flowing Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Neutral Taupe</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Light Chiffon Blend</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Casual & Office Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Casual & Office Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$17.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -782,14 +891,18 @@
                     <div>
                         <h3 class="product-title">Oasis Green Modest Wear</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Forest Green</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Rich Velvet & Crepe</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Festive & Party Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Festive & Party Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$25.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -804,14 +917,18 @@
                     <div>
                         <h3 class="product-title">Crimson Heritage Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Royal Maroon</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Silk Jacquard</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Wedding & Royal Gatherings</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Wedding & Royal Gatherings</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$26.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -826,14 +943,18 @@
                     <div>
                         <h3 class="product-title">Pearl Embellished Gown</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Ivory White & Pearls</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Georgette with Pearls</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Evening & Dinner Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Evening & Dinner Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$20.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -848,14 +969,18 @@
                     <div>
                         <h3 class="product-title">Classic Chiffon Layer</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Smoky Grey</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Double Layer Chiffon</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Casual & Semi-Formal</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Casual & Semi-Formal</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$16.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -870,14 +995,18 @@
                     <div>
                         <h3 class="product-title">Monochrome Stripe Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Black & White Accent</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Structured Linen Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Modern Urban Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Modern Urban Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$19.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -892,14 +1021,18 @@
                     <div>
                         <h3 class="product-title">Festive Flare Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Plum & Gold</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Flowing Silk Blend</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Celebration & Events</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Celebration & Events</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$23.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -914,14 +1047,18 @@
                     <div>
                         <h3 class="product-title">Bell-Sleeve Teal Masterpiece</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Deep Teal</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Raw Silk & Chiffon</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Luxury Party Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Luxury Party Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$22.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -936,14 +1073,18 @@
                     <div>
                         <h3 class="product-title">Belted Teal & Cream Set</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Teal & Soft Cream</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Dual Tone Silk Crepe</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Formal & Business Modest</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Formal & Business Modest</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$24.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -958,14 +1099,18 @@
                     <div>
                         <h3 class="product-title">Emerald Floral Embroidery</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Emerald Green</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Eid & Special Occasions</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Eid & Special Occasions</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$25.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -980,14 +1125,18 @@
                     <div>
                         <h3 class="product-title">Navy Blue Hijab Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Navy Blue</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Korean Crepe</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Daily & Casual Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Daily & Casual Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$17.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1002,14 +1151,18 @@
                     <div>
                         <h3 class="product-title">Peach Chiffon Kaftan</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Pastel Peach</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Lightweight Chiffon</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Summer & Day Gatherings</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Summer & Day Gatherings</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$19.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1024,14 +1177,18 @@
                     <div>
                         <h3 class="product-title">Deep Purple Bow Design</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Royal Purple</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Rich Silk Blend</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Semi-Formal & Evening</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Semi-Formal & Evening</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$21.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1046,14 +1203,18 @@
                     <div>
                         <h3 class="product-title">Maroon Luxury Cape Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Deep Maroon</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Georgette & Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Royal Wedding Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Royal Wedding Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$27.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1068,14 +1229,18 @@
                     <div>
                         <h3 class="product-title">Beige Minimalist Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Warm Beige</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Jersey Crepe</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Casual & Everyday Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Casual & Everyday Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$15.00</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1090,14 +1255,18 @@
                     <div>
                         <h3 class="product-title">Emerald Silk Pleated Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Glossy Emerald</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Pleated Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Festive & Party Wear</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Festive & Party Wear</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$24.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1112,14 +1281,18 @@
                     <div>
                         <h3 class="product-title">Slate Grey Embroidered Abaya</h3>
                         <div class="product-specs">
+                            <span><i class="fa-solid fa-palette"></i> Color: Slate Grey</span>
                             <span><i class="fa-solid fa-layer-group"></i> Fabric: Matte Crepe Silk</span>
                             <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Wear: Formal & Professional</span>
+                            <span><i class="fa-solid fa-shirt"></i> Best For: Formal & Professional</span>
                         </div>
                     </div>
                     <div class="product-footer">
                         <span class="price">$19.50</span>
-                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
+                        <div class="action-buttons">
+                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
+                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1132,7 +1305,7 @@
                 <div class="wholesale-item">
                     <i class="fa-solid fa-box-open"></i>
                     <h3>Minimum Order Quantity</h3>
-                    <p>Minimum quantity is set at <strong>12 pieces</strong> per order configuration for boutique wholesale and custom selections.</p>
+                    <p>Minimum quantity is set at <strong>12 pieces</strong> per order configuration for boutique wholesale and custom orders.</p>
                 </div>
                 <div class="wholesale-item">
                     <i class="fa-solid fa-truck-fast"></i>
@@ -1142,7 +1315,7 @@
                 <div class="wholesale-item">
                     <i class="fa-solid fa-gem"></i>
                     <h3>Boutique Quality</h3>
-                    <p>Each piece comes with matching premium <strong>Hijab & Niqab</strong>, crafted with high-end luxury fabric finish.</p>
+                    <p>Each piece comes complete with matching premium <strong>Hijab & Niqab</strong>, handcrafted with exquisite luxury finishing.</p>
                 </div>
             </div>
         </div>
@@ -1174,6 +1347,16 @@
             modal.style.display = "block";
             modalImg.src = img.src;
             captionText.innerText = title;
+        }
+
+        function openFullLogo() {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const captionText = document.getElementById("modal-caption");
+            
+            modal.style.display = "block";
+            modalImg.src = "boutique logo.jfif";
+            captionText.innerText = "Mir's Abaya Boutique - Official Logo";
         }
 
         function closeModal() {
