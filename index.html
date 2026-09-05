@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mir's Abaya Boutique - Exclusive Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1b2d2a;
-            --secondary: #c5a059;
-            --accent: #f4f1ea;
-            --text-dark: #2c2c2c;
-            --text-light: #666;
+            --bg-deep: #0a0f0e;
+            --primary-green: #112620;
+            --secondary-green: #1b3830;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa820a;
+            --accent-dark: #121212;
+            --text-light: #e0e0e0;
+            --text-muted: #a0a0a0;
             --white: #ffffff;
+            --btn-green: #198754;
+            --btn-green-hover: #157347;
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
@@ -25,24 +31,25 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--accent);
-            color: var(--text-dark);
+            background-color: var(--bg-deep);
+            color: var(--text-light);
             line-height: 1.6;
         }
 
         h1, h2, h3, .brand-font {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif;
         }
 
         /* Header & Navigation */
         header {
-            background-color: var(--primary);
+            background-color: var(--accent-dark);
             color: var(--white);
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .nav-container {
@@ -55,18 +62,20 @@
         }
 
         .logo {
-            font-size: 2rem;
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 2px;
-            color: var(--white);
+            color: var(--gold);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .logo span {
-            color: var(--secondary);
+        .logo i {
+            color: var(--gold);
+            font-size: 1.4rem;
         }
 
         .nav-links {
@@ -80,55 +89,58 @@
             color: var(--white);
             text-decoration: none;
             font-size: 0.95rem;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--gold);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(27, 45, 42, 0.8), rgba(27, 45, 42, 0.8)), url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
-            height: 60vh;
+            background: linear-gradient(rgba(17, 38, 32, 0.88), rgba(10, 15, 14, 0.92)), url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            height: 65vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
             padding: 0 1rem;
+            border-bottom: 3px solid var(--gold);
         }
 
-        .hero-content max-width {
-            max-width: 800px;
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .badge-tag {
+            background-color: var(--gold);
+            color: var(--accent-dark);
+            padding: 0.4rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+            font-family: 'Cinzel', serif;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            color: var(--white);
-            letter-spacing: 1px;
+            color: var(--gold-light);
+            letter-spacing: 2px;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: #d1d1d1;
+            color: var(--text-light);
             margin-bottom: 2rem;
-            letter-spacing: 0.5px;
-        }
-
-        .badge-tag {
-            background-color: var(--secondary);
-            color: var(--primary);
-            padding: 0.4rem 1.2rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-            margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
 
         /* Main Container */
@@ -140,49 +152,53 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
+            font-size: 2.8rem;
+            color: var(--gold);
             margin-bottom: 0.5rem;
+            letter-spacing: 1px;
         }
 
         .section-title p {
-            color: var(--text-light);
-            letter-spacing: 1px;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            font-size: 1.1rem;
         }
 
         /* Gallery Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2.5rem;
         }
 
         .card {
-            background: var(--white);
+            background: var(--accent-dark);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             transition: var(--transition);
-            position: relative;
             display: flex;
             flex-direction: column;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(27, 45, 42, 0.12);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
         }
 
         .card-img-wrapper {
             position: relative;
             width: 100%;
-            height: 420px;
+            height: 440px;
             overflow: hidden;
-            background-color: #f0f0f0;
+            background-color: #111;
+            cursor: pointer;
         }
 
         .card-img-wrapper img {
@@ -193,25 +209,28 @@
         }
 
         .card:hover .card-img-wrapper img {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
         .card-badge {
             position: absolute;
             top: 15px;
             left: 15px;
-            background: rgba(27, 45, 42, 0.85);
-            color: var(--secondary);
+            background: rgba(10, 15, 14, 0.85);
+            color: var(--gold);
+            border: 1px solid var(--gold);
             padding: 5px 12px;
             font-size: 0.75rem;
             border-radius: 4px;
             letter-spacing: 1px;
             text-transform: uppercase;
+            font-family: 'Cinzel', serif;
             backdrop-filter: blur(5px);
+            z-index: 2;
         }
 
         .card-body {
-            padding: 1.5rem;
+            padding: 1.8rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -219,10 +238,32 @@
         }
 
         .product-title {
-            font-size: 1.15rem;
-            color: var(--primary);
+            font-size: 1.25rem;
+            color: var(--gold-light);
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Cinzel', serif;
+        }
+
+        .product-specs {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .product-specs span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-specs i {
+            color: var(--gold);
+            font-size: 0.85rem;
+            width: 16px;
         }
 
         .product-footer {
@@ -230,61 +271,164 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #eee;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .price {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--secondary);
-            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
         }
 
         .btn-order {
-            background-color: var(--primary);
+            background-color: var(--btn-green);
             color: var(--white);
             border: none;
-            padding: 8px 18px;
+            padding: 10px 18px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 0.85rem;
+            font-weight: 600;
             letter-spacing: 0.5px;
             transition: var(--transition);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .btn-order:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
+            background-color: var(--btn-green-hover);
+            transform: scale(1.03);
+        }
+
+        /* Wholesale / Info Box Section */
+        .info-box-section {
+            max-width: 1400px;
+            margin: 5rem auto 0 auto;
+            padding: 0 2rem;
+        }
+
+        .wholesale-box {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-dark));
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .wholesale-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .wholesale-item i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .wholesale-item h3 {
+            color: var(--gold-light);
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .wholesale-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Modal / Image Popup Viewer */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.92);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85%;
+            max-height: 82vh;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            border: 1px solid var(--gold);
+        }
+
+        #modal-caption {
+            margin: 15px auto;
+            text-align: center;
+            color: var(--gold-light);
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            width: 80%;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 45px;
+            color: var(--gold);
+            font-size: 45px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: var(--white);
+            text-decoration: none;
+            cursor: pointer;
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary);
+            background-color: var(--accent-dark);
             color: var(--white);
             text-align: center;
-            padding: 3rem 0;
+            padding: 3.5rem 0;
             margin-top: 5rem;
-            border-top: 3px solid var(--secondary);
+            border-top: 3px solid var(--gold);
+        }
+
+        footer h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
         }
 
         footer p {
-            color: #aaa;
+            color: var(--text-muted);
             font-size: 0.9rem;
             letter-spacing: 1px;
         }
 
-        footer h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.3rem; }
             .nav-links { display: none; }
             .container { padding: 0 1rem; }
+            .modal-content { max-width: 95%; }
         }
     </style>
 </head>
@@ -293,12 +437,12 @@
     <!-- Header -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-gem" style="color: var(--secondary); font-size: 1.5rem;"></i> Mir's Abaya Boutique</a>
+            <a href="#" class="logo"><i class="fa-solid fa-crown"></i> Mir's Abaya Boutique</a>
             <ul class="nav-links">
                 <li><a href="#collection">Home</a></li>
                 <li><a href="#collection">Collection</a></li>
-                <li><a href="#collection">About</a></li>
-                <li><a href="#collection">Contact</a></li>
+                <li><a href="#collection">Boutique</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -306,540 +450,743 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="badge-tag">Luxury Collection 2026</span>
+            <span class="badge-tag">Exclusive Modest Fashion</span>
             <h1>Mir's Abaya Boutique</h1>
-            <p>Discover elegance and modesty with our handcrafted premium designer abayas.</p>
+            <p>Discover ultimate elegance and refined modesty with our handcrafted luxury designer abayas.</p>
         </div>
     </section>
 
     <!-- Main Content Container -->
     <main class="container" id="collection">
         <div class="section-title">
-            <h2>The Masterpiece Collection</h2>
-            <p>Featuring all 30 exclusive handcrafted designs ($4,500 – $10,000)</p>
+            <h2>Modest Fashion Masterpieces</h2>
+            <p>Explore our exclusive curated line of 30 sophisticated handcrafted abayas</p>
         </div>
 
         <div class="grid">
             <!-- 1 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 01</span>
-                    <img src="collection1 (15).jfif" alt="Abaya 1">
+                    <img src="collection1 (15).jfif" alt="Royal Signature Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Royal Signature Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Nada Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Formal & Festive Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$4,800</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$16.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 2 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 02</span>
-                    <img src="collection1 (16).jfif" alt="Abaya 2">
+                    <img src="collection1 (16).jfif" alt="Classic Emerald Drape">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Classic Emerald Drape</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Evening & Party Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$5,200</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$20.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 3 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 03</span>
-                    <img src="collection1 (17).jfif" alt="Abaya 3">
+                    <img src="collection1 (17).jfif" alt="Azure Elegance Piece">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Azure Elegance Piece</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Chiffon Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Casual & Semi-Formal</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$6,500</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$25.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 4 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 04</span>
-                    <img src="collection1 (18).jfif" alt="Abaya 4">
+                    <img src="collection1 (18).jfif" alt="Velvet Touch Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Velvet Touch Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Imported Velvet & Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Winter & Wedding Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$7,100</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$15.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 5 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 05</span>
-                    <img src="collection1 (19).jfif" alt="Abaya 5">
+                    <img src="collection1 (19).jfif" alt="Midnight Blue Kaftan">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Midnight Blue Kaftan</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Korean Georgette</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Festive & Luxury Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$4,500</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$18.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 6 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 06</span>
-                    <img src="collection1 (20).jfif" alt="Abaya 6">
+                    <img src="collection1 (20).jfif" alt="Imperial Gold Threadwork">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Imperial Gold Threadwork</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Matte Crepe Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Bridal & Grand Events</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$8,200</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$22.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 7 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 07</span>
-                    <img src="collection1 (21).jfif" alt="Abaya 7">
+                    <img src="collection1 (21).jfif" alt="Sapphire Luxury Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Sapphire Luxury Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Silk Blend</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Formal Evening Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$5,900</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$19.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 8 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 08</span>
-                    <img src="collection1 (23) - Copy.jfif" alt="Abaya 8">
+                    <img src="collection1 (23) - Copy.jfif" alt="Ornate Embroidered Robe">
                 </div>
                 <div class="card-body">
                     <div>
-                        <h3 class="product-title">Ornate Embroidered robe</h3>
+                        <h3 class="product-title">Ornate Embroidered Robe</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Organza & Crepe</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Party & Gala Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$9,000</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$24.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 9 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 09</span>
-                    <img src="collection1 (26) - Copy.jfif" alt="Abaya 9">
+                    <img src="collection1 (26) - Copy.jfif" alt="Silk Finish Designer Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Silk Finish Designer Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Italian Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Daily Luxury Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$6,100</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$16.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 10</span>
-                    <img src="collection1 (27).jfif" alt="Abaya 10">
+                    <img src="collection1 (27).jfif" alt="Couture Pastel Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Couture Pastel Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Georgette</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Daytime & Casual Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$4,900</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$21.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 11 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 11</span>
-                    <img src="collection1 (51).jfif" alt="Abaya 11">
+                    <img src="collection1 (51).jfif" alt="Minimalist Chic Piece">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Minimalist Chic Piece</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Everyday Modest Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$5,000</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$15.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 12 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 12</span>
-                    <img src="collection1 (32).jfif" alt="Abaya 12">
+                    <img src="collection1 (32).jfif" alt="Regal Noir Edition">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Regal Noir Edition</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Jet Black Crepe Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Evening & Formal Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$7,800</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$23.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 13 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 13</span>
-                    <img src="collection1 (33).jfif" alt="Abaya 13">
+                    <img src="collection1 (33).jfif" alt="Golden Bordered Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Golden Bordered Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Touch Satin Crepe</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Celebration Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$6,700</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$18.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 14 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 14</span>
-                    <img src="collection1 (34) - Copy.jfif" alt="Abaya 14">
+                    <img src="collection1 (34) - Copy.jfif" alt="Soft Flowing Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Soft Flowing Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Light Chiffon Blend</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Casual & Office Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$5,400</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$17.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 15 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 15</span>
-                    <img src="collection1 (36).jfif" alt="Abaya 15">
+                    <img src="collection1 (36).jfif" alt="Oasis Green Modest Wear">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Oasis Green Modest Wear</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Rich Velvet & Crepe</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Festive & Party Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$8,500</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$25.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 16 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 16</span>
-                    <img src="collection1 (37).jfif" alt="Abaya 16">
+                    <img src="collection1 (37).jfif" alt="Crimson Heritage Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Crimson Heritage Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Silk Jacquard</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Wedding & Royal Gatherings</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$9,500</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$26.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 17 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 17</span>
-                    <img src="collection1 (41).jfif" alt="Abaya 17">
+                    <img src="collection1 (41).jfif" alt="Pearl Embellished Gown">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Pearl Embellished Gown</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Georgette with Pearls</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Evening & Dinner Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$7,200</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$20.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 18 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 18</span>
-                    <img src="collection1 (44) - Copy.jfif" alt="Abaya 18">
+                    <img src="collection1 (44) - Copy.jfif" alt="Classic Chiffon Layer">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Classic Chiffon Layer</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Double Layer Chiffon</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Casual & Semi-Formal</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$4,600</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$16.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 19 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 19</span>
-                    <img src="collection1 (46).jfif" alt="Abaya 19">
+                    <img src="collection1 (46).jfif" alt="Monochrome Stripe Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Monochrome Stripe Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Structured Linen Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Modern Urban Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$6,300</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$19.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 20 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 20</span>
-                    <img src="collection1 (50) - Copy.jfif" alt="Abaya 20">
+                    <img src="collection1 (50) - Copy.jfif" alt="Festive Flare Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Festive Flare Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Flowing Silk Blend</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Celebration & Events</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$8,900</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$23.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 21 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 21</span>
-                    <img src="collection1 (67)_3.jfif" alt="Abaya 21">
+                    <img src="collection1 (67)_3.jfif" alt="Bell-Sleeve Teal Masterpiece">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Bell-Sleeve Teal Masterpiece</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Raw Silk & Chiffon</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Luxury Party Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$7,500</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$22.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 22 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 22</span>
-                    <img src="collection1 (68)_2.jfif" alt="Abaya 22">
+                    <img src="collection1 (68)_2.jfif" alt="Belted Teal & Cream Set">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Belted Teal & Cream Set</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Dual Tone Silk Crepe</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Formal & Business Modest</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$8,100</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$24.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 23 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 23</span>
-                    <img src="collection1 (73)_2.png" alt="Abaya 23">
+                    <img src="collection1 (73)_2.png" alt="Emerald Floral Embroidery">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Emerald Floral Embroidery</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Eid & Special Occasions</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$9,200</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$25.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 24 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 24</span>
-                    <img src="collection1 (55)_2.jfif" alt="Abaya 24">
+                    <img src="collection1 (55)_2.jfif" alt="Navy Blue Hijab Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Navy Blue Hijab Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Korean Crepe</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Daily & Casual Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$5,500</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$17.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 25 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 25</span>
-                    <img src="collection1 (57)_2.jfif" alt="Abaya 25">
+                    <img src="collection1 (57)_2.jfif" alt="Peach Chiffon Kaftan">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Peach Chiffon Kaftan</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Lightweight Chiffon</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Summer & Day Gatherings</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$6,800</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$19.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 26 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 26</span>
-                    <img src="collection1 (58)_2.jfif" alt="Abaya 26">
+                    <img src="collection1 (58)_2.jfif" alt="Deep Purple Bow Design">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Deep Purple Bow Design</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Rich Silk Blend</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Semi-Formal & Evening</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$7,400</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$21.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 27 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 27</span>
-                    <img src="collection1 (60)_2.jfif" alt="Abaya 27">
+                    <img src="collection1 (60)_2.jfif" alt="Maroon Luxury Cape Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Maroon Luxury Cape Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Georgette & Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Royal Wedding Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$10,000</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$27.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 28 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 28</span>
-                    <img src="collection1 (61).jfif" alt="Abaya 28">
+                    <img src="collection1 (61).jfif" alt="Beige Minimalist Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Beige Minimalist Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Jersey Crepe</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Casual & Everyday Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$4,500</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$15.00</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 29 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 29</span>
-                    <img src="collection1 (63)_2.jfif" alt="Abaya 29">
+                    <img src="collection1 (63)_2.jfif" alt="Emerald Silk Pleated Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Emerald Silk Pleated Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Pleated Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Festive & Party Wear</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$8,800</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$24.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
             <!-- 30 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="card-img-wrapper" onclick="openModal(this)">
                     <span class="card-badge">Item 30</span>
-                    <img src="collection1 (65)_2.jfif" alt="Abaya 30">
+                    <img src="collection1 (65)_2.jfif" alt="Slate Grey Embroidered Abaya">
                 </div>
                 <div class="card-body">
                     <div>
                         <h3 class="product-title">Slate Grey Embroidered Abaya</h3>
+                        <div class="product-specs">
+                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Matte Crepe Silk</span>
+                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
+                            <span><i class="fa-solid fa-shirt"></i> Wear: Formal & Professional</span>
+                        </div>
                     </div>
                     <div class="product-footer">
-                        <span class="price">$6,900</span>
-                        <a href="#" class="btn-order">Inquire</a>
+                        <span class="price">$19.50</span>
+                        <a href="#" class="btn-order"><i class="fa-solid fa-bag-shopping"></i> Add to Collection</a>
                     </div>
                 </div>
             </div>
 
         </div>
+
+        <!-- Wholesale & Shipping Information Box -->
+        <div class="info-box-section" id="contact">
+            <div class="wholesale-box">
+                <div class="wholesale-item">
+                    <i class="fa-solid fa-box-open"></i>
+                    <h3>Minimum Order Quantity</h3>
+                    <p>Minimum quantity is set at <strong>12 pieces</strong> per order configuration for boutique wholesale and custom selections.</p>
+                </div>
+                <div class="wholesale-item">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Global Shipping</h3>
+                    <p>Fast, secure, and insured international shipping available directly from our boutique to your doorstep.</p>
+                </div>
+                <div class="wholesale-item">
+                    <i class="fa-solid fa-gem"></i>
+                    <h3>Boutique Quality</h3>
+                    <p>Each piece comes with matching premium <strong>Hijab & Niqab</strong>, crafted with high-end luxury fabric finish.</p>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- Image Preview Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="modal-caption"></div>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container" style="margin: 0 auto; padding: 2rem;">
+        <div class="container" style="margin: 0 auto; padding: 0 2rem;">
             <h3>Mir's Abaya Boutique</h3>
-            <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. Crafted with elegance.</p>
+            <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. Crafted with elegance & modesty.</p>
         </div>
     </footer>
+
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const captionText = document.getElementById("modal-caption");
+            const img = element.querySelector("img");
+            const title = element.parentElement.querySelector(".product-title").innerText;
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerText = title;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
