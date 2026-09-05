@@ -3,1384 +3,727 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mir's Abaya Boutique - Exclusive Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MIR'S ABAYA BOUTIQUE </title>
     <style>
         :root {
-            --bg-deep: #070b0a;
-            --primary-green: #0d211a;
-            --secondary-green: #132e25;
-            --gold: #dfb744;
-            --gold-light: #f7e8b9;
-            --gold-dark: #b89228;
-            --accent-dark: #0b0f0e;
-            --text-light: #e6e6e6;
-            --text-muted: #b0b0b0;
-            --white: #ffffff;
-            --btn-green: #198754;
-            --btn-green-hover: #146c43;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --primary-color: #2c2c2c;
+            --accent-color: #d4af37; /* Luxury Gold */
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-light);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
         }
 
-        h1, h2, h3, .brand-font {
-            font-family: 'Cinzel', serif;
-        }
-
-        /* Header & Navigation */
         header {
-            background-color: var(--accent-dark);
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--gold);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            cursor: pointer;
-        }
-
-        .logo-thumb {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--gold);
-            transition: var(--transition);
-        }
-
-        .logo-box:hover .logo-thumb {
-            transform: scale(1.08);
-            box-shadow: 0 0 15px rgba(223, 183, 68, 0.5);
-        }
-
-        .logo-text {
-            font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--gold);
-            text-decoration: none;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        /* Hero Section - Fixed background size & clean royal font */
-        .hero {
-            background: linear-gradient(rgba(7, 11, 10, 0.65), rgba(7, 11, 10, 0.75)), url('green logo.jpg') no-repeat center center;
-            background-size: contain;
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a, var(--primary-color));
+            color: #ffffff;
             text-align: center;
-            color: var(--white);
-            padding: 0 1rem;
-            border-bottom: 3px solid var(--gold);
-            position: relative;
+            padding: 40px 20px;
+            border-bottom: 4px solid var(--accent-color);
         }
 
-        .hero-content {
-            max-width: 900px;
-            z-index: 2;
-        }
-
-        .badge-tag {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: var(--accent-dark);
-            padding: 0.4rem 1.6rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-            margin-bottom: 1.2rem;
-            font-family: 'Cinzel', serif;
-            box-shadow: 0 4px 15px rgba(223, 183, 68, 0.3);
-        }
-
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gold-light);
+        header h1 {
+            font-size: 2.8rem;
             letter-spacing: 3px;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            text-transform: uppercase;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
+        header p {
+            font-size: 1.1rem;
+            color: #cccccc;
             letter-spacing: 1px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
         }
 
-        /* Main Container */
         .container {
             max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Gallery Grid */
-        .grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
-            background: var(--accent-dark);
-            border: 1px solid rgba(223, 183, 68, 0.25);
+            background: var(--card-bg);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            border: 1px solid #eaeaea;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 40px rgba(223, 183, 68, 0.2);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.2);
+            border-color: var(--accent-color);
         }
 
-        .card-img-wrapper {
-            position: relative;
+        .image-container {
             width: 100%;
-            height: 440px;
+            height: 380px;
             overflow: hidden;
-            background-color: #111;
-            cursor: pointer;
+            background-color: #f0f0f0;
+            position: relative;
         }
 
-        .card-img-wrapper img {
+        .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
 
-        .card:hover .card-img-wrapper img {
-            transform: scale(1.06);
+        .card:hover .image-container img {
+            transform: scale(1.05);
         }
 
-        .card-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(11, 15, 14, 0.9);
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 5px 12px;
-            font-size: 0.75rem;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-family: 'Cinzel', serif;
-            backdrop-filter: blur(5px);
-            z-index: 2;
-        }
-
-        .card-body {
-            padding: 1.8rem;
+        .card-content {
+            padding: 20px;
+            background: #ffffff;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
+            gap: 10px;
         }
 
-        .product-title {
-            font-size: 1.25rem;
-            color: var(--gold-light);
+        .card-title {
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.8rem;
-            font-family: 'Cinzel', serif;
-        }
-
-        .product-specs {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .product-specs span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .product-specs i {
-            color: var(--gold);
-            font-size: 0.85rem;
-            width: 16px;
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .price {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--gold);
-            font-family: 'Cinzel', serif;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-try {
-            background-color: var(--btn-green);
-            color: var(--white);
-            border: none;
-            padding: 9px 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 600;
+            color: var(--primary-color);
             letter-spacing: 0.5px;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .btn-try:hover {
-            background-color: var(--btn-green-hover);
-            transform: scale(1.03);
-        }
-
-        .btn-chat {
-            background-color: transparent;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 9px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .btn-chat:hover {
-            background-color: var(--gold);
-            color: var(--accent-dark);
-            transform: scale(1.03);
-        }
-
-        /* Wholesale / Info Box Section */
-        .info-box-section {
-            max-width: 1400px;
-            margin: 5rem auto 0 auto;
-            padding: 0 2rem;
-        }
-
-        .wholesale-box {
-            background: linear-gradient(135deg, var(--primary-green), var(--accent-dark));
-            border: 2px solid var(--gold);
-            border-radius: 16px;
-            padding: 3rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-        }
-
-        .wholesale-item {
             text-align: center;
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            border: 1px solid rgba(223, 183, 68, 0.2);
         }
 
-        .wholesale-item i {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .wholesale-item h3 {
-            color: var(--gold-light);
-            font-size: 1.3rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .wholesale-item p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Modal / Image Popup Viewer */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.94);
-            backdrop-filter: blur(8px);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 85%;
-            max-height: 82vh;
-            border-radius: 8px;
-            box-shadow: 0 0 35px rgba(223, 183, 68, 0.4);
-            border: 1px solid var(--gold);
-        }
-
-        #modal-caption {
-            margin: 15px auto;
-            text-align: center;
-            color: var(--gold-light);
-            font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            width: 80%;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 25px;
-            right: 45px;
-            color: var(--gold);
-            font-size: 45px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-            z-index: 2001;
-        }
-
-        .close-modal:hover,
-        .close-modal:focus {
-            color: var(--white);
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--accent-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 3.5rem 0;
-            margin-top: 5rem;
-            border-top: 3px solid var(--gold);
-        }
-
-        footer h3 {
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-        }
-
-        footer p {
-            color: var(--text-muted);
+        .details-box {
             font-size: 0.9rem;
+            color: #555555;
+            background: #fdfbf7;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .details-box p {
+            margin-bottom: 4px;
+        }
+
+        .btn-view {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px 24px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-view:hover {
+            background-color: var(--accent-color);
+            color: #1a1a1a;
+            border-color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            margin-top: 60px;
+            border-top: 3px solid var(--accent-color);
+            font-size: 0.95rem;
             letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.3rem; }
-            .hero { height: 75vh; background-size: cover; }
-            .nav-links { display: none; }
-            .container { padding: 0 1rem; }
-            .modal-content { max-width: 95%; }
-            .action-buttons { flex-direction: column; width: 100%; }
-            .product-footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+            header h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <div class="nav-container">
-            <div class="logo-box" onclick="openFullLogo()">
-                <img src="boutique logo.jfif" alt="Boutique Logo" class="logo-thumb">
-                <span class="logo-text">Mir's Abaya Boutique</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#collection">Home</a></li>
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#collection">Boutique</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+        <h1>MIR'S ABAYA BOUTIQUE </h1>
+        <p>Exclusive & Elegant Abaya Collection</p>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge-tag">Luxury Modest Fashion</span>
-            <h1>Mir's Abaya Boutique</h1>
-            <p>Embrace timeless elegance and refined sophistication with our exclusive handcrafted designer abayas.</p>
-        </div>
-    </section>
+    <div class="container">
+        <div class="gallery-grid">
 
-    <!-- Main Content Container -->
-    <main class="container" id="collection">
-        <div class="section-title">
-            <h2>The Masterpiece Collection</h2>
-            <p>Featuring exclusive handcrafted luxury designs to bring your dream wardrobe to life.</p>
-            <div style="margin-top: 1.5rem;">
-                <a href="https://wa.me/" target="_blank" class="btn-try" style="padding: 12px 24px; font-size: 0.95rem;">
-                    <i class="fa-brands fa-whatsapp"></i> Contact Now on WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <div class="grid">
-            <!-- 1 -->
+            <!-- Item 1 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 01</span>
-                    <img src="collection1 (15).jfif" alt="Royal Signature Abaya">
+                <div class="image-container">
+                    <img src="Abaya 1.jfif" alt="Abaya 1">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Royal Signature Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Jet Black & Gold</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Nada Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Formal & Festive Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 01</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Formal Events & Parties</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$15.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 2 -->
+            <!-- Item 2 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 02</span>
-                    <img src="collection1 (16).jfif" alt="Classic Emerald Drape">
+                <div class="image-container">
+                    <img src="Abaya 2.jfif" alt="Abaya 2">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Classic Emerald Drape</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Rich Emerald Green</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Evening & Party Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 02</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Crepe Chiffon</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Casual & Daily Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$20.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 3 -->
+            <!-- Item 3 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 03</span>
-                    <img src="collection1 (17).jfif" alt="Azure Elegance Piece">
+                <div class="image-container">
+                    <img src="Abaya 3.jfif" alt="Abaya 3">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Azure Elegance Piece</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Deep Sapphire Blue</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Chiffon Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Casual & Semi-Formal</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 03</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Imported Malai Crepe</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Festive & Wedding Occasions</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$25.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 4 -->
+            <!-- Item 4 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 04</span>
-                    <img src="collection1 (18).jfif" alt="Velvet Touch Abaya">
+                <div class="image-container">
+                    <img src="Abaya 4.jfif" alt="Abaya 4">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Velvet Touch Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Midnight Black</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Imported Velvet & Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Winter & Wedding Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 04</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Soft Georgette</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Formal Gatherings</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$16.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 5 -->
+            <!-- Item 5 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 05</span>
-                    <img src="collection1 (19).jfif" alt="Midnight Blue Kaftan">
+                <div class="image-container">
+                    <img src="Abaya 5.jfif" alt="Abaya 5">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Midnight Blue Kaftan</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Royal Navy Blue</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Korean Georgette</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Festive & Luxury Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 05</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Office & Daily Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$18.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 6 -->
+            <!-- Item 6 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 06</span>
-                    <img src="collection1 (20).jfif" alt="Imperial Gold Threadwork">
+                <div class="image-container">
+                    <img src="Abaya 6.jfif" alt="Abaya 6">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Imperial Gold Threadwork</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Charcoal & Gold</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Matte Crepe Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Bridal & Grand Events</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 06</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Saudi Silk</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Party & Special Events</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$22.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 7 -->
+            <!-- Item 7 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 07</span>
-                    <img src="collection1 (21).jfif" alt="Sapphire Luxury Abaya">
+                <div class="image-container">
+                    <img src="Abaya 7.jfif" alt="Abaya 7">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Sapphire Luxury Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Electric Blue</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Silk Blend</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Formal Evening Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 07</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Imported Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Casual & Formal Use</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$19.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 8 -->
+            <!-- Item 8 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 08</span>
-                    <img src="collection1 (23) - Copy.jfif" alt="Ornate Embroidered Robe">
+                <div class="image-container">
+                    <img src="Abaya 8.jfif" alt="Abaya 8">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Ornate Embroidered Robe</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Classic Black & Silver</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Organza & Crepe</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Party & Gala Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 08</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Korean Georgette</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Evening Events</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$24.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 9 -->
+            <!-- Item 9 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 09</span>
-                    <img src="collection1 (26) - Copy.jfif" alt="Silk Finish Designer Abaya">
+                <div class="image-container">
+                    <img src="Abaya 9.jfif" alt="Abaya 9">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Silk Finish Designer Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Dark Obsidian</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Italian Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Daily Luxury Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 09</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Daily Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$15.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 10 -->
+            <!-- Item 10 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 10</span>
-                    <img src="collection1 (27).jfif" alt="Couture Pastel Abaya">
+                <div class="image-container">
+                    <img src="Abaya 10.jfif" alt="Abaya 10">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Couture Pastel Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Soft Rose & Cream</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Georgette</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Daytime & Casual Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 10</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Soft Crepe</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Festive Gatherings</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$21.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 11 -->
+            <!-- Item 11 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 11</span>
-                    <img src="collection1 (51).jfif" alt="Minimalist Chic Piece">
+                <div class="image-container">
+                    <img src="Abaya 11.jfif" alt="Abaya 11">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Minimalist Chic Piece</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Matte Black</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Everyday Modest Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 11</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Casual Outings</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$15.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 12 -->
+            <!-- Item 12 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 12</span>
-                    <img src="collection1 (32).jfif" alt="Regal Noir Edition">
+                <div class="image-container">
+                    <img src="Abaya 12.jfif" alt="Abaya 12">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Regal Noir Edition</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Deep Jet Black</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Jet Black Crepe Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Evening & Formal Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 12</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Chiffon Blend</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Wedding Events</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$23.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 13 -->
+            <!-- Item 13 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 13</span>
-                    <img src="collection1 (33).jfif" alt="Golden Bordered Abaya">
+                <div class="image-container">
+                    <img src="Abaya 13.jfif" alt="Abaya 13">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Golden Bordered Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Black & Metallic Gold</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Touch Satin Crepe</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Celebration Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 13</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Imported Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Formal Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$18.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 14 -->
+            <!-- Item 14 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 14</span>
-                    <img src="collection1 (34) - Copy.jfif" alt="Soft Flowing Abaya">
+                <div class="image-container">
+                    <img src="Abaya 14.jfif" alt="Abaya 14">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Soft Flowing Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Neutral Taupe</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Light Chiffon Blend</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Casual & Office Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 14</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Malai Crepe</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Daily & Office Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$17.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 15 -->
+            <!-- Item 15 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 15</span>
-                    <img src="collection1 (36).jfif" alt="Oasis Green Modest Wear">
+                <div class="image-container">
+                    <img src="Abaya 15.jfif" alt="Abaya 15">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Oasis Green Modest Wear</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Forest Green</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Rich Velvet & Crepe</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Festive & Party Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 15</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Party Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$25.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 16 -->
+            <!-- Item 16 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 16</span>
-                    <img src="collection1 (37).jfif" alt="Crimson Heritage Abaya">
+                <div class="image-container">
+                    <img src="Abaya 16.jfif" alt="Abaya 16">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Crimson Heritage Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Royal Maroon</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Silk Jacquard</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Wedding & Royal Gatherings</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 16</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Georgette</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Casual & Semi-Formal</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$26.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 17 -->
+            <!-- Item 17 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 17</span>
-                    <img src="collection1 (41).jfif" alt="Pearl Embellished Gown">
+                <div class="image-container">
+                    <img src="Abaya 17.jfif" alt="Abaya 17">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Pearl Embellished Gown</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Ivory White & Pearls</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Georgette with Pearls</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Evening & Dinner Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 17</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Formal Dinners</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$20.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 18 -->
+            <!-- Item 18 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 18</span>
-                    <img src="collection1 (44) - Copy.jfif" alt="Classic Chiffon Layer">
+                <div class="image-container">
+                    <img src="Abaya 18.jfif" alt="Abaya 18">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Classic Chiffon Layer</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Smoky Grey</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Double Layer Chiffon</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Casual & Semi-Formal</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 18</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Saudi Silk</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Festive Occasions</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$16.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 19 -->
+            <!-- Item 19 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 19</span>
-                    <img src="collection1 (46).jfif" alt="Monochrome Stripe Abaya">
+                <div class="image-container">
+                    <img src="Abaya 19.jfif" alt="Abaya 19">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Monochrome Stripe Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Black & White Accent</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Structured Linen Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Modern Urban Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 19</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Soft Crepe</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Daily Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$19.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 20 -->
+            <!-- Item 20 -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 20</span>
-                    <img src="collection1 (50) - Copy.jfif" alt="Festive Flare Abaya">
+                <div class="image-container">
+                    <img src="Abaya 20.jfif" alt="Abaya 20">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Festive Flare Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Plum & Gold</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Flowing Silk Blend</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Celebration & Events</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 20</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Formal Events</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$23.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 21 -->
+            <!-- Item 21 (Abaya 61) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 21</span>
-                    <img src="collection1 (67)_3.jfif" alt="Bell-Sleeve Teal Masterpiece">
+                <div class="image-container">
+                    <img src="Abaya 61.jfif" alt="Abaya 61">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Bell-Sleeve Teal Masterpiece</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Deep Teal</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Raw Silk & Chiffon</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Luxury Party Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 61</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Imported Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Party & Formal Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$22.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 22 -->
+            <!-- Item 22 (Abaya 62) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 22</span>
-                    <img src="collection1 (68)_2.jfif" alt="Belted Teal & Cream Set">
+                <div class="image-container">
+                    <img src="Abaya 62.jfif" alt="Abaya 62">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Belted Teal & Cream Set</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Teal & Soft Cream</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Dual Tone Silk Crepe</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Formal & Business Modest</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 62</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Malai Crepe</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Casual & Daily Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$24.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 23 -->
+            <!-- Item 23 (Abaya 63) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 23</span>
-                    <img src="collection1 (73)_2.png" alt="Emerald Floral Embroidery">
+                <div class="image-container">
+                    <img src="Abaya 63.jfif" alt="Abaya 63">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Emerald Floral Embroidery</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Emerald Green</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Nidah Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Eid & Special Occasions</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 63</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Wedding Functions</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$25.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 24 -->
+            <!-- Item 24 (Abaya 67) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 24</span>
-                    <img src="collection1 (55)_2.jfif" alt="Navy Blue Hijab Abaya">
+                <div class="image-container">
+                    <img src="Abaya 67.jfif" alt="Abaya 67">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Navy Blue Hijab Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Navy Blue</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Korean Crepe</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Daily & Casual Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 67</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Chiffon & Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Formal Gatherings</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$17.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 25 -->
+            <!-- Item 25 (Abaya 69) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 25</span>
-                    <img src="collection1 (57)_2.jfif" alt="Peach Chiffon Kaftan">
+                <div class="image-container">
+                    <img src="Abaya 69.jfif" alt="Abaya 69">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Peach Chiffon Kaftan</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Pastel Peach</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Lightweight Chiffon</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Summer & Day Gatherings</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 69</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Festive Events</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$19.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 26 -->
+            <!-- Item 26 (Abaya 70) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 26</span>
-                    <img src="collection1 (58)_2.jfif" alt="Deep Purple Bow Design">
+                <div class="image-container">
+                    <img src="Abaya 70.jfif" alt="Abaya 70">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Deep Purple Bow Design</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Royal Purple</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Rich Silk Blend</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Semi-Formal & Evening</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 70</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Soft Crepe</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Daily Office Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$21.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 27 -->
+            <!-- Item 27 (Abaya 72) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 27</span>
-                    <img src="collection1 (60)_2.jfif" alt="Maroon Luxury Cape Abaya">
+                <div class="image-container">
+                    <img src="Abaya 72.jfif" alt="Abaya 72">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Maroon Luxury Cape Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Deep Maroon</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Premium Georgette & Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Royal Wedding Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 72</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Imported Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Party Wear</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$27.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 28 -->
+            <!-- Item 28 (Abaya 73) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 28</span>
-                    <img src="collection1 (61).jfif" alt="Beige Minimalist Abaya">
+                <div class="image-container">
+                    <img src="Abaya 73.jfif" alt="Abaya 73">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Beige Minimalist Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Warm Beige</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Soft Jersey Crepe</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Casual & Everyday Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 73</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Saudi Silk</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Grand Celebrations</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$15.00</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 29 -->
+            <!-- Item 29 (Abaya 74) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 29</span>
-                    <img src="collection1 (63)_2.jfif" alt="Emerald Silk Pleated Abaya">
+                <div class="image-container">
+                    <img src="Abaya 74.jfif" alt="Abaya 74">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Emerald Silk Pleated Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Glossy Emerald</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Pure Pleated Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Festive & Party Wear</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 74</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Formal Dinners</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$24.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
-            <!-- 30 -->
+            <!-- Item 30 (Abaya 75) -->
             <div class="card">
-                <div class="card-img-wrapper" onclick="openModal(this)">
-                    <span class="card-badge">Item 30</span>
-                    <img src="collection1 (65)_2.jfif" alt="Slate Grey Embroidered Abaya">
+                <div class="image-container">
+                    <img src="Abaya 75.jfif" alt="Abaya 75">
                 </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="product-title">Slate Grey Embroidered Abaya</h3>
-                        <div class="product-specs">
-                            <span><i class="fa-solid fa-palette"></i> Color: Slate Grey</span>
-                            <span><i class="fa-solid fa-layer-group"></i> Fabric: Matte Crepe Silk</span>
-                            <span><i class="fa-solid fa-head-side-mask"></i> Includes: Matching Hijab & Niqab</span>
-                            <span><i class="fa-solid fa-shirt"></i> Best For: Formal & Professional</span>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 75</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Georgette Blend</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Casual & Semi-Formal</p>
                     </div>
-                    <div class="product-footer">
-                        <span class="price">$19.50</span>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-try"><i class="fa-solid fa-wand-magic-sparkles"></i> Try It</a>
-                            <a href="#" class="btn-chat"><i class="fa-solid fa-comment-dots"></i> Chat Now</a>
-                        </div>
+                    <a href="#" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Item 31 (Abaya 49) -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="Abaya 49.jfif" alt="Abaya 49">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 49</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Raw Silk & Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Luxury Formal Wear</p>
                     </div>
+                    <a href="#" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Item 32 (Abaya 51) -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="Abaya 51.jfif" alt="Abaya 51">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 51</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Premium Nida</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Daily & Routine Wear</p>
+                    </div>
+                    <a href="#" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Item 33 (Abaya 56) -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="Abaya 56.jfif" alt="Abaya 56">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 56</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Luxury Raw Silk</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Wedding & Festive Events</p>
+                    </div>
+                    <a href="#" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Item 34 (Abaya 58) -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="Abaya 58.jfif" alt="Abaya 58">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Abaya 58</div>
+                    <div class="details-box">
+                        <p><strong>Fabric:</strong> Chiffon & Silk</p>
+                        <p><strong>Includes:</strong> Matching Hijab & Niqab</p>
+                        <p><strong>Best For:</strong> Premium Parties</p>
+                    </div>
+                    <a href="#" class="btn-view">View Details</a>
                 </div>
             </div>
 
         </div>
-
-        <!-- Wholesale & Shipping Information Box -->
-        <div class="info-box-section" id="contact">
-            <div class="wholesale-box">
-                <div class="wholesale-item">
-                    <i class="fa-solid fa-box-open"></i>
-                    <h3>Minimum Order Quantity</h3>
-                    <p>Minimum quantity is set at <strong>12 pieces</strong> per order configuration for boutique wholesale and custom orders.</p>
-                </div>
-                <div class="wholesale-item">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <h3>Global Shipping</h3>
-                    <p>Fast, secure, and insured international shipping available directly from our boutique to your doorstep.</p>
-                </div>
-                <div class="wholesale-item">
-                    <i class="fa-solid fa-gem"></i>
-                    <h3>Boutique Quality</h3>
-                    <p>Each piece comes complete with matching premium <strong>Hijab & Niqab</strong>, handcrafted with exquisite luxury finishing.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Image Preview Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImg">
-        <div id="modal-caption"></div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <div class="container" style="margin: 0 auto; padding: 0 2rem;">
-            <h3>Mir's Abaya Boutique</h3>
-            <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. Crafted with elegance & modesty.</p>
-        </div>
+        <p>&copy; 2026 MIR'S. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        function openModal(element) {
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("modalImg");
-            const captionText = document.getElementById("modal-caption");
-            const img = element.querySelector("img");
-            const title = element.parentElement.querySelector(".product-title").innerText;
-            
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            captionText.innerText = title;
-        }
-
-        function openFullLogo() {
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("modalImg");
-            const captionText = document.getElementById("modal-caption");
-            
-            modal.style.display = "block";
-            modalImg.src = "boutique logo.jfif";
-            captionText.innerText = "Mir's Abaya Boutique - Official Logo";
-        }
-
-        function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById("imageModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
