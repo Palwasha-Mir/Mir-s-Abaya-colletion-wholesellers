@@ -34,7 +34,7 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, .brand-text {
             font-family: 'Playfair Display', serif;
         }
 
@@ -63,10 +63,29 @@
             z-index: 1000;
         }
 
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         .brand-logo-img {
-            max-height: 55px;
+            max-height: 48px;
             width: auto;
             object-fit: contain;
+        }
+
+        .brand-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .brand-text span {
+            color: var(--rose-cream);
         }
 
         nav ul {
@@ -246,6 +265,12 @@
             height: 380px;
             object-fit: cover;
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .product-image:hover {
+            opacity: 0.9;
         }
 
         .product-info {
@@ -293,6 +318,47 @@
         .btn-inquire:hover {
             background-color: var(--gold);
             color: var(--primary-black);
+        }
+
+        /* Image Viewer Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85%;
+            max-height: 80vh;
+            border-radius: 6px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            border: 1px solid var(--gold);
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            color: var(--gold);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--white);
         }
 
         /* Customization Banner */
@@ -389,6 +455,9 @@
             .hero h1 {
                 font-size: 2.3rem;
             }
+            .brand-text {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -399,9 +468,10 @@
     </div>
 
     <header>
-        <a href="#">
+        <div class="brand-container" onclick="openModal('logo.png')">
             <img src="logo.png" alt="Mir's Abaya Boutique Logo" class="brand-logo-img">
-        </a>
+            <div class="brand-text">Mir's <span>Abaya Boutique</span></div>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -456,7 +526,7 @@
         <div class="products-grid">
 
             <div class="product-card">
-                <img src="001.jfif" alt="Abaya 001" class="product-image">
+                <img src="001.jfif" alt="Abaya 001" class="product-image" onclick="openModal('001.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Classic Blue Embroidered Sleeve Abaya</h3>
                     <div class="product-meta">
@@ -468,7 +538,7 @@
             </div>
 
             <div class="product-card">
-                <img src="003.png" alt="Abaya 003" class="product-image">
+                <img src="003.png" alt="Abaya 003" class="product-image" onclick="openModal('003.png')">
                 <div class="product-info">
                     <h3 class="product-title">Maroon Floral Open Front Party Set</h3>
                     <div class="product-meta">
@@ -480,7 +550,7 @@
             </div>
 
             <div class="product-card">
-                <img src="004.jfif" alt="Abaya 004" class="product-image">
+                <img src="004.jfif" alt="Abaya 004" class="product-image" onclick="openModal('004.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Royal Black & Purple Layered Abaya</h3>
                     <div class="product-meta">
@@ -492,7 +562,7 @@
             </div>
 
             <div class="product-card">
-                <img src="005.jfif" alt="Abaya 005" class="product-image">
+                <img src="005.jfif" alt="Abaya 005" class="product-image" onclick="openModal('005.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Charcoal Gray Minimalist Line Abaya</h3>
                     <div class="product-meta">
@@ -504,7 +574,7 @@
             </div>
 
             <div class="product-card">
-                <img src="010.jfif" alt="Abaya 010" class="product-image">
+                <img src="010.jfif" alt="Abaya 010" class="product-image" onclick="openModal('010.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Rose Cream Striped Kaftan Abaya</h3>
                     <div class="product-meta">
@@ -516,7 +586,7 @@
             </div>
 
             <div class="product-card">
-                <img src="012.jfif" alt="Abaya 012" class="product-image">
+                <img src="012.jfif" alt="Abaya 012" class="product-image" onclick="openModal('012.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Deep Burgundy Vine Embroidered Black Abaya</h3>
                     <div class="product-meta">
@@ -528,7 +598,7 @@
             </div>
 
             <div class="product-card">
-                <img src="014.jfif" alt="Abaya 014" class="product-image">
+                <img src="014.jfif" alt="Abaya 014" class="product-image" onclick="openModal('014.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Two-Tone Grey & Black Designer Cape Abaya</h3>
                     <div class="product-meta">
@@ -540,7 +610,7 @@
             </div>
 
             <div class="product-card">
-                <img src="017.jfif" alt="Abaya 017" class="product-image">
+                <img src="017.jfif" alt="Abaya 017" class="product-image" onclick="openModal('017.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Plum Purple Brooch Statement Abaya</h3>
                     <div class="product-meta">
@@ -552,7 +622,7 @@
             </div>
 
             <div class="product-card">
-                <img src="018.jfif" alt="Abaya 018" class="product-image">
+                <img src="018.jfif" alt="Abaya 018" class="product-image" onclick="openModal('018.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Chocolate Brown Niqab & Modest Abaya Set</h3>
                     <div class="product-meta">
@@ -564,7 +634,7 @@
             </div>
 
             <div class="product-card">
-                <img src="020.jfif" alt="Abaya 020" class="product-image">
+                <img src="020.jfif" alt="Abaya 020" class="product-image" onclick="openModal('020.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Royal Golden Crystal Beaded Purple Abaya</h3>
                     <div class="product-meta">
@@ -576,7 +646,7 @@
             </div>
 
             <div class="product-card">
-                <img src="022.jfif" alt="Abaya 022" class="product-image">
+                <img src="022.jfif" alt="Abaya 022" class="product-image" onclick="openModal('022.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Elegant Evening Wear Signature Abaya</h3>
                     <div class="product-meta">
@@ -588,7 +658,7 @@
             </div>
 
             <div class="product-card">
-                <img src="026.jfif" alt="Abaya 026" class="product-image">
+                <img src="026.jfif" alt="Abaya 026" class="product-image" onclick="openModal('026.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Classic Black Open Abaya with Gold Trims</h3>
                     <div class="product-meta">
@@ -600,7 +670,7 @@
             </div>
 
             <div class="product-card">
-                <img src="027.jfif" alt="Abaya 027" class="product-image">
+                <img src="027.jfif" alt="Abaya 027" class="product-image" onclick="openModal('027.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Sophisticated Daily Casual Black Abaya</h3>
                     <div class="product-meta">
@@ -612,7 +682,7 @@
             </div>
 
             <div class="product-card">
-                <img src="029.png" alt="Abaya 029" class="product-image">
+                <img src="029.png" alt="Abaya 029" class="product-image" onclick="openModal('029.png')">
                 <div class="product-info">
                     <h3 class="product-title">Royal Festive Party Wear Abaya Set</h3>
                     <div class="product-meta">
@@ -624,7 +694,7 @@
             </div>
 
             <div class="product-card">
-                <img src="030.jfif" alt="Abaya 030" class="product-image">
+                <img src="030.jfif" alt="Abaya 030" class="product-image" onclick="openModal('030.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Luxury Border Embroidered Black Abaya</h3>
                     <div class="product-meta">
@@ -636,7 +706,7 @@
             </div>
 
             <div class="product-card">
-                <img src="035.jfif" alt="Abaya 035" class="product-image">
+                <img src="035.jfif" alt="Abaya 035" class="product-image" onclick="openModal('035.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Modern Executive Office Wear Abaya</h3>
                     <div class="product-meta">
@@ -648,7 +718,7 @@
             </div>
 
             <div class="product-card">
-                <img src="038.jfif" alt="Abaya 038" class="product-image">
+                <img src="038.jfif" alt="Abaya 038" class="product-image" onclick="openModal('038.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Royal Shine Bridal Abaya Edition</h3>
                     <div class="product-meta">
@@ -660,7 +730,7 @@
             </div>
 
             <div class="product-card">
-                <img src="040.jfif" alt="Abaya 040" class="product-image">
+                <img src="040.jfif" alt="Abaya 040" class="product-image" onclick="openModal('040.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Rose Cream Accent Luxury Open Abaya</h3>
                     <div class="product-meta">
@@ -672,7 +742,7 @@
             </div>
 
             <div class="product-card">
-                <img src="043.jfif" alt="Abaya 043" class="product-image">
+                <img src="043.jfif" alt="Abaya 043" class="product-image" onclick="openModal('043.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Graceful Pearl Highlighted Abaya</h3>
                     <div class="product-meta">
@@ -684,7 +754,7 @@
             </div>
 
             <div class="product-card">
-                <img src="045.jfif" alt="Abaya 045" class="product-image">
+                <img src="045.jfif" alt="Abaya 045" class="product-image" onclick="openModal('045.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Exquisite Gold Thread Patterned Abaya</h3>
                     <div class="product-meta">
@@ -696,7 +766,7 @@
             </div>
 
             <div class="product-card">
-                <img src="046.jfif" alt="Abaya 046" class="product-image">
+                <img src="046.jfif" alt="Abaya 046" class="product-image" onclick="openModal('046.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Signature Style Daily Modest Abaya</h3>
                     <div class="product-meta">
@@ -708,7 +778,7 @@
             </div>
 
             <div class="product-card">
-                <img src="048.jfif" alt="Abaya 048" class="product-image">
+                <img src="048.jfif" alt="Abaya 048" class="product-image" onclick="openModal('048.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Regal Shining Black Special Edition</h3>
                     <div class="product-meta">
@@ -720,7 +790,7 @@
             </div>
 
             <div class="product-card">
-                <img src="051.jfif" alt="Abaya 051" class="product-image">
+                <img src="051.jfif" alt="Abaya 051" class="product-image" onclick="openModal('051.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Golden Accented Party & Function Abaya</h3>
                     <div class="product-meta">
@@ -732,7 +802,7 @@
             </div>
 
             <div class="product-card">
-                <img src="052.jfif" alt="Abaya 052" class="product-image">
+                <img src="052.jfif" alt="Abaya 052" class="product-image" onclick="openModal('052.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Minimalist Professional Office Abaya</h3>
                     <div class="product-meta">
@@ -744,7 +814,7 @@
             </div>
 
             <div class="product-card">
-                <img src="053.jfif" alt="Abaya 053" class="product-image">
+                <img src="053.jfif" alt="Abaya 053" class="product-image" onclick="openModal('053.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Luxury Velvet Touch Dubai Abaya</h3>
                     <div class="product-meta">
@@ -756,7 +826,7 @@
             </div>
 
             <div class="product-card">
-                <img src="060.jfif" alt="Abaya 060" class="product-image">
+                <img src="060.jfif" alt="Abaya 060" class="product-image" onclick="openModal('060.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Grandeur Embroidered Bridal Masterpiece</h3>
                     <div class="product-meta">
@@ -768,7 +838,7 @@
             </div>
 
             <div class="product-card">
-                <img src="064.jfif" alt="Abaya 064" class="product-image">
+                <img src="064.jfif" alt="Abaya 064" class="product-image" onclick="openModal('064.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Graceful Silhouette Casual Daily Abaya</h3>
                     <div class="product-meta">
@@ -780,7 +850,7 @@
             </div>
 
             <div class="product-card">
-                <img src="065.jfif" alt="Abaya 065" class="product-image">
+                <img src="065.jfif" alt="Abaya 065" class="product-image" onclick="openModal('065.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Stunning Rose Cream Mix Party Abaya</h3>
                     <div class="product-meta">
@@ -792,7 +862,7 @@
             </div>
 
             <div class="product-card">
-                <img src="072.jfif" alt="Abaya 072" class="product-image">
+                <img src="072.jfif" alt="Abaya 072" class="product-image" onclick="openModal('072.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Elite Haute Couture Black Abaya</h3>
                     <div class="product-meta">
@@ -804,7 +874,7 @@
             </div>
 
             <div class="product-card">
-                <img src="073.png" alt="Abaya 073" class="product-image">
+                <img src="073.png" alt="Abaya 073" class="product-image" onclick="openModal('073.png')">
                 <div class="product-info">
                     <h3 class="product-title">Ultimate Royal Crown Bridal Abaya</h3>
                     <div class="product-meta">
@@ -817,6 +887,11 @@
 
         </div>
     </section>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 
     <section id="customization" class="custom-banner">
         <h2>100% Customization & Private Labeling Available</h2>
@@ -855,6 +930,20 @@
             <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. Designed for Global B2B Export.</p>
         </div>
     </footer>
+
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
