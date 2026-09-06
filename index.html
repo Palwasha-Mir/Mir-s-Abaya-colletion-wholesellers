@@ -3,46 +3,861 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mir's Abaya Boutique - Premium Modest Fashion</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mir's Abaya Boutique | Dream Abaya Collection - B2B Global Exporter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-black: #0c0c0c;
+            --shining-dark: #161616;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --rose-cream: #f4e8df;
+            --rose-cream-dark: #e6d2c4;
+            --white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-light: #f7f7f7;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-black);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Top Announcement Bar */
+        .top-bar {
+            background: linear-gradient(90deg, var(--gold), var(--rose-cream-dark));
+            color: var(--primary-black);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(12, 12, 12, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            z-index: 1000;
+        }
+
+        .brand-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .brand-logo span {
+            color: var(--rose-cream);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        .header-cta {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .header-cta:hover {
+            background: var(--gold);
+            color: var(--primary-black);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.85)), url('001.jfif') no-repeat center center/cover;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content max-w {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--rose-cream);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), #b89728);
+            color: var(--primary-black);
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Features / Why Choose Us */
+        .features {
+            background-color: var(--shining-dark);
+            padding: 70px 5%;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            color: var(--rose-cream);
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #b5b5b5;
+        }
+
+        /* Products Catalog */
+        .catalog {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--rose-cream);
+            font-size: 1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--shining-dark);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            color: var(--rose-cream);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .product-meta {
+            font-size: 0.85rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge-moq {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .btn-inquire {
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .btn-inquire:hover {
+            background-color: var(--gold);
+            color: var(--primary-black);
+        }
+
+        /* Customization Banner */
+        .custom-banner {
+            background: linear-gradient(135deg, #161616, #241f18);
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .custom-banner h2 {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .custom-banner p {
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            color: var(--rose-cream);
+            font-size: 1.05rem;
+        }
+
+        /* Footer / Contact */
+        footer {
+            background-color: #080808;
+            padding: 60px 5% 30px 5%;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.9rem;
+            color: #b5b5b5;
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b5b5b5;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .contact-info-item i {
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                display: none; /* Can add hamburger menu later if needed */
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header & Navigation Bar -->
+    <div class="top-bar">
+        <span>Global B2B Exporter | MOQ: 12 Pieces | Worldwide Shipping via DHL & FedEx</span>
+    </div>
+
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Mir's Abaya Boutique Logo">
-            <span class="brand-title">Mir's Abaya Boutique</span>
-        </div>
+        <a href="#" class="brand-logo">Mir's <span>Abaya Boutique</span></a>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Why Us</a></li>
+                <li><a href="#catalog">Collection</a></li>
+                <li><a href="#customization">Custom Label</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20would%20like%20to%20request%20a%20catalog%20and%20wholesale%20quotation." target="_blank" class="header-cta">Inquire Now</a>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Elegance in Modesty</h1>
-            <p>Discover our exclusive premium abaya collection</p>
+            <h1>Your Dream Abaya Collection</h1>
+            <p>Exclusive High-End B2B Wholesale Abayas Crafted with Premium Dubai Standards, Royal Shining Black, & Elegant Embroidery.</p>
+            <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20am%20interested%20in%20your%20wholesale%20collection." target="_blank" class="btn-gold">Request Wholesale Quote</a>
         </div>
     </section>
 
-    <!-- Gallery / Abaya Pictures Section (Images will be added here later) -->
-    <section id="collection" class="gallery-container">
-        <!-- Abaya picture cards will go here -->
-        <div class="gallery-placeholder">
-            <p style="text-align: center; color: #d4af37; padding: 40px; grid-column: 1 / -1;">Abaya collection pictures will be placed here soon...</p>
+    <section id="features" class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-globe"></i>
+                <h3>Global Shipping</h3>
+                <p>Reliable and fast worldwide shipping partners including DHL & FedEx for secure door-to-door delivery.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-boxes"></i>
+                <h3>MOQ & Flexibility</h3>
+                <p>Minimum Order Quantity (MOQ) of 12 Pieces per design/collection with assorted sizing options.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>100% Customization</h3>
+                <p>Tailor-made designs, fabric choices, and custom brand labeling available upon buyer request.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-credit-card"></i>
+                <h3>Secure Payments</h3>
+                <p>Flexible international payment methods: Wire Transfer (TT), Bank Transfer, Western Union, & PayPal.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. Designed for Premium Modest Fashion.</p>
+    <section id="catalog" class="catalog">
+        <div class="section-title">
+            <h2>The Dream Collection</h2>
+            <p>Browse our curated range of Fancy, Bridal, Open, and Party Wear Abayas</p>
+        </div>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="001.jfif" alt="Abaya 001" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Classic Blue Embroidered Sleeve Abaya</h3>
+                    <div class="product-meta">
+                        <span>Premium Crepe Fabric</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20001" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="003.png" alt="Abaya 003" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Maroon Floral Open Front Party Set</h3>
+                    <div class="product-meta">
+                        <span>Chiffon & Silk Blend</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20003" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="004.jfif" alt="Abaya 004" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Royal Black & Purple Layered Abaya</h3>
+                    <div class="product-meta">
+                        <span>Dubai Style Satin</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20004" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="005.jfif" alt="Abaya 005" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Charcoal Gray Minimalist Line Abaya</h3>
+                    <div class="product-meta">
+                        <span>Formal Office Wear</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20005" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="010.jfif" alt="Abaya 010" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Rose Cream Striped Kaftan Abaya</h3>
+                    <div class="product-meta">
+                        <span>Luxury Satin Silk</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20010" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="012.jfif" alt="Abaya 012" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Deep Burgundy Vine Embroidered Black Abaya</h3>
+                    <div class="product-meta">
+                        <span>Special Function Wear</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20012" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="014.jfif" alt="Abaya 014" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Two-Tone Grey & Black Designer Cape Abaya</h3>
+                    <div class="product-meta">
+                        <span>Modern Open Style</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20014" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="017.jfif" alt="Abaya 017" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Plum Purple Brooch Statement Abaya</h3>
+                    <div class="product-meta">
+                        <span>Daily & Formal Wear</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20017" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="018.jfif" alt="Abaya 018" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Chocolate Brown Niqab & Modest Abaya Set</h3>
+                    <div class="product-meta">
+                        <span>Daily Casual Comfort</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20018" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="020.jfif" alt="Abaya 020" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Royal Golden Crystal Beaded Purple Abaya</h3>
+                    <div class="product-meta">
+                        <span>Bridal & Party Collection</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20020" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="022.jfif" alt="Abaya 022" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Elegant Evening Wear Signature Abaya</h3>
+                    <div class="product-meta">
+                        <span>Premium Dubai Fabric</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20022" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="026.jfif" alt="Abaya 026" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Classic Black Open Abaya with Gold Trims</h3>
+                    <div class="product-meta">
+                        <span>Luxury High-Grade Fabric</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20026" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="027.jfif" alt="Abaya 027" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Sophisticated Daily Casual Black Abaya</h3>
+                    <div class="product-meta">
+                        <span>Breathable Everyday Fabric</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20027" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="029.png" alt="Abaya 029" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Royal Festive Party Wear Abaya Set</h3>
+                    <div class="product-meta">
+                        <span>Fancy Party Edition</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20029" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="030.jfif" alt="Abaya 030" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Luxury Border Embroidered Black Abaya</h3>
+                    <div class="product-meta">
+                        <span>High-End Finish</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20030" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="035.jfif" alt="Abaya 035" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Modern Executive Office Wear Abaya</h3>
+                    <div class="product-meta">
+                        <span>Professional Formal Look</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20035" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="038.jfif" alt="Abaya 038" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Royal Shine Bridal Abaya Edition</h3>
+                    <div class="product-meta">
+                        <span>Bridal Collection</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20038" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="040.jfif" alt="Abaya 040" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Rose Cream Accent Luxury Open Abaya</h3>
+                    <div class="product-meta">
+                        <span>Dubai Style Open Design</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20040" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="043.jfif" alt="Abaya 043" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Graceful Pearl Highlighted Abaya</h3>
+                    <div class="product-meta">
+                        <span>Premium Boutique Series</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20043" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="045.jfif" alt="Abaya 045" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Exquisite Gold Thread Patterned Abaya</h3>
+                    <div class="product-meta">
+                        <span>Fancy Evening Wear</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20045" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="046.jfif" alt="Abaya 046" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Signature Style Daily Modest Abaya</h3>
+                    <div class="product-meta">
+                        <span>Everyday Comfort Fabric</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20046" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="048.jfif" alt="Abaya 048" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Regal Shining Black Special Edition</h3>
+                    <div class="product-meta">
+                        <span>Royal Collection</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20048" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="051.jfif" alt="Abaya 051" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Golden Accented Party & Function Abaya</h3>
+                    <div class="product-meta">
+                        <span>Party Wear Line</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20051" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="052.jfif" alt="Abaya 052" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Professional Office Abaya</h3>
+                    <div class="product-meta">
+                        <span>Smart Workwear</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20052" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="053.jfif" alt="Abaya 053" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Luxury Velvet Touch Dubai Abaya</h3>
+                    <div class="product-meta">
+                        <span>Dubai Style Open Abaya</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20053" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="060.jfif" alt="Abaya 060" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Grandeur Embroidered Bridal Masterpiece</h3>
+                    <div class="product-meta">
+                        <span>Bridal Abaya Line</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20060" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="064.jfif" alt="Abaya 064" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Graceful Silhouette Casual Daily Abaya</h3>
+                    <div class="product-meta">
+                        <span>Comfortable Casual Wear</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20064" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="065.jfif" alt="Abaya 065" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Stunning Rose Cream Mix Party Abaya</h3>
+                    <div class="product-meta">
+                        <span>Function & Party Wear</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20065" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="072.jfif" alt="Abaya 072" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Elite Haute Couture Black Abaya</h3>
+                    <div class="product-meta">
+                        <span>Exclusive Export Line</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20072" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="073.png" alt="Abaya 073" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Ultimate Royal Crown Bridal Abaya</h3>
+                    <div class="product-meta">
+                        <span>Luxury Bridal Showcase</span>
+                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    </div>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20073" target="_blank" class="btn-inquire">Request Quote</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="customization" class="custom-banner">
+        <h2>100% Customization & Private Labeling Available</h2>
+        <p>Are you an international boutique owner or wholesaler? We provide complete custom manufacturing based on your unique designs, custom brand labels, specific sizing guidelines, and specialized fabric choices.</p>
+        <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20want%20to%20discuss%20custom%20design%20and%20private%20labeling." target="_blank" class="btn-gold">Discuss Custom Order</a>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Mir's Abaya Boutique</h3>
+                <p>A trusted global B2B partner exporting high-end, elegant, and modest Dubai style abayas to international clients across the Middle East, Europe, and worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Payment & Shipping</h3>
+                <ul>
+                    <li><strong>Shipping:</strong> DHL & FedEx Express Worldwide</li>
+                    <li><strong>MOQ:</strong> 12 Pieces per design</li>
+                    <li><strong>Payments:</strong> Wire Transfer (TT), Bank Transfer, Western Union, PayPal</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Direct Inquiries & Support</h3>
+                <div class="contact-info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+92 334 8147509</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>mansoor.ahmed033481@gmail.com</span>
+                </div>
+                <a href="mailto:mansoor.ahmed033481@gmail.com?subject=Wholesale%20Inquiry%20-%20Mir's%20Abaya%20Boutique" class="btn-gold" style="margin-top: 10px; padding: 10px 20px; font-size: 0.85rem;">Send Email Inquiry</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. Designed for Global B2B Export.</p>
+        </div>
     </footer>
 
 </body>
