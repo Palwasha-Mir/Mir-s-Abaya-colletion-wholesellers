@@ -18,7 +18,6 @@
             --text-dark: #2c2c2c;
             --text-light: #f7f7f7;
             --transition: all 0.3s ease-in-out;
-            --sale-red: #e74c3c;
         }
 
         * {
@@ -254,26 +253,11 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
         }
 
         .product-card:hover {
             border-color: var(--gold);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .sale-badge-tag {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background-color: var(--sale-red);
-            color: var(--white);
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border-radius: 4px;
-            z-index: 10;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         .product-image {
@@ -310,11 +294,11 @@
             border-left: 2px solid var(--gold);
         }
 
-        .price-box {
+        .product-pricing {
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
         }
 
         .original-price {
@@ -324,9 +308,18 @@
         }
 
         .sale-price {
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.05rem;
             color: var(--gold);
+            font-weight: 700;
+        }
+
+        .sale-tag {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold-light);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
         }
 
         .product-meta {
@@ -522,7 +515,7 @@
 <body>
 
     <div class="top-bar">
-        <span>September & October Sale: Up to 20% - 30% Off | Global B2B Exporter | MOQ: 12 Pieces | Worldwide Shipping</span>
+        <span>Global B2B Exporter | Up to 20% - 30% OFF Special September & October Sale | Worldwide Shipping</span>
     </div>
 
     <header>
@@ -545,8 +538,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Your Dream Abaya Collection</h1>
-            <p>Exclusive High-End B2B Wholesale Abayas Crafted with Premium Dubai Standards, Royal Shining Black, & Elegant Embroidery. <strong>September & October Special Sale: Up to 20% - 30% Off!</strong></p>
-            <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20am%20interested%20in%20your%20wholesale%20collection%20on%20sale." target="_blank" class="btn-gold">Request Wholesale Quote</a>
+            <p>Exclusive High-End B2B Wholesale Abayas Crafted with Premium Dubai Standards, Royal Shining Black, & Elegant Embroidery. Complete with Matching Hijab & Niqab Options. <br><strong style="color: var(--gold-light);">September & October Special: Up to 20% - 30% Off Sale Live Now!</strong></p>
+            <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20am%20interested%20in%20your%20wholesale%20collection." target="_blank" class="btn-gold">Request Wholesale Quote</a>
         </div>
     </section>
 
@@ -578,548 +571,548 @@
     <section id="catalog" class="catalog">
         <div class="section-title">
             <h2>The Dream Collection</h2>
-            <p>September & October Special: Up to 20% - 30% Off on All Exclusive Dubai Standard Abayas</p>
+            <p>September & October Special: Up to 20% - 30% Off Sale Across All Luxury Items (Prices shown in USD)</p>
         </div>
 
         <div class="products-grid">
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="001.jfif" alt="Abaya 001" class="product-image" onclick="openModal('001.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Classic Blue Embroidered Sleeve Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Premium Crepe | Best for: Formal & Evening Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$6,500</span>
-                        <span class="sale-price">$5,200</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$30.00</span>
+                        <span class="sale-price">$22.00</span>
+                        <span class="sale-tag">25% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab & Niqab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20001%20at%20sale%20price%20$5,200" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20001%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="003.png" alt="Abaya 003" class="product-image" onclick="openModal('003.png')">
                 <div class="product-info">
                     <h3 class="product-title">Maroon Floral Open Front Party Set</h3>
                     <div class="product-fabric-occasion">Fabric: Chiffon & Silk | Best for: Party & Festive Events</div>
-                    <div class="price-box">
-                        <span class="original-price">$8,000</span>
-                        <span class="sale-price">$6,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$35.00</span>
+                        <span class="sale-price">$25.00</span>
+                        <span class="sale-tag">30% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20003%20at%20sale%20price%20$6,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20003%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="004.jfif" alt="Abaya 004" class="product-image" onclick="openModal('004.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Royal Black & Purple Layered Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Dubai Satin | Best for: Grand Occasions & Gatherings</div>
-                    <div class="price-box">
-                        <span class="original-price">$10,000</span>
-                        <span class="sale-price">$7,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$38.00</span>
+                        <span class="sale-price">$28.00</span>
+                        <span class="sale-tag">25% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Scarf</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20004%20at%20sale%20price%20$7,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20004%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="005.jfif" alt="Abaya 005" class="product-image" onclick="openModal('005.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Charcoal Gray Minimalist Line Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Zoom Fabric | Best for: Office & Daily Professional Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$6,250</span>
-                        <span class="sale-price">$5,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$25.00</span>
+                        <span class="sale-price">$20.00</span>
+                        <span class="sale-tag">20% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20005%20at%20sale%20price%20$5,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20005%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="010.jfif" alt="Abaya 010" class="product-image" onclick="openModal('010.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Rose Cream Striped Kaftan Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Luxury Silk Blend | Best for: Casual Luxury & Dinners</div>
-                    <div class="price-box">
-                        <span class="original-price">$9,330</span>
-                        <span class="sale-price">$7,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$32.00</span>
+                        <span class="sale-price">$24.00</span>
+                        <span class="sale-tag">25% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20010%20at%20sale%20price%20$7,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20010%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="012.jfif" alt="Abaya 012" class="product-image" onclick="openModal('012.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Deep Burgundy Vine Embroidered Black Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Nida Fabric | Best for: Function & Celebration Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$11,400</span>
-                        <span class="sale-price">$8,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$40.00</span>
+                        <span class="sale-price">$30.00</span>
+                        <span class="sale-tag">25% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20012%20at%20sale%20price%20$8,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20012%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="014.jfif" alt="Abaya 014" class="product-image" onclick="openModal('014.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Two-Tone Grey & Black Designer Cape Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Dubai Cherry | Best for: Modern Open Styling & Outings</div>
-                    <div class="price-box">
-                        <span class="original-price">$7,500</span>
-                        <span class="sale-price">$6,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$32.00</span>
+                        <span class="sale-price">$25.00</span>
+                        <span class="sale-tag">22% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20014%20at%20sale%20price%20$6,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20014%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="017.jfif" alt="Abaya 017" class="product-image" onclick="openModal('017.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Plum Purple Brooch Statement Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Premium Crepe | Best for: Formal Evening Events</div>
-                    <div class="price-box">
-                        <span class="original-price">$9,330</span>
-                        <span class="sale-price">$7,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$36.00</span>
+                        <span class="sale-price">$27.00</span>
+                        <span class="sale-tag">25% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20017%20at%20sale%20price%20$7,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20017%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="018.jfif" alt="Abaya 018" class="product-image" onclick="openModal('018.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Chocolate Brown Niqab & Modest Abaya Set</h3>
                     <div class="product-fabric-occasion">Fabric: Soft Nida | Best for: Daily Modest & Traditional Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$7,125</span>
-                        <span class="sale-price">$5,700</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$28.00</span>
+                        <span class="sale-price">$22.00</span>
+                        <span class="sale-tag">21% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Niqab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20018%20at%20sale%20price%20$5,700" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20018%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="020.jfif" alt="Abaya 020" class="product-image" onclick="openModal('020.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Royal Golden Crystal Beaded Purple Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Luxury Satin & Silk | Best for: Bridal & Wedding Celebrations</div>
-                    <div class="price-box">
-                        <span class="original-price">$15,700</span>
-                        <span class="sale-price">$11,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$50.00</span>
+                        <span class="sale-price">$35.00</span>
+                        <span class="sale-tag">30% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20020%20at%20sale%20price%20$11,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20020%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="022.jfif" alt="Abaya 022" class="product-image" onclick="openModal('022.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Elegant Evening Wear Signature Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Dubai Cherry | Best for: Evening Parties & Dinners</div>
-                    <div class="price-box">
-                        <span class="original-price">$10,000</span>
-                        <span class="sale-price">$7,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$34.00</span>
+                        <span class="sale-price">$26.00</span>
+                        <span class="sale-tag">24% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20022%20at%20sale%20price%20$7,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20022%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="026.jfif" alt="Abaya 026" class="product-image" onclick="openModal('026.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Classic Black Open Abaya with Gold Trims</h3>
                     <div class="product-fabric-occasion">Fabric: Zoom Fabric | Best for: Open Layer Styling & Events</div>
-                    <div class="price-box">
-                        <span class="original-price">$8,125</span>
-                        <span class="sale-price">$6,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$33.00</span>
+                        <span class="sale-price">$25.00</span>
+                        <span class="sale-tag">24% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20026%20at%20sale%20price%20$6,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20026%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="027.jfif" alt="Abaya 027" class="product-image" onclick="openModal('027.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Sophisticated Daily Casual Black Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Everyday Crepe | Best for: Daily Casual & Regular Use</div>
-                    <div class="price-box">
-                        <span class="original-price">$7,330</span>
-                        <span class="sale-price">$5,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$25.00</span>
+                        <span class="sale-price">$20.00</span>
+                        <span class="sale-tag">20% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20027%20at%20sale%20price%20$5,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20027%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="029.png" alt="Abaya 029" class="product-image" onclick="openModal('029.png')">
                 <div class="product-info">
                     <h3 class="product-title">Royal Festive Party Wear Abaya Set</h3>
                     <div class="product-fabric-occasion">Fabric: Chiffon Blend | Best for: Festive Parties & Gatherings</div>
-                    <div class="price-box">
-                        <span class="original-price">$12,850</span>
-                        <span class="sale-price">$9,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$38.00</span>
+                        <span class="sale-price">$28.00</span>
+                        <span class="sale-tag">26% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Scarf</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20029%20at%20sale%20price%20$9,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20029%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="030.jfif" alt="Abaya 030" class="product-image" onclick="openModal('030.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Luxury Border Embroidered Black Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Premium Nida | Best for: High-End Formal Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$11,250</span>
-                        <span class="sale-price">$9,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$42.00</span>
+                        <span class="sale-price">$31.00</span>
+                        <span class="sale-tag">26% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20030%20at%20sale%20price%20$9,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20030%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="035.jfif" alt="Abaya 035" class="product-image" onclick="openModal('035.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Modern Executive Office Wear Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Zoom Fabric | Best for: Smart Office & Business Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$8,660</span>
-                        <span class="sale-price">$6,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$27.00</span>
+                        <span class="sale-price">$21.00</span>
+                        <span class="sale-tag">22% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20035%20at%20sale%20price%20$6,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20035%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="038.jfif" alt="Abaya 038" class="product-image" onclick="openModal('038.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Royal Shine Bridal Abaya Edition</h3>
                     <div class="product-fabric-occasion">Fabric: Dubai Satin & Silk | Best for: Bridal & Wedding Events</div>
-                    <div class="price-box">
-                        <span class="original-price">$15,000</span>
-                        <span class="sale-price">$10,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$48.00</span>
+                        <span class="sale-price">$34.00</span>
+                        <span class="sale-tag">29% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20038%20at%20sale%20price%20$10,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20038%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="040.jfif" alt="Abaya 040" class="product-image" onclick="openModal('040.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Rose Cream Accent Luxury Open Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Dubai Cherry | Best for: Designer Open Styling</div>
-                    <div class="price-box">
-                        <span class="original-price">$9,375</span>
-                        <span class="sale-price">$7,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$35.00</span>
+                        <span class="sale-price">$27.00</span>
+                        <span class="sale-tag">23% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20040%20at%20sale%20price%20$7,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20040%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="043.jfif" alt="Abaya 043" class="product-image" onclick="openModal('043.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Graceful Pearl Highlighted Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Premium Crepe | Best for: Elegant Boutique Gatherings</div>
-                    <div class="price-box">
-                        <span class="original-price">$9,330</span>
-                        <span class="sale-price">$7,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$32.00</span>
+                        <span class="sale-price">$25.00</span>
+                        <span class="sale-tag">22% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20043%20at%20sale%20price%20$7,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20043%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="045.jfif" alt="Abaya 045" class="product-image" onclick="openModal('045.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Exquisite Gold Thread Patterned Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Nida Fabric | Best for: Premium Evening & Parties</div>
-                    <div class="price-box">
-                        <span class="original-price">$14,280</span>
-                        <span class="sale-price">$10,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$39.00</span>
+                        <span class="sale-price">$29.00</span>
+                        <span class="sale-tag">26% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20045%20at%20sale%20price%20$10,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20045%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="046.jfif" alt="Abaya 046" class="product-image" onclick="openModal('046.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Signature Style Daily Modest Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Zoom Fabric | Best for: Comfortable Everyday Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$6,750</span>
-                        <span class="sale-price">$5,400</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$26.00</span>
+                        <span class="sale-price">$20.50</span>
+                        <span class="sale-tag">21% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20046%20at%20sale%20price%20$5,400" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20046%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="048.jfif" alt="Abaya 048" class="product-image" onclick="openModal('048.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Regal Shining Black Special Edition</h3>
                     <div class="product-fabric-occasion">Fabric: Royal Black Nida | Best for: Special Occasions & Events</div>
-                    <div class="price-box">
-                        <span class="original-price">$11,330</span>
-                        <span class="sale-price">$8,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$41.00</span>
+                        <span class="sale-price">$30.00</span>
+                        <span class="sale-tag">27% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20048%20at%20sale%20price%20$8,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20048%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="051.jfif" alt="Abaya 051" class="product-image" onclick="openModal('051.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Golden Accented Party & Function Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Dubai Cherry | Best for: Parties & Family Functions</div>
-                    <div class="price-box">
-                        <span class="original-price">$8,750</span>
-                        <span class="sale-price">$7,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$34.00</span>
+                        <span class="sale-price">$26.00</span>
+                        <span class="sale-tag">24% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20051%20at%20sale%20price%20$7,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20051%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="052.jfif" alt="Abaya 052" class="product-image" onclick="openModal('052.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Minimalist Professional Office Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Crepe Fabric | Best for: Professional & Corporate Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$7,330</span>
-                        <span class="sale-price">$5,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$26.00</span>
+                        <span class="sale-price">$20.00</span>
+                        <span class="sale-tag">23% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20052%20at%20sale%20price%20$5,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20052%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="053.jfif" alt="Abaya 053" class="product-image" onclick="openModal('053.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Luxury Velvet Touch Dubai Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Velvet & Nida | Best for: Winter Evening & Open Styling</div>
-                    <div class="price-box">
-                        <span class="original-price">$13,500</span>
-                        <span class="sale-price">$9,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$40.00</span>
+                        <span class="sale-price">$30.00</span>
+                        <span class="sale-tag">25% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20053%20at%20sale%20price%20$9,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20053%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="060.jfif" alt="Abaya 060" class="product-image" onclick="openModal('060.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Grandeur Embroidered Bridal Masterpiece</h3>
                     <div class="product-fabric-occasion">Fabric: Premium Satin Silk | Best for: Grand Bridal Functions</div>
-                    <div class="price-box">
-                        <span class="original-price">$15,700</span>
-                        <span class="sale-price">$11,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$52.00</span>
+                        <span class="sale-price">$36.50</span>
+                        <span class="sale-tag">30% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20060%20at%20sale%20price%20$11,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20060%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="064.jfif" alt="Abaya 064" class="product-image" onclick="openModal('064.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Graceful Silhouette Casual Daily Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Soft Zoom | Best for: Casual Outings & Daily Use</div>
-                    <div class="price-box">
-                        <span class="original-price">$6,750</span>
-                        <span class="sale-price">$5,400</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$25.00</span>
+                        <span class="sale-price">$20.00</span>
+                        <span class="sale-tag">20% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20064%20at%20sale%20price%20$5,400" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20064%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">25% OFF</div>
                 <img src="065.jfif" alt="Abaya 065" class="product-image" onclick="openModal('065.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Stunning Rose Cream Mix Party Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Chiffon & Crepe | Best for: Party & Celebration Wear</div>
-                    <div class="price-box">
-                        <span class="original-price">$10,000</span>
-                        <span class="sale-price">$7,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$36.00</span>
+                        <span class="sale-price">$27.00</span>
+                        <span class="sale-tag">25% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20065%20at%20sale%20price%20$7,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20065%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">20% OFF</div>
                 <img src="072.jfif" alt="Abaya 072" class="product-image" onclick="openModal('072.jfif')">
                 <div class="product-info">
                     <h3 class="product-title">Elite Haute Couture Black Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Export Nida | Best for: High Fashion & Formal Dinners</div>
-                    <div class="price-box">
-                        <span class="original-price">$10,625</span>
-                        <span class="sale-price">$8,500</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$43.00</span>
+                        <span class="sale-price">$31.50</span>
+                        <span class="sale-tag">27% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Hijab</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20072%20at%20sale%20price%20$8,500" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20072%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <div class="sale-badge-tag">30% OFF</div>
                 <img src="073.png" alt="Abaya 073" class="product-image" onclick="openModal('073.png')">
                 <div class="product-info">
                     <h3 class="product-title">Ultimate Royal Crown Bridal Abaya</h3>
                     <div class="product-fabric-occasion">Fabric: Premium Bridal Silk | Best for: Royal Bridal Showcases</div>
-                    <div class="price-box">
-                        <span class="original-price">$15,700</span>
-                        <span class="sale-price">$11,000</span>
+                    <div class="product-pricing">
+                        <span class="original-price">$55.00</span>
+                        <span class="sale-price">$38.50</span>
+                        <span class="sale-tag">30% OFF</span>
                     </div>
                     <div class="product-meta">
                         <span>Matching Set</span>
                         <span class="badge-moq">MOQ: 12 Pcs</span>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20073%20at%20sale%20price%20$11,000" target="_blank" class="btn-inquire">Request Quote</a>
+                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20073%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
             </div>
 
