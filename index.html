@@ -43,20 +43,34 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-border { border-color: rgba(212, 175, 55, 0.3); }
+        .gold-border { border: 1px solid rgba(212, 175, 55, 0.3); }
+        .gold-border:hover { border-color: #D4AF37; box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
         .gold-bg { background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA820A 100%); }
-        .glow-gold { box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
+        .glow-gold { box-shadow: 0 0 30px rgba(212, 175, 55, 0.2); }
         
+        /* Ultra Smooth 3D Layer Animation for Page Transitions */
         .page-view {
             display: none;
             opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .page-view.active {
             display: block;
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
+        }
+
+        /* Image Zoom Hover Effects */
+        .zoom-img-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .zoom-img-container img {
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .zoom-img-container:hover img {
+            transform: scale(1.08) rotate(0.5deg);
         }
 
         ::-webkit-scrollbar { width: 8px; }
@@ -69,7 +83,7 @@
 
     <!-- Top Announcement Bar -->
     <div class="bg-lux-charcoal border-b border-gold/20 text-xs py-2 px-4 text-center tracking-widest text-gold-300">
-        <i class="fa-solid fa-gem mr-2 text-gold-500"></i> B2B GLOBAL WHOLESALE | MINIMUM ORDER QUANTITY: 12 PIECES | WORLDWIDE EXPRESS SHIPPING <i class="fa-solid fa-gem ml-2 text-gold-500"></i>
+        <i class="fa-solid fa-gem mr-2 text-gold-500"></i> B2B GLOBAL WHOLESALE | MINIMUM ORDER QUANTITY (MOQ): 12 PIECES | WORLDWIDE EXPRESS SHIPPING <i class="fa-solid fa-gem ml-2 text-gold-500"></i>
     </div>
 
     <!-- Navigation Header -->
@@ -77,28 +91,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Logo & Brand Name -->
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
-                <div class="w-12 h-12 rounded-full border border-gold-500 flex items-center justify-center bg-lux-card glow-gold overflow-hidden p-0.5">
-                    <img src="WhatsApp Image 2026-09-14 at 9.52.33 PM.jpeg" alt="Mir's Abaya Boutique Logo" class="w-full h-full object-cover rounded-full">
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="switchPage('home')">
+                <div class="w-12 h-12 rounded-full border border-gold-500 flex items-center justify-center bg-lux-card glow-gold overflow-hidden p-0.5 transform group-hover:rotate-6 transition duration-300">
+                    <img src="WhatsApp Image 2026-09-14 at 9.52.33 PM.jpeg" alt="Mir's Abaya Logo" class="w-full h-full object-cover rounded-full">
                 </div>
                 <div>
-                    <h1 class="text-lg font-serif tracking-widest gold-gradient-text font-bold">MIR'S ABAYA BOUTIQUE</h1>
-                    <p class="text-[9px] tracking-[0.3em] text-gray-400 uppercase">Luxury B2B Wholesale</p>
+                    <h1 class="text-base sm:text-lg font-serif tracking-widest gold-gradient-text font-bold">MIR'S ABAYA BOUTIQUE</h1>
+                    <p class="text-[9px] tracking-[0.3em] text-gray-400 uppercase">Royal B2B Wholesale Couture</p>
                 </div>
             </div>
 
             <!-- Desktop Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm tracking-wider uppercase font-medium">
+            <nav class="hidden md:flex items-center space-x-8 text-xs sm:text-sm tracking-wider uppercase font-medium">
                 <button onclick="switchPage('home')" class="nav-link text-gold-500 transition-colors hover:text-gold-300 py-2 border-b-2 border-gold-500" data-target="home">Home</button>
-                <button onclick="switchPage('collection')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="collection">Collection</button>
+                <button onclick="switchPage('collection')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="collection">Catalog Gallery</button>
                 <button onclick="switchPage('customization')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="customization">Customization</button>
-                <button onclick="switchPage('services')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="services">B2B Wholesale</button>
-                <button onclick="switchPage('contact')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="contact">WhatsApp Inquiry</button>
+                <button onclick="switchPage('services')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="services">B2B Shipping</button>
+                <button onclick="switchPage('contact')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="contact">Inquiry Desk</button>
             </nav>
 
-            <!-- Quick Action / WhatsApp Header Button -->
+            <!-- Quick WhatsApp Button -->
             <div class="hidden lg:flex items-center space-x-4">
-                <a href="https://wa.me/923348100000?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20want%20to%20inquire%20about%20your%20B2B%20catalog." target="_blank" class="px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow-lg hover:opacity-90 transition transform hover:scale-105 flex items-center">
+                <a href="https://wa.me/923348100000?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20want%20to%20inquire%20about%20your%20B2B%20wholesale%20catalog." target="_blank" class="px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow-lg hover:opacity-90 transition transform hover:scale-105 flex items-center">
                     <i class="fa-brands fa-whatsapp mr-2 text-sm"></i> WhatsApp Inquiry
                 </a>
             </div>
@@ -112,10 +126,10 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-lux-card border-b border-lux-border px-6 py-4 space-y-3">
             <button onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gold-500 font-semibold">Home</button>
-            <button onclick="switchPage('collection'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">Collection</button>
+            <button onclick="switchPage('collection'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">Catalog Gallery</button>
             <button onclick="switchPage('customization'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">Customization</button>
-            <button onclick="switchPage('services'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">B2B Wholesale</button>
-            <button onclick="switchPage('contact'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">WhatsApp Inquiry</button>
+            <button onclick="switchPage('services'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">B2B Shipping</button>
+            <button onclick="switchPage('contact'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">Inquiry Desk</button>
         </div>
     </header>
 
@@ -125,101 +139,86 @@
         <!-- ================= PAGE: HOME ================= -->
         <div id="page-home" class="page-view active">
             <!-- Hero Section -->
-            <section class="relative min-h-[85vh] flex items-center justify-center bg-cover bg-center" style="background: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,0.95)), url('https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=1920&q=80') center/cover;">
+            <section class="relative min-h-[85vh] flex items-center justify-center bg-cover bg-center" style="background: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,0.95)), url('030_3.jfif') center/cover;">
                 <div class="max-w-5xl mx-auto px-4 text-center relative z-10 py-20">
                     <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold uppercase tracking-[0.3em] bg-lux-card border border-gold-500/40 text-gold-300 rounded-full glow-gold">
-                        Mir's Abaya Boutique - Global B2B Catalog
+                        Mir's Abaya Boutique - Exclusive Wholesale Collection
                     </span>
                     <h2 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-                        Timeless Royal Modesty, <br><span class="gold-gradient-text font-serif italic">Exclusive Wholesale Standards</span>
+                        Royal Modest Couture, <br><span class="gold-gradient-text font-serif italic">Global B2B Standards</span>
                     </h2>
                     <p class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base font-light mb-10 leading-relaxed">
-                        Step into refined luxury. Hand-crafted silhouettes, pure silk blends, and exquisite gold embroidery designed for international boutique partners (MOQ: 12 Pieces).
+                        Handcrafted luxury abayas, kaftans, and evening robes designed with exquisite gold and multi-color aesthetic touches. Minimum Order Quantity (MOQ): 12 pieces.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <button onclick="switchPage('collection')" class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow-xl hover:opacity-95 transition transform hover:-translate-y-0.5">
                             Explore Catalog <i class="fa-solid fa-arrow-right ml-2"></i>
                         </button>
                         <a href="https://wa.me/923348100000?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20want%20to%20discuss%20bulk%20orders." target="_blank" class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-widest text-gold-400 bg-lux-card border border-gold-500/50 rounded hover:bg-gold-500/10 transition text-center">
-                            <i class="fa-brands fa-whatsapp mr-2"></i> Chat on WhatsApp
+                            <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp Bulk Desk
                         </a>
                     </div>
                 </div>
             </section>
 
-            <!-- Featured Highlight Gallery -->
+            <!-- Featured Highlights -->
             <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <div class="text-center mb-16">
                     <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Masterpieces</span>
-                    <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Signature Wholesale Collection</h3>
+                    <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Aesthetic Highlights</h3>
                     <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Item 1 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition duration-300">
-                        <div class="relative h-96 overflow-hidden bg-lux-black">
-                            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" alt="Teal Silk Kaftan" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 left-4 bg-lux-black/80 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-030</span>
+                    <!-- Highlight 1 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition duration-300">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('030_3.jfif', 'MAB-030', 'Teal Gold-Zari Kaftan')">
+                            <img src="030_3.jfif" alt="Teal Kaftan" class="w-full h-full object-cover object-top">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-030</span>
                         </div>
                         <div class="p-6">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs text-gold-500 uppercase tracking-widest">Royal Kaftan</span>
-                                <span class="text-xs text-gray-400">Pure Korean Silk Blend</span>
-                            </div>
-                            <h4 class="text-lg font-serif text-white mb-3">Emerald Gold-Trimmed Kaftan</h4>
-                            <div class="flex items-center justify-between pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-030', 'Emerald Gold-Trimmed Kaftan')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
-                                    <i class="fa-brands fa-whatsapp mr-1 text-sm"></i> WhatsApp Code Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Pure Korean Silk Blend</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-3">Teal Gold-Zari Embroidered Kaftan</h4>
+                            <button onclick="openWhatsAppInquiry('MAB-030', 'Teal Gold-Zari Kaftan')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Code Inquiry
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Item 2 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition duration-300">
-                        <div class="relative h-96 overflow-hidden bg-lux-black">
-                            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80" alt="Midnight Blue Abaya" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 left-4 bg-lux-black/80 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-035</span>
+                    <!-- Highlight 2 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition duration-300">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('038_2.jfif', 'MAB-038', 'Emerald Silk Embroidered Coat')">
+                            <img src="038_2.jfif" alt="Emerald Coat" class="w-full h-full object-cover object-top">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-038</span>
                         </div>
                         <div class="p-6">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs text-gold-500 uppercase tracking-widest">Evening Abaya</span>
-                                <span class="text-xs text-gray-400">Nida Velvet Touch</span>
-                            </div>
-                            <h4 class="text-lg font-serif text-white mb-3">Midnight Blue Velvet Paneled</h4>
-                            <div class="flex items-center justify-between pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-035', 'Midnight Blue Velvet Paneled')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
-                                    <i class="fa-brands fa-whatsapp mr-1 text-sm"></i> WhatsApp Code Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Raw Silk & Thread</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-3">Emerald Silk Embroidered Coat</h4>
+                            <button onclick="openWhatsAppInquiry('MAB-038', 'Emerald Silk Embroidered Coat')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Code Inquiry
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Item 3 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition duration-300">
-                        <div class="relative h-96 overflow-hidden bg-lux-black">
-                            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Burgundy Royal Robe" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 left-4 bg-lux-black/80 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-048</span>
+                    <!-- Highlight 3 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition duration-300">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('048_2.jfif', 'MAB-048', 'Burgundy Zardozi Royal Cape')">
+                            <img src="048_2.jfif" alt="Burgundy Cape" class="w-full h-full object-cover object-top">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-048</span>
                         </div>
                         <div class="p-6">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs text-gold-500 uppercase tracking-widest">Bridal Modest</span>
-                                <span class="text-xs text-gray-400">Georgette & Zardozi</span>
-                            </div>
-                            <h4 class="text-lg font-serif text-white mb-3">Burgundy Zardozi Masterpiece</h4>
-                            <div class="flex items-center justify-between pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-048', 'Burgundy Zardozi Masterpiece')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
-                                    <i class="fa-brands fa-whatsapp mr-1 text-sm"></i> WhatsApp Code Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Georgette & Zardozi</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-3">Burgundy Zardozi Royal Cape</h4>
+                            <button onclick="openWhatsAppInquiry('MAB-048', 'Burgundy Zardozi Royal Cape')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Code Inquiry
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mt-12">
                     <button onclick="switchPage('collection')" class="px-8 py-3.5 border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-black font-bold uppercase text-xs tracking-widest transition duration-300 rounded">
-                        View Complete Catalog <i class="fa-solid fa-arrow-right ml-2"></i>
+                        View Full Aesthetic Catalog <i class="fa-solid fa-arrow-right ml-2"></i>
                     </button>
                 </div>
             </section>
@@ -230,120 +229,316 @@
         <div id="page-collection" class="page-view">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="text-center mb-12">
-                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Curated Gallery</span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Complete Gallery</span>
                     <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">Mir's Abaya Wholesale Catalog</h2>
-                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">Explore all curated luxury designs. Minimum Order Quantity is 12 pieces. Click inquiry for direct WhatsApp chat.</p>
+                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">Click any product image to zoom in. All items feature specific design codes, aesthetic touches, and are subject to MOQ: 12 Pieces.</p>
                     <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
                 </div>
 
-                <!-- Collection Grid -->
+                <!-- Grid containing all user uploaded images -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Card 1 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
-                        <div class="relative h-96 bg-lux-black overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <!-- Item 1 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('030_3.jfif', 'MAB-030', 'Teal Gold-Zari Kaftan')">
+                            <img src="030_3.jfif" class="w-full h-full object-cover">
                             <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-030</span>
                         </div>
                         <div class="p-6">
-                            <span class="text-xs text-gold-500 uppercase tracking-widest">Pure Korean Silk</span>
-                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Emerald Silk Royal Kaftan</h4>
-                            <p class="text-gray-400 text-xs mb-4">Features hand-stitched gold zari neckline and matching premium hijab.</p>
-                            <div class="pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-030', 'Emerald Silk Royal Kaftan')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
-                                    <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Pure Korean Silk Blend</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Teal Gold-Zari Kaftan</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Festive & Evening wear. Matching aesthetic hijab included.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-030', 'Teal Gold-Zari Kaftan')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
-                        <div class="relative h-96 bg-lux-black overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-035</span>
+                    <!-- Item 2 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('001_2.jfif', 'MAB-001', 'Blue Floral Sleeve Abaya')">
+                            <img src="001_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-001</span>
                         </div>
                         <div class="p-6">
-                            <span class="text-xs text-gold-500 uppercase tracking-widest">Nida Fabric & Velvet</span>
-                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Midnight Blue Velvet Abaya</h4>
-                            <p class="text-gray-400 text-xs mb-4">Elegant front zip closure with wide draped sleeves and rich contrast lining.</p>
-                            <div class="pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-035', 'Midnight Blue Velvet Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
-                                    <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Soft Crepe & Nida</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Blue Floral Sleeve Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Casual and formal daily wear with subtle color touch.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-001', 'Blue Floral Sleeve Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
-                        <div class="relative h-96 bg-lux-black overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-048</span>
+                    <!-- Item 3 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('004_2.jfif', 'MAB-004', 'Black Open-Front Cape Abaya')">
+                            <img src="004_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-004</span>
                         </div>
                         <div class="p-6">
-                            <span class="text-xs text-gold-500 uppercase tracking-widest">Georgette / Zardozi</span>
-                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Burgundy Festive Robe</h4>
-                            <p class="text-gray-400 text-xs mb-4">Heavy golden zardozi embroidery along neckline and cuffs with flowing cape.</p>
-                            <div class="pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-048', 'Burgundy Festive Robe')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
-                                    <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Nida Fabric Blend</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Black Open-Front Cape Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Elegant evening gatherings with plum inner layer.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-004', 'Black Open-Front Cape Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Card 4 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
-                        <div class="relative h-96 bg-lux-black overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <!-- Item 4 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('005_2.jfif', 'MAB-005', 'Charcoal Striped Line Abaya')">
+                            <img src="005_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-005</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Zoom Fabric / Crepe</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Charcoal Striped Line Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Formal corporate and everyday elegance.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-005', 'Charcoal Striped Line Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('010_2.jfif', 'MAB-010', 'Blush Pink Checkered Kaftan')">
+                            <img src="010_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-010</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Silk Blend</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Blush Pink Checkered Kaftan</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Soft pastel festive parties and celebrations.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-010', 'Blush Pink Checkered Kaftan')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('012_2.jfif', 'MAB-012', 'Black Floral Embroidered Abaya')">
+                            <img src="012_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-012</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Nida & Maroon Thread</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Black Floral Embroidered Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Evening dinners and royal gatherings.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-012', 'Black Floral Embroidered Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('014_2.jfif', 'MAB-014', 'Grey Layered Vest Abaya')">
+                            <img src="014_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-014</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Georgette & Crepe Mix</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Grey Layered Vest Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Contemporary aesthetic modest styling.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-014', 'Grey Layered Vest Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('017_2.jfif', 'MAB-017', 'Plum Brooch Front Abaya')">
+                            <img src="017_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-017</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Nida Fabric</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Plum Brooch Front Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Professional and social formal events.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-017', 'Plum Brooch Front Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 9 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('020.jfif', 'MAB-020', 'Plum Beaded Crystal Abaya')">
+                            <img src="020.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-020</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Silk & Crystal Beading</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Plum Beaded Crystal Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Festive gala and luxury evening parties.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-020', 'Plum Beaded Crystal Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 10 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('027.jfif', 'MAB-027', 'Green Floral Embroidered Abaya')">
+                            <img src="027.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-027</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Crepe & Multi-Color Thread</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Green Floral Embroidered Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Daytime celebrations and formal family visits.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-027', 'Green Floral Embroidered Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 11 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('038_2.jfif', 'MAB-038', 'Emerald Silk Embroidered Coat')">
+                            <img src="038_2.jfif" class="w-full h-full object-cover">
                             <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-038</span>
                         </div>
                         <div class="p-6">
-                            <span class="text-xs text-gold-500 uppercase tracking-widest">Raw Silk & Thread</span>
-                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Emerald Floral Embroidered Coat</h4>
-                            <p class="text-gray-400 text-xs mb-4">Exquisite silver-gold thread work cascading down front panels with tie belt.</p>
-                            <div class="pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-038', 'Emerald Floral Embroidered Coat')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
-                                    <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Raw Silk</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Emerald Silk Embroidered Coat</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Festive formal wear.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-038', 'Emerald Silk Embroidered Coat')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Card 5 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
-                        <div class="relative h-96 bg-lux-black overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-073</span>
+                    <!-- Item 12 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('040_2.jfif', 'MAB-040', 'Beige Button-Down Classic')">
+                            <img src="040_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-040</span>
                         </div>
                         <div class="p-6">
-                            <span class="text-xs text-gold-500 uppercase tracking-widest">Chiffon & Gold Thread</span>
-                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Palace Gold-Embroidered Kaftan</h4>
-                            <p class="text-gray-400 text-xs mb-4">Layered chiffon kaftan featuring oriental motifs and comfortable inner lining.</p>
-                            <div class="pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-073', 'Palace Gold-Embroidered Kaftan')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
-                                    <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Crepe Fabric</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Beige Button-Down Classic</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Everyday elegant attire.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-040', 'Beige Button-Down Classic')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Card 6 -->
-                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
-                        <div class="relative h-96 bg-lux-black overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-070</span>
+                    <!-- Item 13 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('046_2.jfif', 'MAB-046', 'Purple Bow Waist Gown')">
+                            <img src="046_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-046</span>
                         </div>
                         <div class="p-6">
-                            <span class="text-xs text-gold-500 uppercase tracking-widest">Raw Silk & Crystals</span>
-                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Golden Bronze Royal Abaya</h4>
-                            <p class="text-gray-400 text-xs mb-4">Complete button-down front with heavily beaded bell sleeves and collar.</p>
-                            <div class="pt-4 border-t border-lux-border">
-                                <button onclick="openWhatsAppInquiry('MAB-070', 'Golden Bronze Royal Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
-                                    <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
-                                </button>
-                            </div>
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Silk & Silver Thread</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Purple Bow Waist Gown</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Special parties and celebrations.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-046', 'Purple Bow Waist Gown')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 14 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('048_2.jfif', 'MAB-048', 'Burgundy Zardozi Royal Cape')">
+                            <img src="048_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-048</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Georgette & Zardozi</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Burgundy Zardozi Royal Cape</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Bridal and luxury festivities.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-048', 'Burgundy Zardozi Royal Cape')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 15 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('052_2.jfif', 'MAB-052', 'Navy Smocked Yoke Abaya')">
+                            <img src="052_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-052</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Velvet & Silk Blend</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Navy Smocked Yoke Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Winter formal wear.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-052', 'Navy Smocked Yoke Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 16 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('060_2.jfif', 'MAB-060', 'Teal Belted Two-Tone Gown')">
+                            <img src="060_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-060</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Raw Silk & Belt</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Teal Belted Two-Tone Gown</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Exclusive corporate and family events.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-060', 'Teal Belted Two-Tone Gown')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 17 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('061_2.jfif', 'MAB-061', 'Teal Heritage Kaftan')">
+                            <img src="061_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-061</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Korean Silk</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Teal Heritage Kaftan</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Cultural and festive gatherings.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-061', 'Teal Heritage Kaftan')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 18 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('063_2.jfif', 'MAB-063', 'Mauve Pleated Batwing Kaftan')">
+                            <img src="063_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-063</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Crepe Blend</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Mauve Pleated Batwing Kaftan</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Comfortable luxury lounge and casual wear.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-063', 'Mauve Pleated Batwing Kaftan')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 19 -->
+                    <div class="bg-lux-card gold-border rounded-lg overflow-hidden group transition">
+                        <div class="relative h-96 zoom-img-container bg-lux-black cursor-pointer" onclick="openLightbox('065_2.jfif', 'MAB-065', 'Emerald Fern Embroidered Abaya')">
+                            <img src="065_2.jfif" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: MAB-065</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-gold-500 uppercase tracking-widest">Nida & Silver Thread</span>
+                            <h4 class="text-lg font-serif text-white mt-1 mb-2">Emerald Fern Embroidered Abaya</h4>
+                            <p class="text-gray-400 text-xs mb-4">Occasion: Evening dinners and formal events.</p>
+                            <button onclick="openWhatsAppInquiry('MAB-065', 'Emerald Fern Embroidered Abaya')" class="w-full py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> WhatsApp Inquiry
+                            </button>
                         </div>
                     </div>
 
@@ -356,48 +551,47 @@
         <div id="page-customization" class="page-view">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="text-center mb-16">
-                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Bespoke Production</span>
-                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">Custom Tailoring & Bulk Sizing</h2>
-                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">We offer bespoke sizing ratios and fabric variations for international wholesale partners (MOQ: 12 pieces).</p>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Bespoke Tailoring</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">Custom Sizing & Wholesale Production</h2>
+                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">We provide tailored production for B2B partners based on exact sizing ratios and fabric preferences (MOQ: 12 pieces).</p>
                     <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
                     <div>
-                        <h3 class="text-2xl font-serif text-white mb-6">Wholesale Customization Process</h3>
+                        <h3 class="text-2xl font-serif text-white mb-6">B2B Customization Process</h3>
                         <div class="space-y-6">
                             <div class="flex items-start space-x-4">
                                 <div class="w-10 h-10 rounded-full bg-gold-500 text-black font-bold flex items-center justify-center flex-shrink-0">1</div>
                                 <div>
                                     <h4 class="text-white font-bold mb-1">Select Design Code</h4>
-                                    <p class="text-gray-400 text-xs leading-relaxed">Choose from our luxury catalog and note down the design reference code.</p>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Choose from our catalog (e.g., MAB-030) and specify bulk quantity (MOQ 12+).</p>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4">
                                 <div class="w-10 h-10 rounded-full bg-gold-500 text-black font-bold flex items-center justify-center flex-shrink-0">2</div>
                                 <div>
-                                    <h4 class="text-white font-bold mb-1">Define Size Ratios</h4>
-                                    <p class="text-gray-400 text-xs leading-relaxed">Provide your required size ratio breakdown (e.g. S, M, L, XL) for bulk manufacturing.</p>
+                                    <h4 class="text-white font-bold mb-1">Specify Sizing & Ratio</h4>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Provide size ratio requirements (Small, Medium, Large, XL) for manufacturing.</p>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4">
                                 <div class="w-10 h-10 rounded-full bg-gold-500 text-black font-bold flex items-center justify-center flex-shrink-0">3</div>
                                 <div>
                                     <h4 class="text-white font-bold mb-1">Direct WhatsApp Confirmation</h4>
-                                    <p class="text-gray-400 text-xs leading-relaxed">Send your specifications straight to our executive WhatsApp line for immediate confirmation.</p>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Confirm your specifications instantly with our production managers via WhatsApp.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Customization Action Box -->
-                    <div class="bg-lux-card border border-lux-border rounded-xl p-8 text-center shadow-2xl">
+                    <div class="bg-lux-card gold-border rounded-xl p-8 text-center shadow-2xl">
                         <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 text-2xl">
                             <i class="fa-solid fa-scissors"></i>
                         </div>
-                        <h3 class="text-xl font-serif text-white mb-3">Ready to Place a Custom Order?</h3>
+                        <h3 class="text-xl font-serif text-white mb-3">Initiate Custom Order</h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">
-                            Connect instantly with our production managers on WhatsApp to discuss bulk quantities, custom color options, and special measurement ratios.
+                            Connect directly on WhatsApp to discuss size breakdowns, fabric choices, and custom color accents.
                         </p>
                         <a href="https://wa.me/923348100000?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20want%20to%20discuss%20custom%20stitching%20and%20wholesale%20order." target="_blank" class="inline-flex items-center justify-center w-full py-4 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow-xl hover:opacity-95 transition">
                             <i class="fa-brands fa-whatsapp mr-2 text-base"></i> Open WhatsApp Chat Now
@@ -412,33 +606,33 @@
         <div id="page-services" class="page-view">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="text-center mb-16">
-                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Excellence Guaranteed</span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Wholesale Terms</span>
                     <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">B2B Global Operations & Shipping</h2>
-                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">We serve international wholesale buyers and luxury boutique owners with strict quality standards.</p>
+                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">Mir's Abaya Boutique caters exclusively to international wholesalers and boutique owners.</p>
                     <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                    <div class="bg-lux-card border border-lux-border p-8 rounded-xl text-center">
+                    <div class="bg-lux-card gold-border p-8 rounded-xl text-center">
                         <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500 text-xl">
                             <i class="fa-solid fa-boxes-stacked"></i>
                         </div>
-                        <h3 class="text-white font-serif font-bold mb-2">MOQ: 12 Pieces</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Minimum wholesale order limit is 12 pieces per order, with flexible design and size mixing.</p>
+                        <h3 class="text-white font-serif font-bold mb-2">Minimum Order (MOQ: 12)</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Wholesale catalog requires a minimum order quantity of 12 pieces per order, mix-and-match allowed.</p>
                     </div>
-                    <div class="bg-lux-card border border-lux-border p-8 rounded-xl text-center">
+                    <div class="bg-lux-card gold-border p-8 rounded-xl text-center">
                         <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500 text-xl">
                             <i class="fa-solid fa-plane-departure"></i>
                         </div>
-                        <h3 class="text-white font-serif font-bold mb-2">Worldwide Express Delivery</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Fast and secure international courier shipping with full tracking capabilities for your bulk cargo.</p>
+                        <h3 class="text-white font-serif font-bold mb-2">Global Shipping</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Secure international express delivery with tracking numbers provided for all bulk shipments worldwide.</p>
                     </div>
-                    <div class="bg-lux-card border border-lux-border p-8 rounded-xl text-center">
+                    <div class="bg-lux-card gold-border p-8 rounded-xl text-center">
                         <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500 text-xl">
                             <i class="fa-brands fa-whatsapp"></i>
                         </div>
-                        <h3 class="text-white font-serif font-bold mb-2">Instant WhatsApp Support</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Direct business negotiations, custom catalogs, and order updates handled via WhatsApp.</p>
+                        <h3 class="text-white font-serif font-bold mb-2">WhatsApp Support</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Direct business communication and catalog inquiries processed instantly via WhatsApp desk.</p>
                     </div>
                 </div>
             </div>
@@ -450,16 +644,16 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
                 <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Direct Communication</span>
                 <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">Connect With Us on WhatsApp</h2>
-                <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">For prompt catalog inquiries, design code verification, and wholesale orders, reach out to us directly.</p>
+                <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">For prompt catalog inquiries, design code verification, and wholesale orders, reach out directly.</p>
                 <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4 mb-12"></div>
 
-                <div class="bg-lux-card border border-lux-border rounded-2xl p-10 sm:p-16 shadow-2xl">
+                <div class="bg-lux-card gold-border rounded-2xl p-10 sm:p-16 shadow-2xl">
                     <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-3xl glow-gold">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
                     <h3 class="text-2xl font-serif text-white mb-4">Mir's Abaya Boutique Wholesale Desk</h3>
                     <p class="text-gray-300 text-xs sm:text-sm max-w-md mx-auto mb-8 leading-relaxed">
-                        Click the button below to open a direct chat on WhatsApp with our sales representatives. Mention your favorite design codes for quick assistance.
+                        Click below to open a direct chat on WhatsApp with our sales team. Mention your favorite design codes for quick bulk order assistance.
                     </p>
                     <a href="https://wa.me/923348100000?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20would%20like%20to%20place%20a%20wholesale%20order." target="_blank" class="inline-flex items-center justify-center px-10 py-4 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow-xl hover:opacity-95 transition transform hover:scale-105">
                         <i class="fa-brands fa-whatsapp mr-2 text-base"></i> Open WhatsApp Chat Now
@@ -469,6 +663,23 @@
         </div>
 
     </main>
+
+    <!-- Lightbox Modal for Full Image Zoom -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md hidden p-4">
+        <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center">
+            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-gold-400 text-2xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i> Close
+            </button>
+            <img id="lightbox-img" src="" alt="Zoomed Abaya" class="max-h-[75vh] object-contain rounded-lg border border-gold-500/50 glow-gold mb-4">
+            <div class="text-center">
+                <h3 id="lightbox-title" class="text-xl font-serif text-white"></h3>
+                <p id="lightbox-code" class="text-xs text-gold-300 font-mono mt-1"></p>
+                <a id="lightbox-wa-btn" href="#" target="_blank" class="mt-4 inline-flex items-center px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow hover:opacity-90 transition">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Inquire via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-lux-charcoal border-t border-lux-border mt-24 text-gray-400 text-xs">
@@ -518,7 +729,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Animated Page Switching & WhatsApp Integration -->
+    <!-- JavaScript for 3D Page Transitions & Zoom Lightbox -->
     <script>
         function switchPage(pageId) {
             const pages = document.querySelectorAll('.page-view');
@@ -554,6 +765,21 @@
         function openWhatsAppInquiry(code, title) {
             const message = encodeURIComponent(`Hello Mir's Abaya Boutique, I am inquiring about Design Code: ${code} (${title}). Please share wholesale details (MOQ: 12).`);
             window.open(`https://wa.me/923348100000?text=${message}`, '_blank');
+        }
+
+        function openLightbox(imgSrc, code, title) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox-title').innerText = title;
+            document.getElementById('lightbox-code').innerText = 'Design Code: ' + code + ' (MOQ: 12)';
+            
+            const waMsg = encodeURIComponent(`Hello Mir's Abaya Boutique, I am viewing Design Code: ${code} (${title}) in the zoom view and want to place a wholesale order.`);
+            document.getElementById('lightbox-wa-btn').href = `https://wa.me/923348100000?text=${waMsg}`;
+            
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
         }
     </script>
 </body>
