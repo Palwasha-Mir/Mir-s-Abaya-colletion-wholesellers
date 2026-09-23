@@ -1,1185 +1,768 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mir's Abaya Boutique | Dream Abaya Collection - B2B Global Exporter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Elegance & Modesty | Luxury Abayas & Eastern Wear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FDF8E2',
+                            300: '#F3E5AB',
+                            500: '#D4AF37',
+                            600: '#AA820A',
+                            700: '#856506',
+                        },
+                        lux: {
+                            black: '#0A0A0A',
+                            charcoal: '#141414',
+                            card: '#1F1F1F',
+                            border: '#2E2E2E'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-black: #0c0c0c;
-            --shining-dark: #161616;
-            --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --rose-cream: #f4e8df;
-            --rose-cream-dark: #e6d2c4;
-            --white: #ffffff;
-            --text-dark: #2c2c2c;
-            --text-light: #f7f7f7;
-            --transition: all 0.3s ease-in-out;
+        body { font-family: 'Montserrat', sans-serif; background-color: #0A0A0A; color: #E5E7EB; overflow-x: hidden; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA820A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--primary-black);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4, .brand-text {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Top Announcement Bar */
-        .top-bar {
-            background: linear-gradient(90deg, var(--gold), var(--rose-cream-dark));
-            color: var(--primary-black);
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        /* Header */
-        header {
-            position: sticky;
-            top: 0;
-            background-color: rgba(12, 12, 12, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 5%;
-            z-index: 1000;
-        }
-
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .brand-logo-img {
-            max-height: 48px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .brand-text {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 1px;
-        }
-
-        .brand-text span {
-            color: var(--rose-cream);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover {
-            color: var(--gold);
-        }
-
-        .header-cta {
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 8px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .header-cta:hover {
-            background: var(--gold);
-            color: var(--primary-black);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.85)), url('001.jfif') no-repeat center center/cover;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--rose-cream);
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold), #b89728);
-            color: var(--primary-black);
-            padding: 14px 35px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            transition: var(--transition);
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-        }
-
-        /* Features / Why Choose Us */
-        .features {
-            background-color: var(--shining-dark);
-            padding: 70px 5%;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-        }
-
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.2rem;
-            color: var(--rose-cream);
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            font-size: 0.9rem;
-            color: #b5b5b5;
-        }
-
-        /* Products Catalog */
-        .catalog {
-            padding: 80px 5%;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: var(--rose-cream);
-            font-size: 1rem;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background-color: var(--shining-dark);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .product-image:hover {
-            opacity: 0.9;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-title {
-            font-size: 1.1rem;
-            color: var(--rose-cream);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .product-fabric-occasion {
-            font-size: 0.82rem;
-            color: var(--gold-light);
-            margin-bottom: 8px;
-            background: rgba(212, 175, 55, 0.08);
-            padding: 5px 8px;
-            border-radius: 4px;
-            border-left: 2px solid var(--gold);
-        }
-
-        .product-pricing {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .original-price {
-            font-size: 0.85rem;
-            color: #888;
-            text-decoration: line-through;
-        }
-
-        .sale-price {
-            font-size: 1.05rem;
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .sale-tag {
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--gold-light);
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-weight: 600;
-        }
-
-        .product-meta {
-            font-size: 0.85rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .badge-moq {
-            background: rgba(212, 175, 55, 0.15);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-        }
-
-        .btn-inquire {
-            display: block;
-            text-align: center;
-            background-color: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 10px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-            margin-top: 10px;
-        }
-
-        .btn-inquire:hover {
-            background-color: var(--gold);
-            color: var(--primary-black);
-        }
-
-        /* Image Viewer Modal Styles */
-        .modal {
+        .gold-border { border-color: rgba(212, 175, 55, 0.3); }
+        .gold-border-hover:hover { border-color: #D4AF37; }
+        .gold-bg { background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA820A 100%); }
+        .glow-gold { box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
+        
+        /* Smooth Page Switching Animations */
+        .page-view {
             display: none;
-            position: fixed;
-            z-index: 2000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(8px);
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
-
-        .modal-content {
-            margin: auto;
+        .page-view.active {
             display: block;
-            max-width: 85%;
-            max-height: 80vh;
-            border-radius: 6px;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-            border: 1px solid var(--gold);
-            object-fit: contain;
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .close-modal {
-            position: absolute;
-            top: 25px;
-            right: 40px;
-            color: var(--gold);
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            color: var(--white);
-        }
-
-        /* WhatsApp Extra Banner */
-        .whatsapp-banner {
-            text-align: center;
-            margin: 40px auto 20px auto;
-            padding: 20px;
-        }
-
-        .whatsapp-banner p {
-            color: var(--rose-cream);
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        /* Customization Banner */
-        .custom-banner {
-            background: linear-gradient(135deg, #161616, #241f18);
-            border-top: 2px solid var(--gold);
-            border-bottom: 2px solid var(--gold);
-            padding: 60px 20px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .custom-banner h2 {
-            font-size: 2.2rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        .custom-banner p {
-            max-width: 700px;
-            margin: 0 auto 25px auto;
-            color: var(--rose-cream);
-            font-size: 1.05rem;
-        }
-
-        /* Footer / Contact */
-        footer {
-            background-color: #080808;
-            padding: 60px 5% 30px 5%;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h3 {
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-col p, .footer-col ul {
-            font-size: 0.9rem;
-            color: #b5b5b5;
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            color: #b5b5b5;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--gold);
-        }
-
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .contact-info-item i {
-            color: var(--gold);
-            font-size: 1.1rem;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.85rem;
-            color: #777;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            .brand-text {
-                font-size: 1.1rem;
-            }
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #2E2E2E; border-radius: 4px; border: 1px solid rgba(212, 175, 55, 0.2); }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
     </style>
 </head>
-<body>
+<body class="bg-lux-black text-gray-200 antialiased selection:bg-gold-500 selection:text-black">
 
-    <div class="top-bar">
-        <span>Global B2B Exporter | Up to 20% - 30% OFF Special September & October Sale | Worldwide Shipping</span>
+    <!-- Top Announcement Bar -->
+    <div class="bg-lux-charcoal border-b border-gold/20 text-xs py-2 px-4 text-center tracking-widest text-gold-300">
+        <i class="fa-solid fa-gem mr-2 text-gold-500"></i> WORLDWIDE EXPRESS SHIPPING | CUSTOM STITCHING AVAILABLE | EXQUISITE LUXURY COLLECTION <i class="fa-solid fa-gem ml-2 text-gold-500"></i>
     </div>
 
-    <header>
-        <div class="brand-container" onclick="openModal('logo.png')">
-            <img src="logo.png" alt="Mir's Abaya Boutique Logo" class="brand-logo-img">
-            <div class="brand-text">Mir's <span>Abaya Boutique</span></div>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-lux-black/95 backdrop-blur-md border-b border-lux-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo & Brand Name -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                <div class="w-10 h-10 rounded-full border border-gold-500 flex items-center justify-center bg-lux-card glow-gold">
+                    <span class="text-gold-500 font-serif font-bold text-xl">E</span>
+                </div>
+                <div>
+                    <h1 class="text-xl font-serif tracking-widest gold-gradient-text font-bold">ELEGANCE</h1>
+                    <p class="text-[9px] tracking-[0.3em] text-gray-400 uppercase">Luxury Modest Couture</p>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm tracking-wider uppercase font-medium">
+                <button onclick="switchPage('home')" class="nav-link text-gold-500 transition-colors hover:text-gold-300 py-2 border-b-2 border-gold-500" data-target="home">Home</button>
+                <button onclick="switchPage('collection')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="collection">Collection</button>
+                <button onclick="switchPage('customization')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="customization">Customization</button>
+                <button onclick="switchPage('services')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="services">Services & Shipping</button>
+                <button onclick="switchPage('contact')" class="nav-link text-gray-300 transition-colors hover:text-gold-300 py-2 border-b-2 border-transparent" data-target="contact">Inquiry</button>
+            </nav>
+
+            <!-- Quick Action / Inquiry Header Button -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="mailto:mansoor.ahmed033481@gmail.com" class="text-xs text-gray-300 hover:text-gold-400 transition">
+                    <i class="fa-solid fa-envelope text-gold-500 mr-1"></i> mansoor.ahmed033481@gmail.com
+                </a>
+                <button onclick="switchPage('contact')" class="px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow-lg hover:opacity-90 transition transform hover:scale-105">
+                    Direct Inquiry
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-gold-500 text-xl focus:outline-none" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Why Us</a></li>
-                <li><a href="#catalog">Collection</a></li>
-                <li><a href="#customization">Custom Label</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20would%20like%20to%20request%20a%20catalog%20and%20wholesale%20quotation." target="_blank" class="header-cta">Inquire Now</a>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-lux-card border-b border-lux-border px-6 py-4 space-y-3">
+            <button onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gold-500 font-semibold">Home</button>
+            <button onclick="switchPage('collection'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">Collection</button>
+            <button onclick="switchPage('customization'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">Customization</button>
+            <button onclick="switchPage('services'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">Services & Shipping</button>
+            <button onclick="switchPage('contact'); toggleMobileMenu();" class="block w-full text-left text-sm uppercase tracking-wider py-2 text-gray-300">Inquiry & Contact</button>
+            <div class="pt-3 border-t border-lux-border text-xs text-gray-400 flex flex-col space-y-2">
+                <span><i class="fa-solid fa-envelope text-gold-500 mr-2"></i> mansoor.ahmed033481@gmail.com</span>
+                <span><i class="fa-solid fa-phone text-gold-500 mr-2"></i> Custom Support Available</span>
+            </div>
+        </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Your Dream Abaya Collection</h1>
-            <p>Exclusive High-End B2B Wholesale Abayas Crafted with Premium Dubai Standards, Royal Shining Black, & Elegant Embroidery. Complete with Matching Hijab & Niqab Options. <br><strong style="color: var(--gold-light);">September & October Special: Up to 20% - 30% Off Sale Live Now!</strong></p>
-            <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20am%20interested%20in%20your%20wholesale%20collection." target="_blank" class="btn-gold">Request Wholesale Quote</a>
-        </div>
-    </section>
+    <!-- MAIN CONTENT CONTAINER -->
+    <main>
 
-    <section id="features" class="features">
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-globe"></i>
-                <h3>Global Shipping</h3>
-                <p>Reliable and fast worldwide shipping partners including DHL & FedEx for secure door-to-door delivery.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-boxes"></i>
-                <h3>MOQ & Flexibility</h3>
-                <p>Minimum Order Quantity (MOQ) of 12 Pieces per design/collection with assorted sizing options.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>100% Customization</h3>
-                <p>Tailor-made designs, fabric choices, and custom brand labeling available upon buyer request.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-credit-card"></i>
-                <h3>Secure Payments</h3>
-                <p>Flexible international payment methods: Wire Transfer (TT), Bank Transfer, Western Union, & PayPal.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="catalog" class="catalog">
-        <div class="section-title">
-            <h2>The Dream Collection</h2>
-            <p>September & October Special: Up to 20% - 30% Off Sale Across All Luxury Items (Prices shown in USD)</p>
-        </div>
-
-        <div class="products-grid">
-
-            <div class="product-card">
-                <img src="001.jfif" alt="Abaya 001" class="product-image" onclick="openModal('001.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Classic Blue Embroidered Sleeve Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Premium Crepe | Best for: Formal & Evening Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$30.00</span>
-                        <span class="sale-price">$22.00</span>
-                        <span class="sale-tag">25% OFF</span>
+        <!-- ================= PAGE: HOME ================= -->
+        <div id="page-home" class="page-view active">
+            <!-- Hero Section -->
+            <section class="relative min-h-[85vh] flex items-center justify-center bg-cover bg-center" style="background: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,0.95)), url('https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=1920&q=80') center/cover;">
+                <div class="max-w-5xl mx-auto px-4 text-center relative z-10 py-20">
+                    <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold uppercase tracking-[0.3em] bg-lux-card border border-gold-500/40 text-gold-300 rounded-full glow-gold">
+                        Exquisite Royal Abayas & Kaftans
+                    </span>
+                    <h2 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                        Timeless Modesty, <br><span class="gold-gradient-text font-serif italic">Unmatched Luxury</span>
+                    </h2>
+                    <p class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base font-light mb-10 leading-relaxed">
+                        Step into a world of refined elegance. Hand-crafted silhouettes, rich silk blends, intricate gold embroidery, and bespoke tailoring designed for the modern royal woman.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button onclick="switchPage('collection')" class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow-xl hover:opacity-95 transition transform hover:-translate-y-0.5">
+                            Explore Collection <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                        <button onclick="switchPage('customization')" class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-widest text-gold-400 bg-lux-card border border-gold-500/50 rounded hover:bg-gold-500/10 transition">
+                            Custom Stitching
+                        </button>
                     </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab & Niqab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20001%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
                 </div>
-            </div>
+            </section>
 
-            <div class="product-card">
-                <img src="003.png" alt="Abaya 003" class="product-image" onclick="openModal('003.png')">
-                <div class="product-info">
-                    <h3 class="product-title">Maroon Floral Open Front Party Set</h3>
-                    <div class="product-fabric-occasion">Fabric: Chiffon & Silk | Best for: Party & Festive Events</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$35.00</span>
-                        <span class="sale-price">$25.00</span>
-                        <span class="sale-tag">30% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20003%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
+            <!-- Featured Highlight Gallery -->
+            <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Masterpieces</span>
+                    <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Featured Masterpieces</h3>
+                    <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
                 </div>
-            </div>
 
-            <div class="product-card">
-                <img src="004.jfif" alt="Abaya 004" class="product-image" onclick="openModal('004.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Royal Black & Purple Layered Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Dubai Satin | Best for: Grand Occasions & Gatherings</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$38.00</span>
-                        <span class="sale-price">$28.00</span>
-                        <span class="sale-tag">25% OFF</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition duration-300">
+                        <div class="relative h-96 overflow-hidden bg-lux-black">
+                            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" alt="Teal Silk Kaftan" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-lux-black/80 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-061</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Royal Kaftan</span>
+                                <span class="text-xs text-gray-400">Pure Korean Silk</span>
+                            </div>
+                            <h4 class="text-lg font-serif text-white mb-3">Emerald Gold-Trimmed Kaftan</h4>
+                            <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                <button onclick="openInquiryModal('EL-061', 'Emerald Gold-Trimmed Kaftan')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                    <i class="fa-solid fa-paper-plane mr-1"></i> Send Inquiry / Direct Code
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-meta">
-                        <span>Matching Scarf</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
+
+                    <!-- Item 2 -->
+                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition duration-300">
+                        <div class="relative h-96 overflow-hidden bg-lux-black">
+                            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80" alt="Midnight Blue Abaya" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-lux-black/80 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-035</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Evening Abaya</span>
+                                <span class="text-xs text-gray-400">Nida Velvet Touch</span>
+                            </div>
+                            <h4 class="text-lg font-serif text-white mb-3">Midnight Blue Velvet Paneled</h4>
+                            <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                <button onclick="openInquiryModal('EL-035', 'Midnight Blue Velvet Paneled')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                    <i class="fa-solid fa-paper-plane mr-1"></i> Send Inquiry / Direct Code
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20004%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
+
+                    <!-- Item 3 -->
+                    <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition duration-300">
+                        <div class="relative h-96 overflow-hidden bg-lux-black">
+                            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Burgundy Royal Robe" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-lux-black/80 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-048</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Bridal Modest</span>
+                                <span class="text-xs text-gray-400">Georgette & Zardozi</span>
+                            </div>
+                            <h4 class="text-lg font-serif text-white mb-3">Burgundy Zardozi Masterpiece</h4>
+                            <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                <button onclick="openInquiryModal('EL-048', 'Burgundy Zardozi Masterpiece')" class="w-full text-center px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                    <i class="fa-solid fa-paper-plane mr-1"></i> Send Inquiry / Direct Code
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="product-card">
-                <img src="005.jfif" alt="Abaya 005" class="product-image" onclick="openModal('005.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Charcoal Gray Minimalist Line Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Zoom Fabric | Best for: Office & Daily Professional Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$25.00</span>
-                        <span class="sale-price">$20.00</span>
-                        <span class="sale-tag">20% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20005%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
+                <div class="text-center mt-12">
+                    <button onclick="switchPage('collection')" class="px-8 py-3.5 border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-black font-bold uppercase text-xs tracking-widest transition duration-300 rounded">
+                        View Complete Collection (29+ Pieces) <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
-            </div>
+            </section>
 
-            <div class="product-card">
-                <img src="010.jfif" alt="Abaya 010" class="product-image" onclick="openModal('010.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Rose Cream Striped Kaftan Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Luxury Silk Blend | Best for: Casual Luxury & Dinners</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$32.00</span>
-                        <span class="sale-price">$24.00</span>
-                        <span class="sale-tag">25% OFF</span>
+            <!-- Brand Trust & Promise -->
+            <section class="bg-lux-charcoal border-y border-lux-border py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500 text-xl">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h4 class="text-white font-serif font-bold mb-2">Global Shipping</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Secure, insured, and expedited worldwide delivery straight to your doorstep with tracking.</p>
                     </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
+                    <div class="p-6">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500 text-xl">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h4 class="text-white font-serif font-bold mb-2">Custom Stitching</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Tailored precisely to your body measurements with bespoke length and sleeve adjustments.</p>
                     </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20010%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
+                    <div class="p-6">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500 text-xl">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h4 class="text-white font-serif font-bold mb-2">Premium Fabrics</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Sourced from top-tier Korean silks, rich Nida, breathable Crepe, and fine Chiffon.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500 text-xl">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h4 class="text-white font-serif font-bold mb-2">Dedicated Inquiry</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Direct support via email or code inquiry for personalized styling and consultation.</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="product-card">
-                <img src="012.jfif" alt="Abaya 012" class="product-image" onclick="openModal('012.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Deep Burgundy Vine Embroidered Black Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Nida Fabric | Best for: Function & Celebration Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$40.00</span>
-                        <span class="sale-price">$30.00</span>
-                        <span class="sale-tag">25% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20012%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="014.jfif" alt="Abaya 014" class="product-image" onclick="openModal('014.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Two-Tone Grey & Black Designer Cape Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Dubai Cherry | Best for: Modern Open Styling & Outings</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$32.00</span>
-                        <span class="sale-price">$25.00</span>
-                        <span class="sale-tag">22% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20014%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="017.jfif" alt="Abaya 017" class="product-image" onclick="openModal('017.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Plum Purple Brooch Statement Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Premium Crepe | Best for: Formal Evening Events</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$36.00</span>
-                        <span class="sale-price">$27.00</span>
-                        <span class="sale-tag">25% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20017%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="018.jfif" alt="Abaya 018" class="product-image" onclick="openModal('018.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Chocolate Brown Niqab & Modest Abaya Set</h3>
-                    <div class="product-fabric-occasion">Fabric: Soft Nida | Best for: Daily Modest & Traditional Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$28.00</span>
-                        <span class="sale-price">$22.00</span>
-                        <span class="sale-tag">21% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Niqab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20018%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="020.jfif" alt="Abaya 020" class="product-image" onclick="openModal('020.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Royal Golden Crystal Beaded Purple Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Luxury Satin & Silk | Best for: Bridal & Wedding Celebrations</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$50.00</span>
-                        <span class="sale-price">$35.00</span>
-                        <span class="sale-tag">30% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20020%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="022.jfif" alt="Abaya 022" class="product-image" onclick="openModal('022.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Elegant Evening Wear Signature Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Dubai Cherry | Best for: Evening Parties & Dinners</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$34.00</span>
-                        <span class="sale-price">$26.00</span>
-                        <span class="sale-tag">24% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20022%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="026.jfif" alt="Abaya 026" class="product-image" onclick="openModal('026.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Classic Black Open Abaya with Gold Trims</h3>
-                    <div class="product-fabric-occasion">Fabric: Zoom Fabric | Best for: Open Layer Styling & Events</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$33.00</span>
-                        <span class="sale-price">$25.00</span>
-                        <span class="sale-tag">24% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20026%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="027.jfif" alt="Abaya 027" class="product-image" onclick="openModal('027.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Sophisticated Daily Casual Black Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Everyday Crepe | Best for: Daily Casual & Regular Use</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$25.00</span>
-                        <span class="sale-price">$20.00</span>
-                        <span class="sale-tag">20% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20027%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="029.png" alt="Abaya 029" class="product-image" onclick="openModal('029.png')">
-                <div class="product-info">
-                    <h3 class="product-title">Royal Festive Party Wear Abaya Set</h3>
-                    <div class="product-fabric-occasion">Fabric: Chiffon Blend | Best for: Festive Parties & Gatherings</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$38.00</span>
-                        <span class="sale-price">$28.00</span>
-                        <span class="sale-tag">26% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Scarf</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20029%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="030.jfif" alt="Abaya 030" class="product-image" onclick="openModal('030.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Luxury Border Embroidered Black Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Premium Nida | Best for: High-End Formal Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$42.00</span>
-                        <span class="sale-price">$31.00</span>
-                        <span class="sale-tag">26% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20030%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="035.jfif" alt="Abaya 035" class="product-image" onclick="openModal('035.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Modern Executive Office Wear Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Zoom Fabric | Best for: Smart Office & Business Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$27.00</span>
-                        <span class="sale-price">$21.00</span>
-                        <span class="sale-tag">22% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20035%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="038.jfif" alt="Abaya 038" class="product-image" onclick="openModal('038.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Royal Shine Bridal Abaya Edition</h3>
-                    <div class="product-fabric-occasion">Fabric: Dubai Satin & Silk | Best for: Bridal & Wedding Events</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$48.00</span>
-                        <span class="sale-price">$34.00</span>
-                        <span class="sale-tag">29% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20038%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="040.jfif" alt="Abaya 040" class="product-image" onclick="openModal('040.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Rose Cream Accent Luxury Open Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Dubai Cherry | Best for: Designer Open Styling</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$35.00</span>
-                        <span class="sale-price">$27.00</span>
-                        <span class="sale-tag">23% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20040%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="043.jfif" alt="Abaya 043" class="product-image" onclick="openModal('043.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Graceful Pearl Highlighted Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Premium Crepe | Best for: Elegant Boutique Gatherings</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$32.00</span>
-                        <span class="sale-price">$25.00</span>
-                        <span class="sale-tag">22% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20043%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="045.jfif" alt="Abaya 045" class="product-image" onclick="openModal('045.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Exquisite Gold Thread Patterned Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Nida Fabric | Best for: Premium Evening & Parties</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$39.00</span>
-                        <span class="sale-price">$29.00</span>
-                        <span class="sale-tag">26% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20045%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="046.jfif" alt="Abaya 046" class="product-image" onclick="openModal('046.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Signature Style Daily Modest Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Zoom Fabric | Best for: Comfortable Everyday Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$26.00</span>
-                        <span class="sale-price">$20.50</span>
-                        <span class="sale-tag">21% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20046%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="048.jfif" alt="Abaya 048" class="product-image" onclick="openModal('048.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Regal Shining Black Special Edition</h3>
-                    <div class="product-fabric-occasion">Fabric: Royal Black Nida | Best for: Special Occasions & Events</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$41.00</span>
-                        <span class="sale-price">$30.00</span>
-                        <span class="sale-tag">27% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20048%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="051.jfif" alt="Abaya 051" class="product-image" onclick="openModal('051.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Golden Accented Party & Function Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Dubai Cherry | Best for: Parties & Family Functions</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$34.00</span>
-                        <span class="sale-price">$26.00</span>
-                        <span class="sale-tag">24% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20051%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="052.jfif" alt="Abaya 052" class="product-image" onclick="openModal('052.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Minimalist Professional Office Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Crepe Fabric | Best for: Professional & Corporate Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$26.00</span>
-                        <span class="sale-price">$20.00</span>
-                        <span class="sale-tag">23% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20052%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="053.jfif" alt="Abaya 053" class="product-image" onclick="openModal('053.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Luxury Velvet Touch Dubai Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Velvet & Nida | Best for: Winter Evening & Open Styling</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$40.00</span>
-                        <span class="sale-price">$30.00</span>
-                        <span class="sale-tag">25% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20053%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="060.jfif" alt="Abaya 060" class="product-image" onclick="openModal('060.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Grandeur Embroidered Bridal Masterpiece</h3>
-                    <div class="product-fabric-occasion">Fabric: Premium Satin Silk | Best for: Grand Bridal Functions</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$52.00</span>
-                        <span class="sale-price">$36.50</span>
-                        <span class="sale-tag">30% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20060%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="064.jfif" alt="Abaya 064" class="product-image" onclick="openModal('064.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Graceful Silhouette Casual Daily Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Soft Zoom | Best for: Casual Outings & Daily Use</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$25.00</span>
-                        <span class="sale-price">$20.00</span>
-                        <span class="sale-tag">20% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20064%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="065.jfif" alt="Abaya 065" class="product-image" onclick="openModal('065.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Stunning Rose Cream Mix Party Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Chiffon & Crepe | Best for: Party & Celebration Wear</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$36.00</span>
-                        <span class="sale-price">$27.00</span>
-                        <span class="sale-tag">25% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20065%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="072.jfif" alt="Abaya 072" class="product-image" onclick="openModal('072.jfif')">
-                <div class="product-info">
-                    <h3 class="product-title">Elite Haute Couture Black Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Export Nida | Best for: High Fashion & Formal Dinners</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$43.00</span>
-                        <span class="sale-price">$31.50</span>
-                        <span class="sale-tag">27% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Hijab</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20072%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="073.png" alt="Abaya 073" class="product-image" onclick="openModal('073.png')">
-                <div class="product-info">
-                    <h3 class="product-title">Ultimate Royal Crown Bridal Abaya</h3>
-                    <div class="product-fabric-occasion">Fabric: Premium Bridal Silk | Best for: Royal Bridal Showcases</div>
-                    <div class="product-pricing">
-                        <span class="original-price">$55.00</span>
-                        <span class="sale-price">$38.50</span>
-                        <span class="sale-tag">30% OFF</span>
-                    </div>
-                    <div class="product-meta">
-                        <span>Matching Set</span>
-                        <span class="badge-moq">MOQ: 12 Pcs</span>
-                    </div>
-                    <a href="https://wa.me/923348147509?text=Hello,%20I%20want%20to%20request%20a%20quote%20for%20Abaya%20Model%20073%20with%20matching%20hijab/niqab" target="_blank" class="btn-inquire">Request Quote</a>
-                </div>
-            </div>
-
+            </section>
         </div>
 
-        <div class="whatsapp-banner">
-            <p><strong>Mazeed abayas dekhne ke liye WhatsApp par rabta karein!</strong></p>
-            <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20want%20to%20see%20more%20abayas%20and%20designs%20from%20your%20collection." target="_blank" class="btn-gold"><i class="fab fa-whatsapp"></i> View More On WhatsApp</a>
-        </div>
-    </section>
 
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImg">
+        <!-- ================= PAGE: COLLECTION ================= -->
+        <div id="page-collection" class="page-view">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="text-center mb-12">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Curated Gallery</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">The Royal Abaya & Kaftan Collection</h2>
+                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">Explore all curated designs. Use individual request codes for seamless inquiry and custom orders.</p>
+                    <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                </div>
+
+                <!-- Filter / Category Tabs -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <button onclick="filterCollection('all')" class="filter-btn px-5 py-2 text-xs uppercase tracking-widest font-semibold rounded bg-gold-500 text-black transition">All Designs</button>
+                    <button onclick="filterCollection('kaftan')" class="filter-btn px-5 py-2 text-xs uppercase tracking-widest font-semibold rounded bg-lux-card border border-lux-border text-gray-300 hover:border-gold-500 transition">Kaftans</button>
+                    <button onclick="filterCollection('abaya')" class="filter-btn px-5 py-2 text-xs uppercase tracking-widest font-semibold rounded bg-lux-card border border-lux-border text-gray-300 hover:border-gold-500 transition">Luxury Abayas</button>
+                    <button onclick="filterCollection('bridal')" class="filter-btn px-5 py-2 text-xs uppercase tracking-widest font-semibold rounded bg-lux-card border border-lux-border text-gray-300 hover:border-gold-500 transition">Bridal / Festive</button>
+                </div>
+
+                <!-- Collection Grid -->
+                <div id="collection-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card Template 1 -->
+                    <div class="collection-card" data-category="kaftan">
+                        <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
+                            <div class="relative h-96 bg-lux-black overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-061</span>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Pure Korean Silk</span>
+                                <h4 class="text-lg font-serif text-white mt-1 mb-2">Emerald Silk Royal Kaftan</h4>
+                                <p class="text-gray-400 text-xs mb-4">Features intricate hand-stitched gold zari neckline and delicate pearl buttons on sleeves.</p>
+                                <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                    <span class="text-xs text-gray-300"><i class="fa-solid fa-head-side-mask text-gold-500 mr-1"></i> Matches Gold Hijab</span>
+                                    <button onclick="openInquiryModal('EL-061', 'Emerald Silk Royal Kaftan')" class="px-4 py-2 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                        Inquiry <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Template 2 -->
+                    <div class="collection-card" data-category="abaya">
+                        <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
+                            <div class="relative h-96 bg-lux-black overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-035</span>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Nida Fabric & Velvet</span>
+                                <h4 class="text-lg font-serif text-white mt-1 mb-2">Midnight Blue Velvet Abaya</h4>
+                                <p class="text-gray-400 text-xs mb-4">Elegant front zip closure with wide draped sleeves and rich purple contrast lining.</p>
+                                <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                    <span class="text-xs text-gray-300"><i class="fa-solid fa-head-side-mask text-gold-500 mr-1"></i> Matches Navy Hijab</span>
+                                    <button onclick="openInquiryModal('EL-035', 'Midnight Blue Velvet Abaya')" class="px-4 py-2 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                        Inquiry <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Template 3 -->
+                    <div class="collection-card" data-category="bridal">
+                        <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
+                            <div class="relative h-96 bg-lux-black overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-048</span>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Georgette / Zardozi</span>
+                                <h4 class="text-lg font-serif text-white mt-1 mb-2">Burgundy Festive Robe</h4>
+                                <p class="text-gray-400 text-xs mb-4">Heavy golden zardozi embroidery along the neckline and cuffs with flowing cape back.</p>
+                                <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                    <span class="text-xs text-gray-300"><i class="fa-solid fa-head-side-mask text-gold-500 mr-1"></i> Matches Maroon Hijab</span>
+                                    <button onclick="openInquiryModal('EL-048', 'Burgundy Festive Robe')" class="px-4 py-2 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                        Inquiry <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Template 4 -->
+                    <div class="collection-card" data-category="abaya">
+                        <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
+                            <div class="relative h-96 bg-lux-black overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-038</span>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Raw Silk & Thread</span>
+                                <h4 class="text-lg font-serif text-white mt-1 mb-2">Emerald Floral Embroidered Coat</h4>
+                                <p class="text-gray-400 text-xs mb-4">Exquisite silver-gold thread work cascading down the front panels with adjustable waist tie.</p>
+                                <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                    <span class="text-xs text-gray-300"><i class="fa-solid fa-head-side-mask text-gold-500 mr-1"></i> Matches Silk Scarf</span>
+                                    <button onclick="openInquiryModal('EL-038', 'Emerald Floral Embroidered Coat')" class="px-4 py-2 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                        Inquiry <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Template 5 -->
+                    <div class="collection-card" data-category="kaftan">
+                        <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
+                            <div class="relative h-96 bg-lux-black overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-073</span>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Chiffon & Gold Thread</span>
+                                <h4 class="text-lg font-serif text-white mt-1 mb-2">Palace Gold-Embroidered Kaftan</h4>
+                                <p class="text-gray-400 text-xs mb-4">Luxurious layered chiffon kaftan featuring intricate oriental motifs and comfortable inner lining.</p>
+                                <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                    <span class="text-xs text-gray-300"><i class="fa-solid fa-head-side-mask text-gold-500 mr-1"></i> Matches Gold Chiffon</span>
+                                    <button onclick="openInquiryModal('EL-073', 'Palace Gold-Embroidered Kaftan')" class="px-4 py-2 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                        Inquiry <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Template 6 -->
+                    <div class="collection-card" data-category="bridal">
+                        <div class="bg-lux-card border border-lux-border rounded-lg overflow-hidden group hover:border-gold-500/50 transition">
+                            <div class="relative h-96 bg-lux-black overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-lux-black/90 border border-gold/40 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded">Code: EL-070</span>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs text-gold-500 uppercase tracking-widest">Raw Silk & Crystals</span>
+                                <h4 class="text-lg font-serif text-white mt-1 mb-2">Golden Bronze Royal Abaya</h4>
+                                <p class="text-gray-400 text-xs mb-4">Complete button-down front with heavily beaded bell sleeves and high mandarin collar.</p>
+                                <div class="flex items-center justify-between pt-4 border-t border-lux-border">
+                                    <span class="text-xs text-gray-300"><i class="fa-solid fa-head-side-mask text-gold-500 mr-1"></i> Matches Bronze Hijab</span>
+                                    <button onclick="openInquiryModal('EL-070', 'Golden Bronze Royal Abaya')" class="px-4 py-2 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                                        Inquiry <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE: CUSTOMIZATION ================= -->
+        <div id="page-customization" class="page-view">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="text-center mb-16">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Bespoke Tailoring</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">Custom Stitching & Personalization</h2>
+                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">Every woman is unique. We offer tailored stitching according to your exact body measurements and style preferences.</p>
+                    <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <h3 class="text-2xl font-serif text-white mb-6">How Our Customization Works</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500 text-black font-bold flex items-center justify-center flex-shrink-0">1</div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Select Your Design & Code</h4>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Choose any design from our collection and note down its request code (e.g., EL-061).</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500 text-black font-bold flex items-center justify-center flex-shrink-0">2</div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Provide Your Measurements</h4>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Submit your length, bust, waist, sleeve length, and shoulder requirements through our inquiry form or direct email.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500 text-black font-bold flex items-center justify-center flex-shrink-0">3</div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Fabric & Color Modifications</h4>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Want a different fabric (Silk, Nida, Chiffon) or color palette (Black, Emerald, Burgundy, Navy)? Our master tailors accommodate your requests.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Customization Form Box -->
+                    <div class="bg-lux-card border border-lux-border rounded-xl p-8 shadow-2xl">
+                        <h3 class="text-xl font-serif text-white mb-6 flex items-center">
+                            <i class="fa-solid fa-scissors text-gold-500 mr-3"></i> Submit Custom Measurement Request
+                        </h3>
+                        <form onsubmit="handleCustomSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Your Name</label>
+                                <input type="text" required class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="e.g. Fatima Al-Mansoor">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Design Code</label>
+                                    <input type="text" id="custom-code-input" required class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="e.g. EL-061">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Length (Inches)</label>
+                                    <input type="text" required class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="e.g. 56 inches">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Specific Alterations & Fabric Preference</label>
+                                <textarea rows="3" class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="Mention sleeve length, bust size, or color changes..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-95 transition">
+                                Send Custom Order Request <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE: SERVICES & SHIPPING ================= -->
+        <div id="page-services" class="page-view">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="text-center mb-16">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Excellence Guaranteed</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">Global Shipping & Premium Services</h2>
+                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">We take pride in seamless international delivery and meticulous craftsmanship standards.</p>
+                    <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div class="bg-lux-card border border-lux-border p-8 rounded-xl">
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 text-xl mb-6">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-3">Global Express Shipping</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            We ship worldwide with trusted carriers (DHL, FedEx, UPS). Every package is securely wrapped in signature luxury packaging to ensure pristine condition upon arrival.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li><i class="fa-solid fa-check text-gold-500 mr-2"></i> Real-time tracking code provided</li>
+                            <li><i class="fa-solid fa-check text-gold-500 mr-2"></i> Expedited delivery options available</li>
+                            <li><i class="fa-solid fa-check text-gold-500 mr-2"></i> Secure customs handling support</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-lux-card border border-lux-border p-8 rounded-xl">
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-500 text-xl mb-6">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3 class="text-xl font-serif text-white mb-3">Stitching & Quality Assurance</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            Our master artisans inspect every seam, embroidery detail, and button attachment before dispatch. We guarantee premium finish without any compromises.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li><i class="fa-solid fa-check text-gold-500 mr-2"></i> Hand-checked zardozi and pearl work</li>
+                            <li><i class="fa-solid fa-check text-gold-500 mr-2"></i> Premium inner lining for maximum comfort</li>
+                            <li><i class="fa-solid fa-check text-gold-500 mr-2"></i> Matching complimentary hijab included with select sets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE: CONTACT & INQUIRY ================= -->
+        <div id="page-contact" class="page-view">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="text-center mb-16">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">Direct Inquiry & Orders</h2>
+                    <p class="text-gray-400 text-sm mt-3 max-w-xl mx-auto">Have questions about a design code, shipping, or custom sizing? Reach out directly.</p>
+                    <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-lux-card border border-lux-border p-6 rounded-xl text-center">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4 class="text-white font-serif font-bold mb-1">Email Us</h4>
+                        <p class="text-xs text-gold-400 select-all">mansoor.ahmed033481@gmail.com</p>
+                    </div>
+                    <div class="bg-lux-card border border-lux-border p-6 rounded-xl text-center">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h4 class="text-white font-serif font-bold mb-1">Direct Line</h4>
+                        <p class="text-xs text-gray-300">+92 (Dedicated Support)</p>
+                    </div>
+                    <div class="bg-lux-card border border-lux-border p-6 rounded-xl text-center">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-lux-black border border-gold-500/40 flex items-center justify-center text-gold-500">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h4 class="text-white font-serif font-bold mb-1">Working Hours</h4>
+                        <p class="text-xs text-gray-300">Mon - Sat: 10:00 AM - 8:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="bg-lux-card border border-lux-border rounded-xl p-8 sm:p-12">
+                    <form onsubmit="handleGeneralInquiry(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Your Name</label>
+                                <input type="text" required class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="Enter your full name">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Your Email</label>
+                                <input type="email" required class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="Enter your email address">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Design Code / Subject (Optional)</label>
+                            <input type="text" id="general-subject" class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="e.g. Inquiry regarding EL-061">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Your Message / Requirements</label>
+                            <textarea rows="4" required class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="Type your inquiry or stitching requirements here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded shadow-xl hover:opacity-95 transition">
+                            Submit Inquiry to mansoor.ahmed033481@gmail.com <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Inquiry Modal Popup -->
+    <div id="inquiry-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden">
+        <div class="bg-lux-card border border-gold-500/40 rounded-xl p-8 max-w-md w-full mx-4 relative shadow-2xl animate-fade-in">
+            <button onclick="closeInquiryModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gold-400 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-6">
+                <span class="text-xs uppercase tracking-widest text-gold-500 font-semibold">Direct Code Inquiry</span>
+                <h3 id="modal-title" class="text-xl font-serif text-white mt-1">Design Inquiry</h3>
+                <p id="modal-code" class="text-xs text-gray-400 mt-1 font-mono text-gold-300"></p>
+            </div>
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Your Name / Contact</label>
+                    <input type="text" required class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="Name & Phone/Email">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Customizations / Size Notes</label>
+                    <textarea rows="3" class="w-full bg-lux-black border border-lux-border rounded px-4 py-3 text-sm text-white focus:border-gold-500 focus:outline-none" placeholder="Mention size, sleeve adjustments or preferred fabric..."></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 text-xs font-bold uppercase tracking-widest text-black gold-bg rounded hover:opacity-90 transition">
+                    Send Inquiry Now
+                </button>
+            </form>
+            <div class="mt-4 text-center text-[10px] text-gray-500">
+                Direct inquiries are sent to <span class="text-gold-400">mansoor.ahmed033481@gmail.com</span>
+            </div>
+        </div>
     </div>
 
-    <section id="customization" class="custom-banner">
-        <h2>100% Customization & Private Labeling Available</h2>
-        <p>Are you an international boutique owner or wholesaler? We provide complete custom manufacturing based on your unique designs, custom brand labels, specific sizing guidelines, and specialized fabric choices.</p>
-        <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20want%20to%20discuss%20custom%20design%20and%20private%20labeling." target="_blank" class="btn-gold">Discuss Custom Order</a>
-    </section>
-
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h3>Mir's Abaya Boutique</h3>
-                <p>A trusted global B2B partner exporting high-end, elegant, and modest Dubai style abayas with matching hijabs and niqabs to international clients worldwide.</p>
+    <!-- Footer -->
+    <footer class="bg-lux-charcoal border-t border-lux-border mt-24 text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-full border border-gold-500 flex items-center justify-center bg-lux-card">
+                        <span class="text-gold-500 font-serif font-bold">E</span>
+                    </div>
+                    <h1 class="text-lg font-serif tracking-widest gold-gradient-text font-bold">ELEGANCE</h1>
+                </div>
+                <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                    Exquisite luxury abayas, kaftans, and modest Eastern wear crafted with precision, pure fabrics, and timeless royal aesthetics.
+                </p>
+                <p class="text-gold-400 font-mono text-xs"><i class="fa-solid fa-envelope mr-2"></i> mansoor.ahmed033481@gmail.com</p>
             </div>
-            <div class="footer-col">
-                <h3>Payment & Shipping</h3>
-                <ul>
-                    <li><strong>Shipping:</strong> DHL & FedEx Express Worldwide</li>
-                    <li><strong>MOQ:</strong> 12 Pieces per design</li>
-                    <li><strong>Payments:</strong> Wire Transfer (TT), Bank Transfer, Western Union, PayPal</li>
+            <div>
+                <h4 class="text-white font-serif uppercase tracking-widest text-sm mb-4">Quick Navigation</h4>
+                <ul class="space-y-2">
+                    <li><button onclick="switchPage('home')" class="hover:text-gold-400 transition">Home</button></li>
+                    <li><button onclick="switchPage('collection')" class="hover:text-gold-400 transition">Collection Gallery</button></li>
+                    <li><button onclick="switchPage('customization')" class="hover:text-gold-400 transition">Custom Tailoring</button></li>
+                    <li><button onclick="switchPage('services')" class="hover:text-gold-400 transition">Global Shipping</button></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h3>Direct Inquiries & Support</h3>
-                <div class="contact-info-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+92 334 8147509</span>
+            <div>
+                <h4 class="text-white font-serif uppercase tracking-widest text-sm mb-4">Categories</h4>
+                <ul class="space-y-2">
+                    <li><span class="hover:text-gold-400 cursor-pointer" onclick="switchPage('collection')">Royal Kaftans</span></li>
+                    <li><span class="hover:text-gold-400 cursor-pointer" onclick="switchPage('collection')">Velvet Evening Abayas</span></li>
+                    <li><span class="hover:text-gold-400 cursor-pointer" onclick="switchPage('collection')">Festive Zardozi Robes</span></li>
+                    <li><span class="hover:text-gold-400 cursor-pointer" onclick="switchPage('customization')">Bespoke Sizing</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-serif uppercase tracking-widest text-sm mb-4">Newsletter & Updates</h4>
+                <p class="text-gray-400 text-xs mb-4">Subscribe for private collection launches and seasonal royal discounts.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your Email" class="bg-lux-black border border-lux-border px-3 py-2 text-xs text-white rounded-l focus:outline-none focus:border-gold-500 w-full">
+                    <button onclick="alert('Thank you for subscribing!')" class="gold-bg text-black px-4 py-2 rounded-r font-bold text-xs uppercase tracking-wider hover:opacity-90">Join</button>
                 </div>
-                <div class="contact-info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>mansoor.ahmed033481@gmail.com</span>
-                </div>
-                <a href="https://wa.me/923348147509?text=Hello%20Mir's%20Abaya%20Boutique,%20I%20have%20an%20inquiry%20regarding%20wholesale%20orders." target="_blank" class="btn-gold" style="margin-top: 10px; padding: 10px 20px; font-size: 0.85rem;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Mir's Abaya Boutique. All Rights Reserved. Designed for Global B2B Export.</p>
+        <div class="border-t border-lux-border py-6 text-center text-[11px] text-gray-500">
+            &copy; 2026 ELEGANCE COUTURE. All Rights Reserved. Crafted for Luxury Modesty.
         </div>
     </footer>
 
+    <!-- JavaScript for Animated Page Switching & Interactive Elements -->
     <script>
-        function openModal(imageSrc) {
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("modalImg");
-            modal.style.display = "block";
-            modalImg.src = imageSrc;
+        function switchPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(p => p.classList.remove('active'));
+
+            // Show selected page
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update nav link active states
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if(link.getAttribute('data-target') === pageId) {
+                    link.classList.add('text-gold-500', 'border-gold-500');
+                    link.classList.remove('text-gray-300', 'border-transparent');
+                } else {
+                    link.classList.remove('text-gold-500', 'border-gold-500');
+                    link.classList.add('text-gray-300', 'border-transparent');
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function closeModal() {
-            const modal = document.getElementById("imageModal");
-            modal.style.display = "none";
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+
+        function filterCollection(category) {
+            const cards = document.querySelectorAll('.collection-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-gold-500', 'text-black');
+                btn.classList.add('bg-lux-card', 'text-gray-300');
+            });
+            event.target.classList.add('bg-gold-500', 'text-black');
+            event.target.classList.remove('bg-lux-card', 'text-gray-300');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openInquiryModal(code, title) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-code').innerText = 'Request Code: ' + code;
+            document.getElementById('inquiry-modal').classList.remove('hidden');
+        }
+
+        function closeInquiryModal() {
+            document.getElementById('inquiry-modal').classList.add('hidden');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            alert('Your inquiry has been successfully sent to mansoor.ahmed033481@gmail.com! We will get back to you shortly.');
+            closeInquiryModal();
+        }
+
+        function handleCustomSubmit(e) {
+            e.preventDefault();
+            alert('Custom stitching request submitted successfully! Our master tailor will review your measurements and email you at mansoor.ahmed033481@gmail.com.');
+            e.target.reset();
+        }
+
+        function handleGeneralInquiry(e) {
+            e.preventDefault();
+            alert('Your message has been sent successfully to mansoor.ahmed033481@gmail.com.');
+            e.target.reset();
         }
     </script>
-
 </body>
 </html>
